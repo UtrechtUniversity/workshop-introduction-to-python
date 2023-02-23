@@ -4,29 +4,30 @@ title: Setup
 
 ## Overview
 
-This lesson is designed to be run on a personal computer.
-All of the software and data used in this lesson are freely available online,
+The course materials are designed to be run on a personal computer.
+All of the software and data used are freely available online,
 and instructions on how to obtain them are provided below.
 
 ## Install Python
 
-In this lesson, we will be using Python 3 with some of its most popular scientific libraries.
+In this course, we will be using Python 3 with some of its most popular scientific libraries.
 Although one can install a plain-vanilla Python and all required libraries by hand,
 we recommend installing [Anaconda][anaconda-website],
-a Python distribution that comes with everything we need for the lesson.
-Detailed installation instructions for various operating systems can be found
-on The Carpentries [template website for workshops][anaconda-instructions]
-and in [Anaconda documentation][anaconda-install].
+a Python distribution that comes with everything we need for the lesson. 
+Detailed installation instructions can be found in the [Anaconda documentation][anaconda-install],
+or by following the instructions below.
+
+{% include python.html %}
 
 ## Obtain lesson materials
 
-1. Download [python-novice-inflammation-data.zip][zipfile1]
-        and [python-novice-inflammation-code.zip][zipfile2].
-2. Create a folder called `swc-python` on your Desktop.
-3. Move downloaded files to `swc-python`.
+1. Download [??-data.zip][zipfile-data]
+        and [??-code.zip][zipfile-code].
+2. Create a folder called `intro-python` on your Desktop.
+3. Move downloaded files to `intro-python`.
 4. Unzip the files.
 
-You should see two folders called `data` and `code` in the `swc-python` directory on your
+You should see two folders called `data` and `code` in the `intro-python` directory on your
 Desktop.
 
 ## Launch Python interface
@@ -54,7 +55,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 > contents of your Home (or User) folder.
 > 3. Navigate to the `data` directory by clicking on the directory names leading to it:
-> `Desktop`, `swc-python`, then `data`:
+> `Desktop`, `intro-python`, then `data`:
 > ![Anaconda Navigator Notebook directory](
 {{ page.root }}{% link fig/jupyter-notebook-data-directory.png %})
 > 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
@@ -70,7 +71,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > > If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
 > > in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
 > > ~~~
-> > cd ~/Desktop/swc-python/data
+> > cd ~/Desktop/intro-python/data
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
@@ -81,7 +82,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > > <kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
 > > the `data` folder:
 > > ~~~
-> > cd /D %userprofile%\Desktop\swc-python\data
+> > cd /D %userprofile%\Desktop\intro-python\data
 > > ~~~
 > > {: .source}
 > {: .solution}
@@ -114,8 +115,8 @@ If you installed Anaconda, you can launch a notebook in two ways:
 
 IPython is an alternative solution situated somewhere in between the plain-vanilla Python
 interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with
-various convenience features and commands.  You should have IPython on your system if you installed
-[Anaconda][anaconda-instructions].
+various convenience features and commands. You should have IPython on your system if you installed
+[Anaconda][anaconda-website].
 
 To start using IPython, execute:
 ~~~
@@ -139,9 +140,14 @@ winpty python
 ~~~
 {: .source}
 
+
+The instructions on this page were adapted from the [setup instructions of the Software Carpentries "Programming with Python" course][swcarpentry-python] and [their Workshop Template Python installation instructions][carpentries-template], both released under the [Creative Commons Attribution license][license]. Changes to the material were made, and can be tracked in the Git repository associated with this course.
+
 [anaconda-install]: https://docs.anaconda.com/anaconda/install
-[anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
 [anaconda-website]: https://www.anaconda.com/
+[carpentries-template]: https://carpentries.github.io/workshop-template/#python
 [gitbash]: https://gitforwindows.org
-[zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
-[zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
+[license]: https://creativecommons.org/licenses/by/4.0/
+[swcarpentry-python]: https://swcarpentry.github.io/python-novice-inflammation/setup.html
+[zipfile-code]: #
+[zipfile-data]: #
