@@ -1,5 +1,15 @@
 # Introduction
 
+Let's try out some Python!
+
+```{python}
+2 + 2
+```
+
+```{python}
+print("Hello World")
+```
+
 This is a book created from markdown and executable code.
 
 See @knuth84 for additional discussion of literate programming.
