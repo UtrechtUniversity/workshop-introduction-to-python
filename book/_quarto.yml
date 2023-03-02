@@ -24,6 +24,3 @@ format:
     theme: pulse
   pdf:
     documentclass: scrreprt
-
-
-
