@@ -16,6 +16,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
@@ -28,6 +30,7 @@ jobs:
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          target: gh-pages
+          target: gh-pages 
+          path: ./book
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
