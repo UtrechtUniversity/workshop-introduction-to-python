@@ -1,5 +1,0 @@
-# Welcome! {.unnumbered}
-
-Python is a powerful programming language that is popular can be used to write scripts for to work effectively and reproducibly with data. In this workshop, we aim to give you the tools to start exploring Python and all it has to offer by yourself.
-
-Our workshop material is licensed under a Creative Commons Attribution 4.0 International License. You can view the license here.
