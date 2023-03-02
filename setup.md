@@ -8,6 +8,9 @@ The course materials are designed to be run on a personal computer.
 All of the software and data used are freely available online,
 and instructions on how to obtain them are provided below.
 
+If you have any questions, or are not comfortable with doing the installation yourself
+join the [RDM walk-in hours][walk-in-hours] to ask for help.
+
 ## Install Python
 
 In this course, we will be using Python 3 with some of its most popular scientific libraries.
@@ -45,22 +48,14 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > ## Anaconda Navigator
 >
 > 1. Launch Anaconda Navigator.
-> It might ask you if you'd like to send anonymized usage information to Anaconda developers:
-> ![Anaconda Navigator first launch](
-{{ page.root }}{% link fig/anaconda-navigator-first-launch.png %})
+> It might ask you if you'd like to send anonymized usage information to Anaconda developers.
 > Make your choice and click "Ok, and don't show again" button.
-> 2. Find the "Notebook" tab and click on the "Launch" button:
-> ![Anaconda Navigator Notebook launch](
-{{ page.root }}{% link fig/anaconda-navigator-notebook-launch.png %})
+> 2. Find the "Notebook" tab and click on the "Launch" button.
 > Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 > contents of your Home (or User) folder.
-> 3. Navigate to the `data` directory by clicking on the directory names leading to it:
+> 3. Navigate to the `data` directory by clicking on the directory names leading to it.
 > `Desktop`, `intro-python`, then `data`:
-> ![Anaconda Navigator Notebook directory](
-{{ page.root }}{% link fig/jupyter-notebook-data-directory.png %})
-> 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
-> ![Anaconda Navigator Notebook directory](
-{{ page.root }}{% link fig/jupyter-notebook-launch-notebook.png %})
+> 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3".
 {: .solution}
 
 > ## Command line (Terminal)
@@ -104,9 +99,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > {: .solution}
 >
 > 3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
-> from the drop-down menu:
-> ![Anaconda Navigator Notebook directory](
-{{ page.root }}{% link fig/jupyter-notebook-launch-notebook2.png %})
+> from the drop-down menu.
 {: .solution}
 
 &nbsp; <!-- vertical spacer -->
@@ -149,5 +142,6 @@ The instructions on this page were adapted from the [setup instructions of the S
 [gitbash]: https://gitforwindows.org
 [license]: https://creativecommons.org/licenses/by/4.0/
 [swcarpentry-python]: https://swcarpentry.github.io/python-novice-inflammation/setup.html
+[walk-in-hours]: https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software
 [zipfile-code]: #
 [zipfile-data]: #
