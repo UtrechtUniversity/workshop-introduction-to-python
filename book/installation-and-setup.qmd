@@ -1,0 +1,3 @@
+# Installation & Setup
+
+Hello plz don't download Python from the Microsoft Store :P 
