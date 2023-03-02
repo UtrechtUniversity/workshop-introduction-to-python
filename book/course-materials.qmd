@@ -1,0 +1,5 @@
+# Course Materials
+
+You can download the course materials as individual files or as zip files
+
+- insert links to datasets and notebooks and zip files etc. below

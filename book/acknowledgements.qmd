@@ -1,0 +1,11 @@
+# Acknowledgements
+
+Our course materials are an adaptation of the .... Carpentries course, reused under a CC-something license. The Intro to R & Data course at UU also served as a reference. 
+
+## Contributors
+
+- Jelle
+- Christine
+- Roel
+- Neha
+- Stefano

@@ -3,14 +3,18 @@ project:
   output-dir: ../docs
 
 book:
-  title: "book"
-  author: "Jane Doe"
-  date: "23-2-2023"
+  title: "Introduction to Python & Data"
+  author: "Research Data Management Support"
+  date: "02-03-2023"
   chapters:
     - index.qmd
-    - intro.qmd
-    - test.ipynb
-    - summary.qmd
+    - acknowledgements.qmd
+    - schedule.qmd
+    - installation-and-setup.qmd
+    - course-materials.qmd
+    - introduction.qmd
+    - python-101.ipynb
+    - data-science-with-pandas.ipynb
     - references.qmd
 
 bibliography: references.bib

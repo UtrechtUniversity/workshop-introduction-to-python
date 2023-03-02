@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "book",
+    "title": "Introduction to Python & Data",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+    "text": "Welcome!\nPython is a powerful programming language that is popular can be used to write scripts for to work effectively and reproducibly with data. In this workshop, we aim to give you the tools to start exploring Python and all it has to offer by yourself.\nOur workshop material is licensed under a Creative Commons Attribution 4.0 International License. You can view the license here."
   },
   {
     "objectID": "intro.html",
@@ -33,5 +33,54 @@
     "title": "2  Test",
     "section": "",
     "text": "Let’s try out some Python!\n\n2 + 2\n\n4\n\n\n\nprint(\"Hello World\")\n\nHello World\n\n\nThis is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "acknowledgements.html#contributors",
+    "href": "acknowledgements.html#contributors",
+    "title": "1  Acknowledgements",
+    "section": "1.1 Contributors",
+    "text": "1.1 Contributors\n\nJelle\nChristine\nRoel\nNeha\nStefano"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "2  Schedule",
+    "section": "",
+    "text": "we can add a detailed schedule here later"
+  },
+  {
+    "objectID": "installation-and-setup.html",
+    "href": "installation-and-setup.html",
+    "title": "3  Installation & Setup",
+    "section": "",
+    "text": "Hello plz don’t download Python from the Microsoft Store :P"
+  },
+  {
+    "objectID": "course-materials.html",
+    "href": "course-materials.html",
+    "title": "4  Course Materials",
+    "section": "",
+    "text": "You can download the course materials as individual files or as zip files\n\ninsert links to datasets and notebooks and zip files etc. below"
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "5  Introduction",
+    "section": "",
+    "text": "What is Python? Why do we like it so much more than R? Let’s get going!"
+  },
+  {
+    "objectID": "python-101.html",
+    "href": "python-101.html",
+    "title": "6  Python 101",
+    "section": "",
+    "text": "Let’s try out some Python!\n\n2 + 2\n\n4\n\n\n\nprint(\"Hello World\")\n\nHello World\n\n\nThis is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "data-science-with-pandas.html",
+    "href": "data-science-with-pandas.html",
+    "title": "7  Data Science with Pandas",
+    "section": "",
+    "text": "Let’s try out the Pandas library!\n\n2 + 2\n\n4\n\n\n\nprint(\"Hello World\")\n\nHello World\n\n\nThis is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   }
 ]
