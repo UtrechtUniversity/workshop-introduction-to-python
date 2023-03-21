@@ -6,15 +6,20 @@ book:
   title: "Introduction to Python & Data"
   author: "Research Data Management Support"
   date: "02-03-2023"
+  search: true
+  repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python/
   chapters:
     - index.qmd
     - acknowledgements.qmd
-    - schedule.qmd
-    - installation-and-setup.qmd
-    - course-materials.qmd
-    - introduction.qmd
-    - python-101.ipynb
-    - data-science-with-pandas.ipynb
+    - part: "Preparation"
+      chapters: 
+        - schedule.qmd
+        - installation-and-setup.qmd
+        - course-materials.qmd
+    - part: introduction.qmd
+      chapters: 
+        - python-101.ipynb
+    - part: data-science-with-pandas.ipynb
     - references.qmd
 
 bibliography: references.bib
