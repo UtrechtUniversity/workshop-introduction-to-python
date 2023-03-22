@@ -15,15 +15,18 @@ book:
     - introduction.qmd
     - python-101.ipynb
     - data-science-with-pandas.ipynb
+    - what-next.qmd
     - references.qmd
+  search: true
+  repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python
+  repo-actions: [edit]
+  sidebar:
+    logo: python-logo.png
 
 bibliography: references.bib
 
 format:
   html:
     theme: pulse
-  pdf:
-    documentclass: scrreprt
-
 
 

@@ -1,11 +1,19 @@
-# Acknowledgements
+# Acknowledgements {.unnumbered}
 
-Our course materials are an adaptation of the .... Carpentries course, reused under a CC-something license. The Intro to R & Data course at UU also served as a reference. 
+Our workshop materials are an adaptation of the following sources: 
+
+- [Data Analysis and Visualization in Python for Ecologists](https://datacarpentry.org/python-ecology-lesson/index.html) developed by [The Carpentries](https://carpentries.org/)  
+    
+- [Introduction to R & Data](https://utrechtuniversity.github.io/workshop-introduction-to-R-and-data/) developed by [Research Data Management Support](https://www.uu.nl/en/research/research-data-management) at Utrecht University. 
+    
+The aforementioned source materials are reused under a [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
 ## Contributors
 
-- Jelle
-- Christine
-- Roel
-- Neha
-- Stefano
+The following indivduals have contributed to the development of this workshop:
+
+- Jelle Treep
+- Christine Staiger
+- Roel Brouwer
+- [Neha Moopen](https://orcid.org/0000-0003-1412-4402)
+- Stefano Rapisarda
