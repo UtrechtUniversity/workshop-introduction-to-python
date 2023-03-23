@@ -7,11 +7,11 @@ book:
   author: "Research Data Management Support"
   date: "02-03-2023"
   search: true
-  repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python/
   chapters:
-    - index.qmd    - acknowledgements.qmd
+    - index.qmd
+    - acknowledgements.qmd
     - part: "Preparation"
-      chapters:
+      chapters: 
         - schedule.qmd
         - installation-and-setup.qmd
         - course-materials.qmd
