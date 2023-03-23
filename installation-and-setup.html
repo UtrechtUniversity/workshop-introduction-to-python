@@ -159,7 +159,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="toc-section-number">3.1</span>  Overview</a></li>
+  <li><a href="#install-python" id="toc-install-python" class="nav-link" data-scroll-target="#install-python"><span class="toc-section-number">3.2</span>  Install Python</a></li>
+  <li><a href="#obtain-lesson-materials" id="toc-obtain-lesson-materials" class="nav-link" data-scroll-target="#obtain-lesson-materials"><span class="toc-section-number">3.3</span>  Obtain lesson materials</a></li>
+  <li><a href="#launch-python-interface" id="toc-launch-python-interface" class="nav-link" data-scroll-target="#launch-python-interface"><span class="toc-section-number">3.4</span>  Launch Python interface</a></li>
+  <li><a href="#option-a-jupyter-notebook" id="toc-option-a-jupyter-notebook" class="nav-link" data-scroll-target="#option-a-jupyter-notebook"><span class="toc-section-number">3.5</span>  Option A: Jupyter Notebook</a></li>
+  <li><a href="#option-b-ipython-interpreter" id="toc-option-b-ipython-interpreter" class="nav-link" data-scroll-target="#option-b-ipython-interpreter"><span class="toc-section-number">3.6</span>  Option B: IPython interpreter</a></li>
+  <li><a href="#option-c-plain-vanilla-python-interpreter" id="toc-option-c-plain-vanilla-python-interpreter" class="nav-link" data-scroll-target="#option-c-plain-vanilla-python-interpreter"><span class="toc-section-number">3.7</span>  Option C: plain-vanilla Python interpreter</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -181,9 +193,108 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Hello plz don’t download Python from the Microsoft Store :P</p>
+<section id="overview" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">3.1</span> Overview</h2>
+<p>The course materials are designed to be run on a personal computer. All of the software and data used are freely available online, and instructions on how to obtain them are provided below.</p>
+<p>If you have any questions, or are not comfortable with doing the installation yourself join the <a href="https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software">RDM walk-in hours</a> to ask for help.</p>
+</section>
+<section id="install-python" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="install-python"><span class="header-section-number">3.2</span> Install Python</h2>
+<p>In this course, we will be using Python 3 with some of its most popular scientific libraries. <a href="https://python.org">Python</a> is a popular language for research computing, and great for general-purpose programming as well. Although one can install a plain-vanilla Python and all required libraries by hand, we recommend installing <a href="https://www.anaconda.com/">Anaconda</a>, a Python distribution that comes with everything we need for the lesson. Detailed installation instructions can be found in the <a href="https://docs.anaconda.com/anaconda/install">Anaconda documentation</a>, or by following the instructions below.</p>
+<p>Regardless of how you choose to install it, <strong>please make sure you install Python version 3.x</strong> (e.g., 3.9 is fine).</p>
+<p>We will teach Python using the <a href="https://jupyter.org/">Jupyter Notebook</a>, a programming environment that runs in a web browser (Jupyter Notebook will be installed by Anaconda). For this to work you will need a reasonably up-to-date browser. The current versions of the Chrome, Safari and Firefox browsers are all <a href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility">supported</a> (some older browsers, including Internet Explorer version 9 and below, are not).</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ol type="1">
+<li>Open <a href="https://www.anaconda.com/products/individual#download-section">https://www.anaconda.com/products/individual#download-section</a> with your web browser.</li>
+<li>Download the Anaconda for Windows installer with Python 3. (If you are not sure which version to choose, you probably want the 64-bit Graphical Installer <code>Anaconda3-...-Windows-x86_64.exe</code>)</li>
+<li>Install Python 3 by running the Anaconda Installer, using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
+</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>Open <a href="https://www.anaconda.com/products/individual#download-section">https://www.anaconda.com/products/individual#download-section</a> with your web browser.</li>
+<li>Download the Anaconda Installer with Python 3 for macOS (you can either use the Graphical or the Command Line Installer).</li>
+<li>Install Python 3 by running the Anaconda Installer using all of the defaults for installation.</li>
+</ol>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ol type="1">
+<li><p>Open <a href="https://www.anaconda.com/products/individual#download-section">https://www.anaconda.com/products/individual#download-section</a> with your web browser.</p></li>
+<li><p>Download the Anaconda Installer with Python 3 for Linux. <br> (The installation requires using the shell. If you aren’t comfortable doing the installation yourself stop here and come to the <a href="https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software">walk-in hours</a> to ask for help.)</p></li>
+<li><p>Open a terminal window and navigate to the directory where the executable is downloaded (e.g., <code>cd ~/Downloads</code>).</p></li>
+<li><p>Type</p>
+<pre class="{sh}"><code>bash Anaconda3-</code></pre>
+<p>and then press <kbd>Tab</kbd> to autocomplete the full file name. The name of file you just downloaded should appear.</p></li>
+<li><p>Press <kbd>Enter</kbd> (or <kbd>Return</kbd> depending on your keyboard). You will follow the text-only prompts. To move through the text, press <kbd>Spacebar</kbd>. Type <code>yes</code> and press enter to approve the license. Press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve the default location for the files. Type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to prepend Anaconda to your <code>PATH</code> (this makes the Anaconda distribution the default Python).</p></li>
+<li><p>Close the terminal window.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="obtain-lesson-materials" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="obtain-lesson-materials"><span class="header-section-number">3.3</span> Obtain lesson materials</h2>
+<ol type="1">
+<li>Download <a href="#">??-data.zip</a> and <a href="#">??-code.zip</a> (see <a href="./course-materials.html">Course Materials</a>).</li>
+<li>Create a folder called <code>intro-python</code> on your Desktop.</li>
+<li>Move downloaded files to <code>intro-python</code>.</li>
+<li>Unzip the files.</li>
+</ol>
+<p>You should see two folders called <code>data</code> and <code>code</code> in the <code>intro-python</code> directory on your Desktop.</p>
+</section>
+<section id="launch-python-interface" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="launch-python-interface"><span class="header-section-number">3.4</span> Launch Python interface</h2>
+<p>To start working with Python, we need to launch a program that will interpret and execute our Python commands. Below we list several options. If you don’t have a preference, proceed with the top option in the list that is available on your machine. Otherwise, you may use any interface you like.</p>
+</section>
+<section id="option-a-jupyter-notebook" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="option-a-jupyter-notebook"><span class="header-section-number">3.5</span> Option A: Jupyter Notebook</h2>
+<p>A Jupyter Notebook provides a browser-based interface for working with Python. If you installed Anaconda, you can launch a notebook in two ways:</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Command line (Terminal)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Anaconda Navigator</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ol type="1">
+<li><p>Navigate to the <code>data</code> directory:<br> <strong>Unix shell</strong><br> If you’re using a Unix shell application, such as Terminal app in macOS, Console or Terminal in Linux, or <a href="https://gitforwindows.org">Git Bash</a> on Windows, execute the following command:</p>
+<pre class="{bash}"><code>cd ~/Desktop/intro-python/data</code></pre>
+<p><strong>Command Prompt (Windows)</strong><br> On Windows, you can use its native Command Prompt program. The easiest way to start it up is pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering <code>cmd</code>, and hitting <kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to the <code>data</code> folder:</p>
+<pre class="{sh}"><code>cd /D %userprofile%\Desktop\intro-python\data</code></pre></li>
+<li><p>Start Jupyter server:<br> <strong>Unix shell</strong></p>
+<pre class="{bash}"><code>jupyter notebook</code></pre>
+<p><strong>Command Prompt (Windows)</strong></p>
+<pre class="{sh}"><code>python -m notebook</code></pre></li>
+<li><p>Launch the notebook by clicking on the “New” button on the right and selecting “Python 3” from the drop-down menu.</p></li>
+</ol>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ol type="1">
+<li>Launch Anaconda Navigator. It might ask you if you’d like to send anonymized usage information to Anaconda developers. Make your choice and click “Ok, and don’t show again” button.</li>
+<li>Find the “Notebook” tab and click on the “Launch” button. Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the contents of your Home (or User) folder.</li>
+<li>Navigate to the <code>data</code> directory by clicking on the directory names leading to it. <code>Desktop</code>, <code>intro-python</code>, then <code>data</code>:</li>
+<li>Launch the notebook by clicking on the “New” button and then selecting “Python 3”.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="option-b-ipython-interpreter" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="option-b-ipython-interpreter"><span class="header-section-number">3.6</span> Option B: IPython interpreter</h2>
+<p>IPython is an alternative solution situated somewhere in between the plain-vanilla Python interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with various convenience features and commands. You should have IPython on your system if you installed <a href="https://www.anaconda.com/">Anaconda</a>.</p>
+<p>To start using IPython, execute:</p>
+<pre class="{bash}"><code>ipython</code></pre>
+</section>
+<section id="option-c-plain-vanilla-python-interpreter" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="option-c-plain-vanilla-python-interpreter"><span class="header-section-number">3.7</span> Option C: plain-vanilla Python interpreter</h2>
+<p>To launch a plain-vanilla Python interpreter, execute:</p>
+<pre class="{bash}"><code>python</code></pre>
+<p>If you are using <a href="https://gitforwindows.org">Git Bash on Windows</a>, you have to call Python <em>via</em> <code>winpty</code>:</p>
+<pre class="{bash}"><code>winpty python</code></pre>
+<p>The instructions on this page were adapted from the <a href="https://swcarpentry.github.io/python-novice-inflammation/setup.html">setup instructions of the Software Carpentries “Programming with Python” course</a> and <a href="https://carpentries.github.io/workshop-template/#python">their Workshop Template Python installation instructions</a>, both released under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a>. Changes to the material were made, and can be tracked in the Git repository associated with this course.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -21,11 +21,53 @@
     "text": "we can add a detailed schedule here later"
   },
   {
-    "objectID": "installation-and-setup.html",
-    "href": "installation-and-setup.html",
+    "objectID": "installation-and-setup.html#overview",
+    "href": "installation-and-setup.html#overview",
     "title": "3  Installation & Setup",
-    "section": "",
-    "text": "Hello plz don’t download Python from the Microsoft Store :P"
+    "section": "3.1 Overview",
+    "text": "3.1 Overview\nThe course materials are designed to be run on a personal computer. All of the software and data used are freely available online, and instructions on how to obtain them are provided below.\nIf you have any questions, or are not comfortable with doing the installation yourself join the RDM walk-in hours to ask for help."
+  },
+  {
+    "objectID": "installation-and-setup.html#install-python",
+    "href": "installation-and-setup.html#install-python",
+    "title": "3  Installation & Setup",
+    "section": "3.2 Install Python",
+    "text": "3.2 Install Python\nIn this course, we will be using Python 3 with some of its most popular scientific libraries. Python is a popular language for research computing, and great for general-purpose programming as well. Although one can install a plain-vanilla Python and all required libraries by hand, we recommend installing Anaconda, a Python distribution that comes with everything we need for the lesson. Detailed installation instructions can be found in the Anaconda documentation, or by following the instructions below.\nRegardless of how you choose to install it, please make sure you install Python version 3.x (e.g., 3.9 is fine).\nWe will teach Python using the Jupyter Notebook, a programming environment that runs in a web browser (Jupyter Notebook will be installed by Anaconda). For this to work you will need a reasonably up-to-date browser. The current versions of the Chrome, Safari and Firefox browsers are all supported (some older browsers, including Internet Explorer version 9 and below, are not).\n\nWindowsMacOSLinux\n\n\n\nOpen https://www.anaconda.com/products/individual#download-section with your web browser.\nDownload the Anaconda for Windows installer with Python 3. (If you are not sure which version to choose, you probably want the 64-bit Graphical Installer Anaconda3-...-Windows-x86_64.exe)\nInstall Python 3 by running the Anaconda Installer, using all of the defaults for installation except make sure to check Add Anaconda to my PATH environment variable.\n\n\n\n\nOpen https://www.anaconda.com/products/individual#download-section with your web browser.\nDownload the Anaconda Installer with Python 3 for macOS (you can either use the Graphical or the Command Line Installer).\nInstall Python 3 by running the Anaconda Installer using all of the defaults for installation.\n\n\n\n\nOpen https://www.anaconda.com/products/individual#download-section with your web browser.\nDownload the Anaconda Installer with Python 3 for Linux.  (The installation requires using the shell. If you aren’t comfortable doing the installation yourself stop here and come to the walk-in hours to ask for help.)\nOpen a terminal window and navigate to the directory where the executable is downloaded (e.g., cd ~/Downloads).\nType\nbash Anaconda3-\nand then press Tab to autocomplete the full file name. The name of file you just downloaded should appear.\nPress Enter (or Return depending on your keyboard). You will follow the text-only prompts. To move through the text, press Spacebar. Type yes and press enter to approve the license. Press Enter (or Return) to approve the default location for the files. Type yes and press Enter (or Return) to prepend Anaconda to your PATH (this makes the Anaconda distribution the default Python).\nClose the terminal window."
+  },
+  {
+    "objectID": "installation-and-setup.html#obtain-lesson-materials",
+    "href": "installation-and-setup.html#obtain-lesson-materials",
+    "title": "3  Installation & Setup",
+    "section": "3.3 Obtain lesson materials",
+    "text": "3.3 Obtain lesson materials\n\nDownload ??-data.zip and ??-code.zip (see Course Materials).\nCreate a folder called intro-python on your Desktop.\nMove downloaded files to intro-python.\nUnzip the files.\n\nYou should see two folders called data and code in the intro-python directory on your Desktop."
+  },
+  {
+    "objectID": "installation-and-setup.html#launch-python-interface",
+    "href": "installation-and-setup.html#launch-python-interface",
+    "title": "3  Installation & Setup",
+    "section": "3.4 Launch Python interface",
+    "text": "3.4 Launch Python interface\nTo start working with Python, we need to launch a program that will interpret and execute our Python commands. Below we list several options. If you don’t have a preference, proceed with the top option in the list that is available on your machine. Otherwise, you may use any interface you like."
+  },
+  {
+    "objectID": "installation-and-setup.html#option-a-jupyter-notebook",
+    "href": "installation-and-setup.html#option-a-jupyter-notebook",
+    "title": "3  Installation & Setup",
+    "section": "3.5 Option A: Jupyter Notebook",
+    "text": "3.5 Option A: Jupyter Notebook\nA Jupyter Notebook provides a browser-based interface for working with Python. If you installed Anaconda, you can launch a notebook in two ways:\n\nCommand line (Terminal)Anaconda Navigator\n\n\n\nNavigate to the data directory: Unix shell If you’re using a Unix shell application, such as Terminal app in macOS, Console or Terminal in Linux, or Git Bash on Windows, execute the following command:\ncd ~/Desktop/intro-python/data\nCommand Prompt (Windows) On Windows, you can use its native Command Prompt program. The easiest way to start it up is pressing Windows Logo Key+R, entering cmd, and hitting Return. In the Command Prompt, use the following command to navigate to the data folder:\ncd /D %userprofile%\\Desktop\\intro-python\\data\nStart Jupyter server: Unix shell\njupyter notebook\nCommand Prompt (Windows)\npython -m notebook\nLaunch the notebook by clicking on the “New” button on the right and selecting “Python 3” from the drop-down menu.\n\n\n\n\nLaunch Anaconda Navigator. It might ask you if you’d like to send anonymized usage information to Anaconda developers. Make your choice and click “Ok, and don’t show again” button.\nFind the “Notebook” tab and click on the “Launch” button. Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the contents of your Home (or User) folder.\nNavigate to the data directory by clicking on the directory names leading to it. Desktop, intro-python, then data:\nLaunch the notebook by clicking on the “New” button and then selecting “Python 3”."
+  },
+  {
+    "objectID": "installation-and-setup.html#option-b-ipython-interpreter",
+    "href": "installation-and-setup.html#option-b-ipython-interpreter",
+    "title": "3  Installation & Setup",
+    "section": "3.6 Option B: IPython interpreter",
+    "text": "3.6 Option B: IPython interpreter\nIPython is an alternative solution situated somewhere in between the plain-vanilla Python interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with various convenience features and commands. You should have IPython on your system if you installed Anaconda.\nTo start using IPython, execute:\nipython"
+  },
+  {
+    "objectID": "installation-and-setup.html#option-c-plain-vanilla-python-interpreter",
+    "href": "installation-and-setup.html#option-c-plain-vanilla-python-interpreter",
+    "title": "3  Installation & Setup",
+    "section": "3.7 Option C: plain-vanilla Python interpreter",
+    "text": "3.7 Option C: plain-vanilla Python interpreter\nTo launch a plain-vanilla Python interpreter, execute:\npython\nIf you are using Git Bash on Windows, you have to call Python via winpty:\nwinpty python\nThe instructions on this page were adapted from the setup instructions of the Software Carpentries “Programming with Python” course and their Workshop Template Python installation instructions, both released under the Creative Commons Attribution license. Changes to the material were made, and can be tracked in the Git repository associated with this course."
   },
   {
     "objectID": "course-materials.html",
