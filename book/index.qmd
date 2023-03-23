@@ -1,5 +1,7 @@
 # Welcome! {.unnumbered}
 
-Python is a powerful programming language that is popular can be used to write scripts for to work effectively and reproducibly with data. In this workshop, we aim to give you the tools to start exploring Python and all it has to offer by yourself.
+Python is a powerful programming language that is suitable for scientific computing and general-purpose programming. Python is used to write scripts to work efficiently and reproducibly with scientific data. 
 
-Our workshop material is licensed under a Creative Commons Attribution 4.0 International License. You can view the license here.
+In this workshop, we will utilize the Jupyter Notebook interface and take you from the basics of Python syntax to using the `pandas` package to work with data frames. In doing so, we aim to give you the tools and confidence to start exploring Python and all it has to offer.
+
+Our workshop material is licensed under a Creative Commons Attribution 4.0 International License. You can view the license on our GitHub repository.

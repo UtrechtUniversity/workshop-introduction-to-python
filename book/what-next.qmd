@@ -1,0 +1,13 @@
+# What Next? {.unnumbered}
+
+See this website as reference: https://datacarpentry.org/python-ecology-lesson/00-before-we-start/index.html
+
+You can continue on your programming journey using:
+
+- help function
+- documentation
+- StackOverflow
+- ChatGPT haha
+- Walk-In Hours
+- Programming Cafe
+
