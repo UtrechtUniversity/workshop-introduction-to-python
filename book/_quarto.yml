@@ -21,7 +21,6 @@ book:
     - part: data-science-with-pandas.ipynb
     - what-next.qmd
     - references.qmd
-  search: true
   repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python
   repo-actions: [edit]
   sidebar:
