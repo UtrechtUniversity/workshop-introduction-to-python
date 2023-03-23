@@ -1,9 +1,5 @@
 # Installation & Setup
 
----
-title: Installation & Setup
----
-
 ## Overview
 
 The course materials are designed to be run on a personal computer.
