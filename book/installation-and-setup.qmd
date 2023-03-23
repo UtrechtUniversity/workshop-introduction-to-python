@@ -1,3 +1,171 @@
 # Installation & Setup
 
-Hello plz don't download Python from the Microsoft Store :P 
+## Overview
+
+The course materials are designed to be run on a personal computer.
+All of the software and data used are freely available online,
+and instructions on how to obtain them are provided below.
+
+If you have any questions, or are not comfortable with doing the installation yourself
+join the [RDM walk-in hours][walk-in-hours] to ask for help.
+
+## Install Python
+
+In this course, we will be using Python 3 with some of its most popular scientific libraries.
+[Python][python] is a popular language for research computing, and great for general-purpose
+programming as well.
+Although one can install a plain-vanilla Python and all required libraries by hand,
+we recommend installing [Anaconda][anaconda-website],
+a Python distribution that comes with everything we need for the lesson. 
+Detailed installation instructions can be found in the [Anaconda documentation][anaconda-install],
+or by following the instructions below.
+
+Regardless of how you choose to install it, **please make sure you install Python version 3.x**
+(e.g., 3.9 is fine).
+
+We will teach Python using the [Jupyter Notebook][jupyter], a programming environment that runs 
+in a web browser (Jupyter Notebook will be installed by Anaconda). For this to work you will need
+a reasonably up-to-date browser. The current versions of the Chrome, Safari and Firefox browsers
+are all [supported][jupyter-compatibility] (some older browsers, including Internet Explorer
+version 9 and below, are not).
+
+::: {.panel-tabset}
+## Windows
+1. Open [https://www.anaconda.com/products/individual#download-section](https://www.anaconda.com/products/individual#download-section) with your web browser.
+2. Download the Anaconda for Windows installer with Python 3. (If you are not sure which version to choose, you probably want the 64-bit Graphical Installer `Anaconda3-...-Windows-x86_64.exe`)
+3. Install Python 3 by running the Anaconda Installer, using all of the defaults for installation *except* make sure to check **Add Anaconda to my PATH environment variable**.
+
+## MacOS 
+1. Open [https://www.anaconda.com/products/individual#download-section](https://www.anaconda.com/products/individual#download-section) with your web browser.
+2. Download the Anaconda Installer with Python 3 for macOS (you can either use the Graphical or the Command Line Installer).
+3. Install Python 3 by running the Anaconda Installer using all of the defaults for installation.
+
+## Linux
+1. Open [https://www.anaconda.com/products/individual#download-section](https://www.anaconda.com/products/individual#download-section) with your web browser.
+2. Download the Anaconda Installer with Python 3 for Linux. <br>
+   (The installation requires using the shell. If you aren't
+   comfortable doing the installation yourself
+   stop here and come to the [walk-in hours][walk-in-hours] to ask for help.)
+3. Open a terminal window and navigate to the directory where the executable is downloaded (e.g., `cd ~/Downloads`).
+4. Type 
+   ```{sh}
+   bash Anaconda3-
+   ```
+   and then press <kbd>Tab</kbd> to autocomplete the full file name. The name of file you just downloaded should appear.
+5. Press <kbd>Enter</kbd> (or <kbd>Return</kbd> depending on your keyboard).
+   You will follow the text-only prompts.
+   To move through the text, press <kbd>Spacebar</kbd>.
+   Type `yes` and press enter to approve the license.
+   Press <kbd>Enter</kbd> (or <kbd>Return</kbd>)
+   to approve the default location for the files.
+   Type `yes` and press <kbd>Enter</kbd> (or <kbd>Return</kbd>)
+   to prepend Anaconda to your `PATH`
+  (this makes the Anaconda distribution the default Python).
+6. Close the terminal window.
+:::
+
+## Obtain lesson materials
+
+1. Download [??-data.zip][zipfile-data]
+        and [??-code.zip][zipfile-code] (see [Course Materials][course-materials]).
+2. Create a folder called `intro-python` on your Desktop.
+3. Move downloaded files to `intro-python`.
+4. Unzip the files.
+
+You should see two folders called `data` and `code` in the `intro-python` directory on your
+Desktop.
+
+## Launch Python interface
+
+To start working with Python, we need to launch a program that will interpret and execute our
+Python commands. Below we list several options. If you don't have a preference, proceed with the
+top option in the list that is available on your machine. Otherwise, you may use any interface
+you like.
+
+## Option A: Jupyter Notebook
+
+A Jupyter Notebook provides a browser-based interface for working with Python.
+If you installed Anaconda, you can launch a notebook in two ways:
+
+::: {.panel-tabset}
+## Command line (Terminal)
+1. Navigate to the `data` directory:<br>
+	**Unix shell**<br>
+	If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
+	in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
+	```{bash}
+	cd ~/Desktop/intro-python/data
+	```
+
+	**Command Prompt (Windows)**<br>
+	On Windows, you can use its native Command Prompt program.  The easiest way to start it up is
+	pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting
+	<kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
+	the `data` folder:
+	```{sh}
+	cd /D %userprofile%\Desktop\intro-python\data
+	```
+2. Start Jupyter server:<br>
+	**Unix shell**
+	```{bash}
+	jupyter notebook
+	```
+
+	**Command Prompt (Windows)**
+	```{sh}
+	python -m notebook
+	```
+3. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
+	from the drop-down menu.
+
+## Anaconda Navigator
+1. Launch Anaconda Navigator.
+It might ask you if you'd like to send anonymized usage information to Anaconda developers.
+Make your choice and click "Ok, and don't show again" button.
+2. Find the "Notebook" tab and click on the "Launch" button.
+Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
+contents of your Home (or User) folder.
+3. Navigate to the `data` directory by clicking on the directory names leading to it.
+`Desktop`, `intro-python`, then `data`:
+4. Launch the notebook by clicking on the "New" button and then selecting "Python 3".
+:::
+
+## Option B: IPython interpreter
+
+IPython is an alternative solution situated somewhere in between the plain-vanilla Python
+interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with
+various convenience features and commands. You should have IPython on your system if you installed
+[Anaconda][anaconda-website].
+
+To start using IPython, execute:
+```{bash}
+ipython
+```
+
+## Option C: plain-vanilla Python interpreter
+
+To launch a plain-vanilla Python interpreter, execute:
+```{bash}
+python
+```
+
+If you are using [Git Bash on Windows][gitbash], you have to call Python _via_ `winpty`:
+```{bash}
+winpty python
+```
+
+The instructions on this page were adapted from the [setup instructions of the Software Carpentries "Programming with Python" course][swcarpentry-python] and [their Workshop Template Python installation instructions][carpentries-template], both released under the [Creative Commons Attribution license][license]. Changes to the material were made, and can be tracked in the Git repository associated with this course.
+
+[anaconda-install]: https://docs.anaconda.com/anaconda/install
+[anaconda-website]: https://www.anaconda.com/
+[carpentries-template]: https://carpentries.github.io/workshop-template/#python
+[course-materials]: ./course-materials.qmd
+[gitbash]: https://gitforwindows.org
+[jupyter]: https://jupyter.org/
+[jupyter-compatibility]: https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility
+[license]: https://creativecommons.org/licenses/by/4.0/
+[python]: https://python.org
+[swcarpentry-python]: https://swcarpentry.github.io/python-novice-inflammation/setup.html
+[walk-in-hours]: https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software
+[zipfile-code]: #
+[zipfile-data]: #
