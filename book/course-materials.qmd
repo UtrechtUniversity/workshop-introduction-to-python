@@ -1,5 +1,26 @@
-# Course Materials
+# Workshop Materials {.unnumbered}
 
-You can download the course materials as individual files or as zip files
+You can download the workshop materials collectively in a zipped file or separately using the links further below. Please make sure that all workshop-related files are contained within a single folder and placed in a location accessible to your system.
 
-- insert links to datasets and notebooks and zip files etc. below
+## Zipped File
+
+The following zipped file contains the notebooks and data required for the workshop. 
+
+- link to zipped file
+
+Don't forget to extract the contents of the zipped file after downloading!
+
+## Notebooks
+
+We will be using the following Jupyter Notebooks to work on the exercises:
+
+- python-101-exercises.ipynb
+- data-science-with-pandas-exercises.ipynb
+
+## Data
+
+The data for this workshop is from the [Portal Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459). We will be using the following datasets:
+
+- surveys.csv
+- species.csv
+- plots.csv
