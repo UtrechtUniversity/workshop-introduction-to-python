@@ -16,9 +16,13 @@ book:
         - schedule.qmd
         - installation-and-setup.qmd
         - course-materials.qmd
-    - part: introduction.qmd
+    - part: "Python fundamentals"
       chapters: 
-        - python-101.ipynb
+        - introduction.qmd
+        - Introduction_to_python_1.ipynb
+        - Introduction_to_python_2.ipynb
+        - Introduction_to_python_3.ipynb
+        - Introduction_to_python_4.ipynb
     - part: data-science-with-pandas.ipynb
     - references.qmd
 
