@@ -21,7 +21,7 @@ book:
         - Introduction_to_python_1.ipynb
         - Introduction_to_python_2.ipynb
         - Introduction_to_python_3.ipynb
-        - Introduction_to_python_4.ipynbn
+        - Introduction_to_python_4.ipynb
     - part: data-science-with-pandas.ipynb
     - what-next.qmd
     - references.qmd
