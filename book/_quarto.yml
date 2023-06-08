@@ -15,9 +15,9 @@ book:
       chapters: 
         - installation-and-setup.qmd
         - course-materials.qmd
+    - introduction.qmd
     - part: "Python Fundamentals"
       chapters: 
-        - introduction.qmd
         - Introduction_to_python_1.ipynb
         - Introduction_to_python_2.ipynb
         - Introduction_to_python_3.ipynb
@@ -34,4 +34,4 @@ bibliography: references.bib
 
 format:
   html:
-    theme: pulse
+    theme: cosmo
