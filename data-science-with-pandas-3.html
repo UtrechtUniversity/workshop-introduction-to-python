@@ -95,6 +95,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -278,11 +281,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#combining-data-frames" id="toc-combining-data-frames" class="nav-link active" data-scroll-target="#combining-data-frames"><span class="header-section-number">8.1</span> Combining data frames</a>
+  <li><a href="#combining-dataframes" id="toc-combining-dataframes" class="nav-link active" data-scroll-target="#combining-dataframes"><span class="header-section-number">8.1</span> Combining DataFrames</a></li>
+  <li><a href="#concatenating-dataframes" id="toc-concatenating-dataframes" class="nav-link" data-scroll-target="#concatenating-dataframes"><span class="header-section-number">8.2</span> Concatenating DataFrames</a>
   <ul class="collapse">
-  <li><a href="#concatenating-dataframes" id="toc-concatenating-dataframes" class="nav-link" data-scroll-target="#concatenating-dataframes"><span class="header-section-number">8.1.1</span> Concatenating DataFrames</a></li>
-  <li><a href="#joining-dataframes" id="toc-joining-dataframes" class="nav-link" data-scroll-target="#joining-dataframes"><span class="header-section-number">8.1.2</span> Joining DataFrames</a></li>
+  <li><a href="#vertical-concatenation" id="toc-vertical-concatenation" class="nav-link" data-scroll-target="#vertical-concatenation"><span class="header-section-number">8.2.1</span> Vertical concatenation</a></li>
+  <li><a href="#exercise-11" id="toc-exercise-11" class="nav-link" data-scroll-target="#exercise-11"><span class="header-section-number">8.2.2</span> Exercise 11</a></li>
+  <li><a href="#horizontal-concatenation" id="toc-horizontal-concatenation" class="nav-link" data-scroll-target="#horizontal-concatenation"><span class="header-section-number">8.2.3</span> Horizontal concatenation</a></li>
+  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12"><span class="header-section-number">8.2.4</span> Exercise 12</a></li>
   </ul></li>
+  <li><a href="#joining-dataframes" id="toc-joining-dataframes" class="nav-link" data-scroll-target="#joining-dataframes"><span class="header-section-number">8.3</span> Joining DataFrames</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/UtrechtUniversity/workshop-introduction-to-python/blob/main/data-science-with-pandas-3.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -306,243 +313,2425 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="combining-data-frames" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="combining-data-frames"><span class="header-section-number">8.1</span> Combining data frames</h2>
-<p>In many real life cases, you may find data saved into different files and, therefore, you may need to deal with several different pandas DataFrames. In the previous session, we saw how can we easily run statistical analysis on a single DataFrame, so, ideally, we would like to have all the relevant data for our analysis inside a single DataFrame. <br> In this session we will explore different ways of combining DataFrames into a single DataFrame.</p>
-<p>Let’s start loading the pandas library, reading two data sets into pandas DataFrames, and having a quick look at the tabular data: <code>surveys.csv</code> and <code>species.csv</code></p>
+<section id="combining-dataframes" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="combining-dataframes"><span class="header-section-number">8.1</span> Combining DataFrames</h2>
+<p>Previously, we have seen how to analyze and manipulate data in a single DataFrame. However, you will often find data saved into different files and, therefore, you may need to deal with several different pandas DataFrames.<br> In this session we will explore different ways of combining DataFrames into a single DataFrame.</p>
+<p>Let’s start loading the <code>pandas</code> library, reading two data sets into DataFrames, and having a quick look at the tabular data: <code>surveys.csv</code> and <code>species.csv</code></p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>surveys_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/surveys.csv"</span>, keep_default_na<span class="op">=</span><span class="va">False</span>, na_values<span class="op">=</span>[<span class="st">""</span>])</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/species.csv"</span>, keep_default_na<span class="op">=</span><span class="va">False</span>, na_values<span class="op">=</span>[<span class="st">""</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>FileNotFoundError: [Errno 2] No such file or directory: '../data/surveys.csv'</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>surveys_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/surveys.csv"</span>, keep_default_na<span class="op">=</span><span class="va">False</span>, na_values<span class="op">=</span>[<span class="st">""</span>])</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/species.csv"</span>, keep_default_na<span class="op">=</span><span class="va">False</span>, na_values<span class="op">=</span>[<span class="st">""</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df.info())</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'='</span><span class="op">*</span><span class="dv">72</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>surveys_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df.info())</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>surveys_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 35549 entries, 0 to 35548
+Data columns (total 9 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   record_id        35549 non-null  int64  
+ 1   month            35549 non-null  int64  
+ 2   day              35549 non-null  int64  
+ 3   year             35549 non-null  int64  
+ 4   plot_id          35549 non-null  int64  
+ 5   species_id       34786 non-null  object 
+ 6   sex              33038 non-null  object 
+ 7   hindfoot_length  31438 non-null  float64
+ 8   weight           32283 non-null  float64
+dtypes: float64(2), int64(5), object(2)
+memory usage: 2.4+ MB
+None</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>NL</td>
+<td>M</td>
+<td>32.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>NL</td>
+<td>M</td>
+<td>33.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>DM</td>
+<td>F</td>
+<td>37.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>7</td>
+<td>DM</td>
+<td>M</td>
+<td>36.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>DM</td>
+<td>M</td>
+<td>35.0</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(species_df.info())</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'='</span><span class="op">*</span><span class="dv">72</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>species_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'species_df' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(species_df.info())</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>species_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 54 entries, 0 to 53
+Data columns (total 4 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   species_id  54 non-null     object
+ 1   genus       54 non-null     object
+ 2   species     54 non-null     object
+ 3   taxa        54 non-null     object
+dtypes: object(4)
+memory usage: 1.8+ KB
+None</code></pre>
 </div>
-</div>
-<section id="concatenating-dataframes" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="concatenating-dataframes"><span class="header-section-number">8.1.1</span> Concatenating DataFrames</h3>
-<p>The first way we will combine DataFrames is <strong>concatenation</strong>, i.e.&nbsp;simply putting DataFrames one after the other either <strong>verically</strong> or <strong>horizontally</strong>. To concatenate two DataFrames you will use the function <code>pd.concat</code>, specifying as arguments the DataFrames to concatenate and <code>axis=0</code> or <code>axis=1</code> for vertical or horizontal concatenation, respectively.</p>
-<p>To play a bit with DataFrame concatenation, we will use a subset of the DataFrames we just read. In particular, we will work with two sub-DataFrames obtained selecting the first and the last 10 rows of the <code>surveys.csv</code> dataset.</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsetting data frames</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_first10 <span class="op">=</span> surveys_df.head(<span class="dv">10</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_last10  <span class="op">=</span> surveys_df.tail(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
-</div>
-</div>
-Let’s start with <strong>vertical stacking</strong>. In this case the two DataFrames are simply stacked on top of each other (remember to specify <code>axis=0</code>).
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
-<p><img src="pictures/vertical_stacking.jpeg" width="300"></p>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">genus</th>
+<th data-quarto-table-cell-role="th">species</th>
+<th data-quarto-table-cell-role="th">taxa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>AB</td>
+<td>Amphispiza</td>
+<td>bilineata</td>
+<td>Bird</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>AH</td>
+<td>Ammospermophilus</td>
+<td>harrisi</td>
+<td>Rodent</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>AS</td>
+<td>Ammodramus</td>
+<td>savannarum</td>
+<td>Bird</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>BA</td>
+<td>Baiomys</td>
+<td>taylori</td>
+<td>Rodent</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>CB</td>
+<td>Campylorhynchus</td>
+<td>brunneicapillus</td>
+<td>Bird</td>
+</tr>
+</tbody>
+</table>
+
 </div>
+</div>
+</div>
+<p>We now have two DataFrames. The first, <code>surveys_df</code>, contains information on individuals of a species recorded in a survey, while the second, <code>species_df</code>, contains more detailed information on each species.</p>
+</section>
+<section id="concatenating-dataframes" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="concatenating-dataframes"><span class="header-section-number">8.2</span> Concatenating DataFrames</h2>
+<p>The first way we will combine DataFrames is <strong>concatenation</strong>, i.e.&nbsp;simply putting DataFrames one after the other either <strong>verically</strong> or <strong>horizontally</strong>.</p>
+<p>Concatenation can be used if the DataFrames are similar, meaning that they either have the same rows or columns. We will see examples of this later.</p>
+<p>To concatenate two DataFrames you will use the function <code>pd.concat()</code>, specifying as arguments the DataFrames to concatenate and <code>axis=0</code> or <code>axis=1</code> for vertical or horizontal concatenation, respectively.</p>
+<p>Let us first obtain two small DataFrames from the larger <code>surveys.csv</code> dataset.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsetting DataFrames</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_first10 <span class="op">=</span> surveys_df.head(<span class="dv">10</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_last10  <span class="op">=</span> surveys_df.tail(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We now have two DataFrames, one with the first ten rows of the original dataset, and another with the last ten rows.</p>
+<section id="vertical-concatenation" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="vertical-concatenation"><span class="header-section-number">8.2.1</span> Vertical concatenation</h3>
+Let’s start with <strong>vertical stacking</strong>. In this case the two DataFrames are simply stacked ‘on top of’ eachother (remember to specify <code>axis=0</code>).
+<div>
+<p><img src="images/vertical_stacking.jpeg" width="300"></p>
+</div>
+<p>Vertical stacking can be understood as combining two DataFrames that have different sets of the same type of data. In our example, it may be that one field researcher has registered the first ten entries, and another did the last ten, both using the same laboratory sheets. They both wrote down the same information (weight, species, and so on) of all different individuals. If we combine them, we have one list of twenty records, rather than two lists of ten.</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stack the DataFrames on top of each other</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>vertical_stack <span class="op">=</span> pd.concat([surveys_df_sub_first10, surveys_df_sub_last10], axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'surveys_df_sub_first10' is not defined</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stack the DataFrames on top of each other</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>vertical_stack <span class="op">=</span> pd.concat([surveys_df_sub_first10, surveys_df_sub_last10], axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vertical_stack.info())</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'='</span><span class="op">*</span><span class="dv">72</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>vertical_stack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'vertical_stack' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vertical_stack.info())</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>vertical_stack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 20 entries, 0 to 35548
+Data columns (total 9 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   record_id        20 non-null     int64  
+ 1   month            20 non-null     int64  
+ 2   day              20 non-null     int64  
+ 3   year             20 non-null     int64  
+ 4   plot_id          20 non-null     int64  
+ 5   species_id       19 non-null     object 
+ 6   sex              16 non-null     object 
+ 7   hindfoot_length  15 non-null     float64
+ 8   weight           6 non-null      float64
+dtypes: float64(2), int64(5), object(2)
+memory usage: 1.6+ KB
+None</code></pre>
 </div>
-</div>
-<p>The resulting DataFrame (<code>vertical_stack</code>) consists, as expected, of 20 rows. These are the result of the first and last 10 rows of out original DataFrame <code>surveys_df</code>. You may have noticed that the last ten rows have very high index, not consecutive with the first ten rows. This is because concatenation preserves the indices of the two original DataFrames. If you want a brand new set of indices for your concateneted DataFrame, simply resets the indices using the method <code>.reset_index()</code>.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vertical_stack.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'vertical_stack' is not defined</code></pre>
-</div>
-</div>
-<div class="alert alert-block alert-success">
-<b>TRY IT YOURSELF</b>: In the given example of vertical concatenation, you concatenated two DataFrames with the same columns. What would happen if the two DataFrames to concatenate have different column number and names?
-<ol>
-<li>
-Create a new DataFrame using the last 10 rows of the species DataFrame;
-</li>
-<li>
-Concatenate vertically <code>surveys_df_sub_first_10</code> and your just created DataFrame;
-</li>
-<li>
-Print the concatenated DataFrame info on the screen. How may rows does it have? What happened to the columns? Can you tell, finally, what happens when you vertically concatenate two DataFrames with different columns?
-</li></ol>
-</div>
-It’s now time to try <strong>horizontal concatenation</strong>. In this case the two DataFrames are simply stacked one after one other (remember to specify <code>axis=1</code>).
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
-<p><img src="pictures/horizontal_stacking.jpeg" width="300"></p>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>NL</td>
+<td>M</td>
+<td>32.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>NL</td>
+<td>M</td>
+<td>33.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>DM</td>
+<td>F</td>
+<td>37.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>7</td>
+<td>DM</td>
+<td>M</td>
+<td>36.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>DM</td>
+<td>M</td>
+<td>35.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>PF</td>
+<td>M</td>
+<td>14.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>PE</td>
+<td>F</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>DM</td>
+<td>M</td>
+<td>37.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>9</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>DM</td>
+<td>F</td>
+<td>34.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>6</td>
+<td>PF</td>
+<td>F</td>
+<td>20.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35539</td>
+<td>35540</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>23.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35540</td>
+<td>35541</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>24.0</td>
+<td>31.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35541</td>
+<td>35542</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35542</td>
+<td>35543</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>27.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35543</td>
+<td>35544</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>US</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35544</td>
+<td>35545</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35545</td>
+<td>35546</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35546</td>
+<td>35547</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>10</td>
+<td>RM</td>
+<td>F</td>
+<td>15.0</td>
+<td>14.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35547</td>
+<td>35548</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>7</td>
+<td>DO</td>
+<td>M</td>
+<td>36.0</td>
+<td>51.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35548</td>
+<td>35549</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
 </div>
-<p>In this case, as a result, we expect a DataFrame with the same number of rows of the original one (10 row) and twice the number of columns (18 columns).</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Place the DataFrames side by side</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>horizontal_stack <span class="op">=</span> pd.concat([surveys_df_sub_first10, surveys_df_sub_last10], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'surveys_df_sub_first10' is not defined</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(horizontal_stack.info())</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'='</span><span class="op">*</span><span class="dv">72</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>horizontal_stack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'horizontal_stack' is not defined</code></pre>
+<p>The resulting DataFrame (<code>vertical_stack</code>) consists, as expected, of 20 rows. These are the result of the first and last 10 rows of our original DataFrame <code>surveys_df</code>.</p>
+<p>You may have noticed that the last ten rows have very high index, not consecutive with the first ten rows. This is because concatenation preserves the indices of the two original DataFrames. If you want a brand new set of indices for your concateneted DataFrame, simply reset the indices using the method <code>.reset_index()</code>. Notice that this adds a column <code>index</code> to your DataFrame, that maintains the original index. If you pass <code>drop=True</code> into the function, you will avoid the addition of this column.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>vertical_stack.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">index</th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>1</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>NL</td>
+<td>M</td>
+<td>32.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>2</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>NL</td>
+<td>M</td>
+<td>33.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>3</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>DM</td>
+<td>F</td>
+<td>37.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>4</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>7</td>
+<td>DM</td>
+<td>M</td>
+<td>36.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>5</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>DM</td>
+<td>M</td>
+<td>35.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>PF</td>
+<td>M</td>
+<td>14.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>7</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>PE</td>
+<td>F</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>7</td>
+<td>8</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>DM</td>
+<td>M</td>
+<td>37.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>8</td>
+<td>9</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>DM</td>
+<td>F</td>
+<td>34.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>9</td>
+<td>10</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>6</td>
+<td>PF</td>
+<td>F</td>
+<td>20.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>35539</td>
+<td>35540</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>23.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>35540</td>
+<td>35541</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>24.0</td>
+<td>31.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>35541</td>
+<td>35542</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>35542</td>
+<td>35543</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>27.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>35543</td>
+<td>35544</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>US</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>35544</td>
+<td>35545</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>35545</td>
+<td>35546</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>35546</td>
+<td>35547</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>10</td>
+<td>RM</td>
+<td>F</td>
+<td>15.0</td>
+<td>14.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18</td>
+<td>35547</td>
+<td>35548</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>7</td>
+<td>DO</td>
+<td>M</td>
+<td>36.0</td>
+<td>51.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>35548</td>
+<td>35549</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<p>Looking at the result of our horizontal concatenation, we may realise that something went wrong. The total number of row on the resulting DataFrame is 20, that is not what we would expect from a horizontal stacking (we where expecting 10 rows, as the initial DataFrames). This happens because horizontal stacking is based on index and our two DataFrames have different indices (1-9 and 35539-35548 respectively). In order to properly stack the DataFrame we need first to reset the indeces of the second DataFrame so that they will match the ones of the first DataFrame.</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_last10 <span class="op">=</span> surveys_df_sub_last10.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'surveys_df_sub_last10' is not defined</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_last10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'surveys_df_sub_last10' is not defined</code></pre>
-</div>
-</div>
-<p>Now that the index has been reset, we can concatenate this DataFrame with the first 10 lines DataFrame.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>horizontal_stack <span class="op">=</span> pd.concat([surveys_df_sub_first10, surveys_df_sub_last10], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'surveys_df_sub_first10' is not defined</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(horizontal_stack.info())</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'='</span><span class="op">*</span><span class="dv">72</span>)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>horizontal_stack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'horizontal_stack' is not defined</code></pre>
-</div>
-</div>
-<div class="alert alert-block alert-success">
-<b>TRY IT YOURSELF</b>: In the given example of horizontal concatenation, you first concatenated two DataFrame with different indices, then reset the indices of the second one. Base on the outcome of these two cases, try to answer the following questions:
-<ol>
-<li>
-What happens when you concatenate horizontally two DataFrames with different indexing?
-</li>
-<li>
-What happens when you concatenate horizontally two DataFrames with the same columns?
-</li>
-<li>
-What happens when you try to select a column of the just horizontally concatenated DataFrame?&gt;
-</li>
-<li>
-How can you select a specific columns among duplicates?
-</li>
-</ol>
 </div>
 </section>
-<section id="joining-dataframes" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="joining-dataframes"><span class="header-section-number">8.1.2</span> Joining DataFrames</h3>
-Concatenating DataFrames seems a quite “brutal” operation, you simply merge them one after another either verically or horizontally. What about if you want to merge DataFrames according to the value contained in specific columns? The pandas function <code>merge()</code> performs an operation that in database language is called <em>join</em>, the join operation adds the content of one DataFrame to another. There are different types of joins, but the workflow to perform a join operation is always the same:
-<ol>
-<li>
-You identify a <em>left</em> and a <em>right</em> DataFrames, the ones you want to join;
-</li>
-<li>
-You identify in both your left and righ DataFrame a column to join on;
-</li>
-<li>
-You choose the type of join;
-</li>
-<li>
-You perform the join running the function <code>pd.merge()</code> with the specified inputs and options.
-</li>
-</ol>
-<p>Let’s see some join example considering two tiny (few rows) DataFrames, our left DataFrame contains general data of European capitals, while our right DataFrame contains weather measuraments for some Dutch towns.</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>left_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/EU_capitals_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>right_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/Netherlands_town_weather_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>FileNotFoundError: [Errno 2] No such file or directory: '../data/EU_capitals_tiny.csv'</code></pre>
+<section id="exercise-11" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="exercise-11"><span class="header-section-number">8.2.2</span> Exercise 11</h3>
+</section>
+<section id="horizontal-concatenation" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="horizontal-concatenation"><span class="header-section-number">8.2.3</span> Horizontal concatenation</h3>
+It’s now time to try <strong>horizontal stacking</strong>. In this case the two DataFrames are simply put one after the other (remember to specify <code>axis=1</code>).
+<div>
+<p><img src="images/horizontal_stacking.jpeg" width="300"></p>
 </div>
+<p>Horizontal stacking can be understood as combining two DataFrames that have different measurements on the same observed objects. In our example, it may be that one field researcher has registered the weight and hindfoot length of an individual, and another wrote down their species and sex. They both registered different information of the same individuals. If we combine them, we have one list with all the information of the individual, rather than two lists with partial information.</p>
+<p>We now go back to our DataFrames with 10 survey result each, and concatenate those. In this case, as a result, we would expect a DataFrame with the same number of rows of the original ones (10 row) and twice the number of columns (18 columns).</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Place the DataFrames side by side</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>horizontal_stack <span class="op">=</span> pd.concat([surveys_df_sub_first10, surveys_df_sub_last10], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(horizontal_stack.info())</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>horizontal_stack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 20 entries, 0 to 35548
+Data columns (total 18 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   record_id        10 non-null     float64
+ 1   month            10 non-null     float64
+ 2   day              10 non-null     float64
+ 3   year             10 non-null     float64
+ 4   plot_id          10 non-null     float64
+ 5   species_id       10 non-null     object 
+ 6   sex              10 non-null     object 
+ 7   hindfoot_length  9 non-null      float64
+ 8   weight           0 non-null      float64
+ 9   record_id        10 non-null     float64
+ 10  month            10 non-null     float64
+ 11  day              10 non-null     float64
+ 12  year             10 non-null     float64
+ 13  plot_id          10 non-null     float64
+ 14  species_id       9 non-null      object 
+ 15  sex              6 non-null      object 
+ 16  hindfoot_length  6 non-null      float64
+ 17  weight           6 non-null      float64
+dtypes: float64(14), object(4)
+memory usage: 3.0+ KB
+None</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>2.0</td>
+<td>NL</td>
+<td>M</td>
+<td>32.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>3.0</td>
+<td>NL</td>
+<td>M</td>
+<td>33.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>2.0</td>
+<td>DM</td>
+<td>F</td>
+<td>37.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>7.0</td>
+<td>DM</td>
+<td>M</td>
+<td>36.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>3.0</td>
+<td>DM</td>
+<td>M</td>
+<td>35.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>1.0</td>
+<td>PF</td>
+<td>M</td>
+<td>14.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>2.0</td>
+<td>PE</td>
+<td>F</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>1.0</td>
+<td>DM</td>
+<td>M</td>
+<td>37.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>9.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>1.0</td>
+<td>DM</td>
+<td>F</td>
+<td>34.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>7.0</td>
+<td>16.0</td>
+<td>1977.0</td>
+<td>6.0</td>
+<td>PF</td>
+<td>F</td>
+<td>20.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35539</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35540.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>15.0</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>23.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35540</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35541.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>15.0</td>
+<td>PB</td>
+<td>F</td>
+<td>24.0</td>
+<td>31.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35541</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35542.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>15.0</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35542</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35543.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>15.0</td>
+<td>PB</td>
+<td>F</td>
+<td>27.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35543</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35544.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>15.0</td>
+<td>US</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35544</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35545.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>15.0</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35545</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35546.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>15.0</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35546</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35547.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>10.0</td>
+<td>RM</td>
+<td>F</td>
+<td>15.0</td>
+<td>14.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35547</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35548.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>7.0</td>
+<td>DO</td>
+<td>M</td>
+<td>36.0</td>
+<td>51.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35548</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35549.0</td>
+<td>12.0</td>
+<td>31.0</td>
+<td>2002.0</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Looking at the result of our horizontal concatenation, we may realise that something went wrong. The total number of rows on the resulting DataFrame is 20, instead of 10.</p>
+<p>This happens because horizontal stacking will only merge rows that actually “belong together”. Rows that relate to the same observed object are merged. To determine this, it compares the indices of the rows. In our two DataFrames, the rows have different indices (1-9 and 35539-35548 respectively). It will therefore not merge any of the rows together, as it does not find any two rows that relate to the same observation.</p>
+<p>If we want to force the DataFrames into the form we had in mind, we need to reset the indices of the second DataFrame so that they will match the ones of the first DataFrame.</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_last10 <span class="op">=</span> surveys_df_sub_last10.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_last10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>35540</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>23.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>35541</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>24.0</td>
+<td>31.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>35542</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>35543</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>27.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>35544</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>US</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>35545</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>35546</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>35547</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>10</td>
+<td>RM</td>
+<td>F</td>
+<td>15.0</td>
+<td>14.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>35548</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>7</td>
+<td>DO</td>
+<td>M</td>
+<td>36.0</td>
+<td>51.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>35549</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Now that the index has been reset, we can concatenate the two DataFrames.</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>horizontal_stack <span class="op">=</span> pd.concat([surveys_df_sub_first10, surveys_df_sub_last10], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(horizontal_stack.info())</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>horizontal_stack</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 18 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   record_id        10 non-null     int64  
+ 1   month            10 non-null     int64  
+ 2   day              10 non-null     int64  
+ 3   year             10 non-null     int64  
+ 4   plot_id          10 non-null     int64  
+ 5   species_id       10 non-null     object 
+ 6   sex              10 non-null     object 
+ 7   hindfoot_length  9 non-null      float64
+ 8   weight           0 non-null      float64
+ 9   record_id        10 non-null     int64  
+ 10  month            10 non-null     int64  
+ 11  day              10 non-null     int64  
+ 12  year             10 non-null     int64  
+ 13  plot_id          10 non-null     int64  
+ 14  species_id       9 non-null      object 
+ 15  sex              6 non-null      object 
+ 16  hindfoot_length  6 non-null      float64
+ 17  weight           6 non-null      float64
+dtypes: float64(4), int64(10), object(4)
+memory usage: 1.5+ KB
+None</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>NL</td>
+<td>M</td>
+<td>32.0</td>
+<td>NaN</td>
+<td>35540</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>23.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>NL</td>
+<td>M</td>
+<td>33.0</td>
+<td>NaN</td>
+<td>35541</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>24.0</td>
+<td>31.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>DM</td>
+<td>F</td>
+<td>37.0</td>
+<td>NaN</td>
+<td>35542</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>26.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>7</td>
+<td>DM</td>
+<td>M</td>
+<td>36.0</td>
+<td>NaN</td>
+<td>35543</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>PB</td>
+<td>F</td>
+<td>27.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>3</td>
+<td>DM</td>
+<td>M</td>
+<td>35.0</td>
+<td>NaN</td>
+<td>35544</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>US</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>6</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>PF</td>
+<td>M</td>
+<td>14.0</td>
+<td>NaN</td>
+<td>35545</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>PE</td>
+<td>F</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>35546</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>15</td>
+<td>AH</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>DM</td>
+<td>M</td>
+<td>37.0</td>
+<td>NaN</td>
+<td>35547</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>10</td>
+<td>RM</td>
+<td>F</td>
+<td>15.0</td>
+<td>14.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>9</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>1</td>
+<td>DM</td>
+<td>F</td>
+<td>34.0</td>
+<td>NaN</td>
+<td>35548</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>7</td>
+<td>DO</td>
+<td>M</td>
+<td>36.0</td>
+<td>51.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>6</td>
+<td>PF</td>
+<td>F</td>
+<td>20.0</td>
+<td>NaN</td>
+<td>35549</td>
+<td>12</td>
+<td>31</td>
+<td>2002</td>
+<td>5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-12" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="exercise-12"><span class="header-section-number">8.2.4</span> Exercise 12</h3>
+</section>
+</section>
+<section id="joining-dataframes" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="joining-dataframes"><span class="header-section-number">8.3</span> Joining DataFrames</h2>
+<p>Concatenating DataFrames allows you to combine two entire DataFrames into a single one. In many cases, you want to combine only selected parts of two DataFrames.</p>
+<p>You might, for example, want to merge rows of two DataFrames that have matching values in specific columns. The pandas function <code>merge()</code> performs an operation that you may know as a <em>join</em> if you worked with databases before. The join operation joins the content of two DataFrames in a particular way. There are different types of joins, but the workflow to perform a join operation is always the same:</p>
+<ol type="1">
+<li>You identify a <em>left</em> and a <em>right</em> DataFrame, among the two you want to join;</li>
+<li>You identify in both your left and right DataFrame a column (or set of columns) to join on;</li>
+<li>You choose the type of join;</li>
+<li>You perform the join running the function <code>pd.merge()</code> with the specified inputs and options.</li>
+</ol>
+<p>What it means for a DataFrame to be ‘left’ or ‘right’ depends on the type of join, and will become clear in the examples below. For now, just remember that it matters which DataFrame you mention first when performing a join.</p>
+<p>Let’s see some join example considering two tiny (few rows) DataFrames. Our left DataFrame contains general data of European capitals, and our right DataFrame contains weather measurements for some Dutch towns. We first need to import these datasets:</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>left_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/EU_capitals_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>right_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/Netherlands_town_weather_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>left_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'left_df' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>left_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Capital</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">Population</th>
+<th data-quarto-table-cell-role="th">Time_zone</th>
+<th data-quarto-table-cell-role="th">Elevation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Amsterdam</td>
+<td>The Netherland</td>
+<td>2480394</td>
+<td>UTC+1</td>
+<td>-2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Rome</td>
+<td>Italy</td>
+<td>1459402</td>
+<td>UTC+1</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Paris</td>
+<td>France</td>
+<td>10858852</td>
+<td>UTC+1</td>
+<td>131</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Madrid</td>
+<td>Spain</td>
+<td>6791667</td>
+<td>UTC+1</td>
+<td>650</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Berlin</td>
+<td>Germany</td>
+<td>4473101</td>
+<td>UTC+1</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Lisbon</td>
+<td>Portugal</td>
+<td>2719000</td>
+<td>UTC+1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>right_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'right_df' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>right_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Town</th>
+<th data-quarto-table-cell-role="th">Elevation</th>
+<th data-quarto-table-cell-role="th">Temperature</th>
+<th data-quarto-table-cell-role="th">Humidity</th>
+<th data-quarto-table-cell-role="th">Wind dir</th>
+<th data-quarto-table-cell-role="th">Wind strengh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Amsterdam</td>
+<td>2</td>
+<td>12</td>
+<td>81</td>
+<td>SW</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Arnhem</td>
+<td>13</td>
+<td>12</td>
+<td>82</td>
+<td>S</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Utrecht</td>
+<td>5</td>
+<td>13</td>
+<td>78</td>
+<td>S</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Rotterdam</td>
+<td>0</td>
+<td>13</td>
+<td>84</td>
+<td>SW</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Leiden</td>
+<td>0</td>
+<td>12</td>
+<td>89</td>
+<td>SW</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Den Haag</td>
+<td>1</td>
+<td>12</td>
+<td>85</td>
+<td>SW</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Rotterdam</td>
+<td>0</td>
+<td>13</td>
+<td>84</td>
+<td>SW</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 <p>The column we want to perform the join on is the one containing information about the town. In the left DataFrame this has name <em>Capital</em> while in the right one <em>Town</em>.</p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>inner_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>inner_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'left_df' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>inner_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>inner_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Capital</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">Population</th>
+<th data-quarto-table-cell-role="th">Time_zone</th>
+<th data-quarto-table-cell-role="th">Elevation_x</th>
+<th data-quarto-table-cell-role="th">Town</th>
+<th data-quarto-table-cell-role="th">Elevation_y</th>
+<th data-quarto-table-cell-role="th">Temperature</th>
+<th data-quarto-table-cell-role="th">Humidity</th>
+<th data-quarto-table-cell-role="th">Wind dir</th>
+<th data-quarto-table-cell-role="th">Wind strengh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Amsterdam</td>
+<td>The Netherland</td>
+<td>2480394</td>
+<td>UTC+1</td>
+<td>-2</td>
+<td>Amsterdam</td>
+<td>2</td>
+<td>12</td>
+<td>81</td>
+<td>SW</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<p>As you may notice, the resulting DataFrame has only one line, the only row that the columns <em>Capital</em> and <em>Town</em> have in common (<em>Amsterdam</em>). This is because an inner join selects only those row values that are <strong>the same</strong> in the two columns (mathematically, an intersection).<br> The columns of the two DataFrames are merged, even if they have the same name. In our case, both left and right DataFrames have a column with the same name (<em>Elevation</em>). After merging, the two columns are preserved, but with a suffix to distinguish them. If you are not happy with the default suffix, you may specify yours in the list of arguments of the <code>pd.merge</code> functions.<br></p>
+</div>
+<p>As you may notice, the resulting DataFrame has only one line, the only row that the columns <em>Capital</em> and <em>Town</em> have in common (<em>Amsterdam</em>). This is because an inner join selects only those row values that are <strong>the same</strong> in the two columns (mathematically, an intersection).</p>
+<p>The columns of the two DataFrames are all preserved, even if they have the same name. In our case, both left and right DataFrames have a column with the same name (<em>Elevation</em>). After merging, the two columns are preserved, but with a suffix to distinguish them. If you are not happy with the default suffix, you may specify yours in the list of arguments of the <code>pd.merge</code> functions.</p>
 <p>Let’s now look at the other joins:</p>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>left_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>left_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'left_df' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>left_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>left_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Capital</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">Population</th>
+<th data-quarto-table-cell-role="th">Time_zone</th>
+<th data-quarto-table-cell-role="th">Elevation_x</th>
+<th data-quarto-table-cell-role="th">Town</th>
+<th data-quarto-table-cell-role="th">Elevation_y</th>
+<th data-quarto-table-cell-role="th">Temperature</th>
+<th data-quarto-table-cell-role="th">Humidity</th>
+<th data-quarto-table-cell-role="th">Wind dir</th>
+<th data-quarto-table-cell-role="th">Wind strengh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Amsterdam</td>
+<td>The Netherland</td>
+<td>2480394</td>
+<td>UTC+1</td>
+<td>-2</td>
+<td>Amsterdam</td>
+<td>2.0</td>
+<td>12.0</td>
+<td>81.0</td>
+<td>SW</td>
+<td>21.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Rome</td>
+<td>Italy</td>
+<td>1459402</td>
+<td>UTC+1</td>
+<td>21</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Paris</td>
+<td>France</td>
+<td>10858852</td>
+<td>UTC+1</td>
+<td>131</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Madrid</td>
+<td>Spain</td>
+<td>6791667</td>
+<td>UTC+1</td>
+<td>650</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Berlin</td>
+<td>Germany</td>
+<td>4473101</td>
+<td>UTC+1</td>
+<td>34</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Lisbon</td>
+<td>Portugal</td>
+<td>2719000</td>
+<td>UTC+1</td>
+<td>2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>right_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'right'</span>)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>right_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'left_df' is not defined</code></pre>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>right_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>right_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Capital</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">Population</th>
+<th data-quarto-table-cell-role="th">Time_zone</th>
+<th data-quarto-table-cell-role="th">Elevation_x</th>
+<th data-quarto-table-cell-role="th">Town</th>
+<th data-quarto-table-cell-role="th">Elevation_y</th>
+<th data-quarto-table-cell-role="th">Temperature</th>
+<th data-quarto-table-cell-role="th">Humidity</th>
+<th data-quarto-table-cell-role="th">Wind dir</th>
+<th data-quarto-table-cell-role="th">Wind strengh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Amsterdam</td>
+<td>The Netherland</td>
+<td>2480394.0</td>
+<td>UTC+1</td>
+<td>-2.0</td>
+<td>Amsterdam</td>
+<td>2</td>
+<td>12</td>
+<td>81</td>
+<td>SW</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Arnhem</td>
+<td>13</td>
+<td>12</td>
+<td>82</td>
+<td>S</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Utrecht</td>
+<td>5</td>
+<td>13</td>
+<td>78</td>
+<td>S</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Rotterdam</td>
+<td>0</td>
+<td>13</td>
+<td>84</td>
+<td>SW</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Leiden</td>
+<td>0</td>
+<td>12</td>
+<td>89</td>
+<td>SW</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Den Haag</td>
+<td>1</td>
+<td>12</td>
+<td>85</td>
+<td>SW</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Rotterdam</td>
+<td>0</td>
+<td>13</td>
+<td>84</td>
+<td>SW</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 <div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>outer_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'outer'</span>)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>outer_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'left_df' is not defined</code></pre>
-</div>
-</div>
-<p>To resume: - An inner join selects rows that are in common to both left and right selected columns (intersection); - A left join selects rows that are in common to both left and right selected columns <strong>AND</strong> all the rows of the left DataFrame; - A right join selects rows that are in common to both left and right selected columns <strong>AND</strong> all the rows of the right DataFrame; - An outer join merges the two DataFrames.</p>
-To better understand how join works, it may be useful to look at the diagrams below:
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>outer_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>outer_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
-<p><img src="pictures/joins.jpeg" width="600"></p>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Capital</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">Population</th>
+<th data-quarto-table-cell-role="th">Time_zone</th>
+<th data-quarto-table-cell-role="th">Elevation_x</th>
+<th data-quarto-table-cell-role="th">Town</th>
+<th data-quarto-table-cell-role="th">Elevation_y</th>
+<th data-quarto-table-cell-role="th">Temperature</th>
+<th data-quarto-table-cell-role="th">Humidity</th>
+<th data-quarto-table-cell-role="th">Wind dir</th>
+<th data-quarto-table-cell-role="th">Wind strengh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Amsterdam</td>
+<td>The Netherland</td>
+<td>2480394.0</td>
+<td>UTC+1</td>
+<td>-2.0</td>
+<td>Amsterdam</td>
+<td>2.0</td>
+<td>12.0</td>
+<td>81.0</td>
+<td>SW</td>
+<td>21.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Rome</td>
+<td>Italy</td>
+<td>1459402.0</td>
+<td>UTC+1</td>
+<td>21.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Paris</td>
+<td>France</td>
+<td>10858852.0</td>
+<td>UTC+1</td>
+<td>131.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Madrid</td>
+<td>Spain</td>
+<td>6791667.0</td>
+<td>UTC+1</td>
+<td>650.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Berlin</td>
+<td>Germany</td>
+<td>4473101.0</td>
+<td>UTC+1</td>
+<td>34.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Lisbon</td>
+<td>Portugal</td>
+<td>2719000.0</td>
+<td>UTC+1</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Arnhem</td>
+<td>13.0</td>
+<td>12.0</td>
+<td>82.0</td>
+<td>S</td>
+<td>6.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Utrecht</td>
+<td>5.0</td>
+<td>13.0</td>
+<td>78.0</td>
+<td>S</td>
+<td>18.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Rotterdam</td>
+<td>0.0</td>
+<td>13.0</td>
+<td>84.0</td>
+<td>SW</td>
+<td>13.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Rotterdam</td>
+<td>0.0</td>
+<td>13.0</td>
+<td>84.0</td>
+<td>SW</td>
+<td>16.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Leiden</td>
+<td>0.0</td>
+<td>12.0</td>
+<td>89.0</td>
+<td>SW</td>
+<td>19.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Den Haag</td>
+<td>1.0</td>
+<td>12.0</td>
+<td>85.0</td>
+<td>SW</td>
+<td>19.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>To resume: a join always merges rows that have matching values in the columns that you merge on. Which rows you find in the resulting DataFrame, depends on the type of join: - An inner join selects only the rows that result from the combination of matching rows in both the original left and right DataFrames (intersection); - A left join selects all rows that were in the original left DataFrame, some of which may have been joined with a matching entry from the right DataFrame; - A right join selects all rows that were in the original right DataFrame, some of which may have been joined with a matching entry from the left DataFrame; - An outer join merges the two DataFrames and keeps all resulting rows.</p>
+<p>To better understand how join works, it may be useful to look at the diagrams below:</p>
+<div>
+<p><img src="images/joins.jpeg" width="600"></p>
 </div>
 <ul>
-<li>
-Do you want to select only <strong>common</strong> information between the two DataFrames? Then you would probably need an inner join;
-</li>
-<li>
-Do you want to add information to your <strong>left</strong> DataFrame? Then you would probably need a left join;
-</li>
-<li>
-Do you want to add information to your <strong>right</strong> DataFrame? Then you would probably need a right join;
-</li>
-<li>
-Do you want to get <strong>all</strong> the information from the two DataFrames? Then you would probably need an outer join.
-</li>
+<li>Do you want to select only <strong>common</strong> information between the two DataFrames? Then you use an <strong>inner join</strong>;</li>
+<li>Do you want to <strong>add information</strong> to your <strong>left</strong> DataFrame? Then you use a <strong>left join</strong>;</li>
+<li>Do you want to <strong>add information</strong> to your <strong>right</strong> DataFrame? Then you use a <strong>right join</strong>;</li>
+<li>Do you want to get <strong>all the information</strong> from the two DataFrames? Then you use an <strong>outer join</strong>.</li>
 </ul>
+<p>We will continue with <a href="./data-science-with-pandas-4.html">Data visualization</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
