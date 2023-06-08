@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Python &amp; Data - 6&nbsp; Data Science with Pandas (part 1: Introduction and basic statistics)</title>
+<title>Introduction to Python &amp; Data - 6&nbsp; Reading and Exploring data)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working with data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 1: Introduction and basic statistics)</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working with data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and Exploring data)</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -236,25 +236,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 1: Introduction and basic statistics)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and Exploring data)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 2: Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 3: Combining DataFrames)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Combining DataFrames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 4: Data Visualization)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
   </div>
 </li>
       </ul>
@@ -283,11 +283,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#data-science-with-pandas" id="toc-data-science-with-pandas" class="nav-link active" data-scroll-target="#data-science-with-pandas"><span class="header-section-number">7</span> Data Science with pandas</a>
   <ul class="collapse">
-  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries"><span class="header-section-number">7.1</span> Preliminaries</a>
-  <ul class="collapse">
-  <li><a href="#reading-data-and-quick-look-data-exploration" id="toc-reading-data-and-quick-look-data-exploration" class="nav-link" data-scroll-target="#reading-data-and-quick-look-data-exploration"><span class="header-section-number">7.1.1</span> Reading data and quick look (data exploration)</a></li>
-  </ul></li>
-  <li><a href="#basic-statistics" id="toc-basic-statistics" class="nav-link" data-scroll-target="#basic-statistics"><span class="header-section-number">7.2</span> Basic statistics</a></li>
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><span class="header-section-number">7.1</span> Libraries</a></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas"><span class="header-section-number">7.2</span> Pandas</a></li>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries"><span class="header-section-number">7.3</span> Preliminaries</a></li>
+  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data"><span class="header-section-number">7.4</span> Reading data</a></li>
+  <li><a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="header-section-number">7.5</span> Exploring data</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/UtrechtUniversity/workshop-introduction-to-python/blob/main/data-science-with-pandas-1.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 1: Introduction and basic statistics)</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and Exploring data)</span></h1>
 </div>
 
 
@@ -314,16 +314,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="data-science-with-pandas" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Data Science with pandas</h1>
-<p>Data analysis heavily depends on the characteristics of the chosen research subject, but we can still identify main common data analysis steps as follows: - Define the problem or objective (research question); - Design/perform experiments and collect data; - Data Exploration and Visualization; - Data Cleaning and Preparation; - Data Analysis and Modelling; - Result Interpretation; - Reporting and Visualization.</p>
-<p>While tasks like finding a relevant research question and interpreting data are challenges for the critical and analytical skills of the single researcher, all the tasks related to data manipulation, from data reduction and statistical analysis to modelling and visualization, require a systematic use of a quite large variety of software. No need to say that implementing such software yourself from scratch would require a huge amount of time, without even mentioning all the issues related to software mantainance. Luckily for us, people have already devoloped software with specific tools for data analysis. These tools are organised into <em>packages</em> or <em>libraries</em>, they usually are openly available (according to the programming language you use), and they keep to be mantained and developed by a huge community of users. In particular, for python programmers, the most popular data analysis library is Pandas.</p>
-<p>The python library <a url="https://pandas.pydata.org/about/"><strong>Pandas</strong></a> is a popular open-source data analysis and data manupulation library for Python that started to be developed in 2008. The library is based on two main data structures: <em>Series</em> (1D, similar to numpy arrays) and <em>DataFrame</em> (2D labeled arrays). Why shall we use Series and DataFrame when we can work with numpy arrays and matrices? Because Pandas has been designed specifically for data manipulation and analysis tasks, providing tools and functions for data cleaning, data transformation, data aggregation, and data visualization, among other data-related tasks. Adopting Pandas, we can run through all the main technical tasks in our data analysis pipeline mainly using a single python library.</p>
-<p>Pandas is widely used in data science, machine learning, and data analysis tasks, as it provides powerful tools for data handling and manipulation, making it easier to work with a large variety of data. Furthermore, it well integrates with other Python libraries for data analysis, machine learning, and statistical analysis, such as NumPy, Scikit-Learn, and StatsModels.</p>
-<p>Overall, Pandas is a powerful and flexible library for data analysis and manipulation in Python, widely used in various domains including data science, finance, business, and research.</p>
-<p>In this session we will explore the main features of Pandas going through the main steps of standard data analysis. For this purpose, we will be using data from the <a url="https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459">Portal Project Teaching Database</a>: real world example of life-history, population, and ecological data and, occasionally, small ad hoc dataset to exaplain DataFrame operations.</p>
-<section id="preliminaries" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">7.1</span> Preliminaries</h2>
+<p>In the previous chapters we started with the fundamentals of Python. Now we will continue with more practical examples of doing data analysis with Python using the Pandas library.</p>
+<section id="libraries" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="libraries"><span class="header-section-number">7.1</span> Libraries</h2>
+<p>The power of Python (and many programming languages) is in the libraries.</p>
+<p>A library (aka package) is a collection of files (aka python scripts) that contains <strong>functions</strong> that can be used to perform specific tasks. A library may also contain data. The functions in a library are typically related and used for a specific purpose, e.g.&nbsp;there are libraries for plotting, handling audio data and machine learning and many many more. Some libraries are built into python, but most packages need to be installed before you can use it.</p>
+<p>Important to add: libraries are developed and maintained by other Python users. A popular library like Pandas has a large user base and the maintainers are supported by several funders, which makes it a reliable library that is updated very frequently. But this is not always the case, on the other side of the spectrum, a library can also be published once and not maintained at all.</p>
+</section>
+<section id="pandas" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="pandas"><span class="header-section-number">7.2</span> Pandas</h2>
+<p>The python library <a href="https://pandas.pydata.org/about/"><strong>Pandas</strong></a> is a popular open-source data analysis and data manipulation library for Python which was developed in 2008. The library has some similarities with R, mainly related to the DataFrame data type that is used to handle table like datasets.</p>
+<p>Pandas is widely used in data analyses and machine learning, as it provides powerful tools for data handling and manipulation. Furthermore, it integrates well with other Python libraries for data analysis, machine learning, and statistical analysis, such as NumPy, Scikit-Learn, and StatsModels.</p>
+<p>In this first chapter we will explore the main features of Pandas related to reading and exploring a dataset. In the following chapters we will go into finding, selecting and grouping data, merging datasets and visualization.</p>
+<p>For this purpose, we will be using data from the <a url="https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459">Portal Project Teaching Database</a>: real world example of life-history, population, and ecological data and, occasionally, a small ad-hoc dataset to exaplain DataFrame operations.</p>
+</section>
+<section id="preliminaries" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">7.3</span> Preliminaries</h2>
 <p>Before we start our journey into Pandas functionalities, there are some preliminary operations to run.</p>
-<p>The Pandas library is not native of python (it is not automatically loaded when you start running python), it needs to be installed and loaded. Assuming you already installed it, let’s start importing the Pandas library and checking our installed version.</p>
+<p>The Pandas library is not a built-in library of python, it needs to be installed and loaded. Installations instructions for Pandas are in the the <a href="./installation-and-setup.html">setup instructions</a> for this course. Assuming you already installed it, let’s start importing the Pandas library and checking our installed version.</p>
 <div class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -331,7 +339,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>1.5.3</code></pre>
 </div>
 </div>
-<p>The path of our data files will be specified relatively to the main project folder, so, in order to properly upload our dataset, it’s important to check we are working in there. In order to do that, we will load another library, os, containing all sort of tools to interact with our operating system. The function <code>os.getcwd()</code>, in particular, returns the current working directory (cwd).</p>
+<p>It is also possible to just type <code>import pandas</code>, but we chose to give the library an ‘alias’: <code>pd</code>. The main reason is that we can now use functions from the library by typing <code>pd</code> instead of <code>pandas</code> (see the following line <code>print(pd.__version__)</code>)</p>
+<p>To be able to read the data files that we will be using, we need to specify the location of the files (also referred to as ‘path’). It is best practice to specify the path relative to the main project folder, so, in order to properly read our dataset, it’s important to check that we are working in the main project folder. In order to do that, we will load another library called ‘os’, containing all sort of tools to interact with our operating system. The function <code>os.getcwd()</code>, returns the current working directory (cwd).</p>
 <div class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cwd <span class="op">=</span> os.getcwd()</span>
@@ -340,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>/home/runner/work/workshop-introduction-to-python/workshop-introduction-to-python/book</code></pre>
 </div>
 </div>
-<p>If the current local directory is <local_dir>/workshop-introduction-to-python, where <local_dir> is whatever directory you chose to download and unzip the course material, you are in the right place.</local_dir></local_dir></p>
+<p>If the current working directory ends with <code>&lt;...&gt;/workshop-introduction-to-python</code>, where <code>&lt;...&gt;</code> is whatever directory you chose to download and unzip the course material, you are in the right place. If not, use <code>os.chdir(&lt;...&gt;)</code> to change the working directory, where <code>&lt;...&gt;</code> is the full path of the <code>workshop-introductions-to-python</code> directory.</p>
 <p>Let’s store the relative path of our data into a variable and let’s check if the data file actually exists using the function <code>os.path.exists()</code></p>
 <div class="cell" data-tags="[]" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_file <span class="op">=</span> <span class="st">'../course_materials/data/surveys.csv'</span></span>
@@ -350,9 +359,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>If the result is True, we are all set up to go!</p>
-<section id="reading-data-and-quick-look-data-exploration" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="reading-data-and-quick-look-data-exploration"><span class="header-section-number">7.1.1</span> Reading data and quick look (data exploration)</h3>
-<p>The very first operation we will perform is loading our data into a Pandas <strong>DataFrame</strong> (from now on, only DataFrame). A DataFrame is a Pandas <em>core object</em>, i.e.&nbsp;a key component that provides the primary functionality or core features of the entire library. We can convert our data into DataFrame using Pandas functions, they can read a quite large variety of formats like the <em>comma-separated values</em> (CSV) file format. In CSV files data values are separated by a comma (“,”), but files where values are separated by a semicolon (“;”), space (” “) or tab (”) can also have a .csv extention. Once specified the spacer, Pandas can read all these files with the function <code>pd.read_csv()</code>. The default spacer is a comma, so in our specific case there is no need to specify the separator.</p>
+</section>
+<section id="reading-data" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">7.4</span> Reading data</h2>
+<p>The very first operation we will perform is loading our data into a Pandas <strong>DataFrame</strong> using <code>pd.read_csv()</code>.</p>
 <div class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>surveys_df <span class="op">=</span> pd.read_csv(data_file)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -363,7 +373,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 &lt;class 'pandas.core.frame.DataFrame'&gt;</code></pre>
 </div>
 </div>
-<p>The variable <code>data_file</code> is a string (a word) specifying the location of our file. We use it as the first argument of the function <code>pd.read_csv()</code> that, indeed, reads the file and returns a DataFrame. In Jupyter Notebook or Jupyter Lab you can visualise the DataFrame simply writing its name in a code cell and running the cell (in the same way you would display the value of any variable). Let’s have a look at our just created DataFrame:</p>
+<p>Pandas can read quite a large variety of formats like the <em>comma-separated values</em> (CSV) and Excel file formats.</p>
+<p>Sometimes values in CSV files are separated using “;” or tabs. The default separator Pandas expects is a comma, if it is different it is necessary to specify the separator in an argument, e.g.: <code>pd.read_csv(data_file, sep=";")</code>. The documentation of pandas provides a <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">full overview</a> of the arguments you may use for this function.</p>
+<p>In Jupyter Notebook or Jupyter Lab you can visualise the DataFrame simply by writing its name in a code cell and running the cell (in the same way you would display the value of any variable). Let’s have a look at our just created DataFrame:</p>
 <div class="cell" data-tags="[]" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>surveys_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -525,34 +537,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>By looking at the DataFrame we can finally understand what a DataFrame actually is: a 2-dimensional data structure storing different types of variables in columns. Ever DataFrame has an Index (starting from 0) referring to the rows of the table. Columns can be addressed either by their names or by their index, where 0 corresponds to the very first column.</p>
-<p>Jupyter does something else for us, it does not show the entire DataFrame as it is too big, instead it shows the first and last 5 rows separated by … . Simply typing the name of our DataFrame in Jupyter is a great way to start looking at how our data looks like, get familiar with all the columns names, values, and type, and, most importantly, to check for the presence of the infamous NaN (not a number), as these not numeric values are the worst enemies of data analysis scripts.</p>
+<p>By looking at the DataFrame we can finally understand what a DataFrame actually is: a 2-dimensional data structure storing different types of variables in columns. All rows in the DataFrame have a row index (starting from 0). The columns have names. The row indices and column names can be used to do operations on values in the column (we will go into this later).</p>
+<p>As you can see Jupyter only prints the first and last 5 rows separated by <code>...</code> . In this way the notebook remains clear and tidy (printing the whole DataFrame may result in a large table and a lot of scrolling to get to the next code cell).</p>
+<p>It is, however, enough for a quick exploration of how the dataset looks like in terms of columns names, values, and potential reading errors.</p>
 <div class="alert alert-block alert-success">
-<p><b>TRY IT YOURSELF:</b> Type the following commands and check out the outputs. Can you tell what each command does? What is the difference between commands with and without parenthesis?</p>
+<p><b>Exercise 1</b></p>
+<p>Now go to the Jupyter Dashboard in your internet browser and open the notebook <code>afternoon_exercises.ipynb</code> and do exercise 1.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>surveys_df.shape</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>surveys_df.columns</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>surveys_df.index</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>surveys_df.dtypes</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>surveys_df.head(<span class="op">&lt;</span>try_various_integers_here<span class="op">&gt;</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>surveys_df.tail(<span class="op">&lt;</span>try_various_integers_here<span class="op">&gt;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="basic-statistics" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="basic-statistics"><span class="header-section-number">7.2</span> Basic statistics</h2>
-<p>It’s time to perform some basic statistics on our dataset. There is nothing to worry about, Pandas has been specifucally designed for data analysis, so Pandas datastructures have plenty of attributes and methods for our needs (you can always visualise detailed information about attributes and methods of any python object running <code>help(&lt;object&gt;)</code>). Let’s first visualise all the column names in the DataFrame</p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you can see in this exercise a DataFrame object comes with several methods that can be applied to the DataFrame. A method is similar to a function, but it can only be applied to the object it belongs to and has a different notation than a function.</p>
+<p>Compare the notation of the function <code>len</code>: <code>len(surveys_df)</code><br>
+with the DataFrame specific method <code>shape</code>: <code>surveys_df.shape</code></p>
+</div>
+</div>
+</div></section>
+<section id="exploring-data" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="exploring-data"><span class="header-section-number">7.5</span> Exploring data</h2>
+<p>Now we will take a closer look into the actual values in the DataFrame. In order to do this it is helpful to have the column names at hand (easy for copy-pasting):</p>
 <div class="cell" data-tags="[]" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Index(['record_id', 'month', 'day', 'year', 'plot_id', 'species_id', 'sex',
        'hindfoot_length', 'weight'],
       dtype='object')</code></pre>
 </div>
 </div>
-<p>We can use the loop statements we learned about this morning to print the DataFrame column one by one:</p>
+<p>As you can see this gives you more information than just the column names. It is also possible to just print the column names using a for loop (see <a href="Introducion_to_python_4.ipynb">chapter 4</a>):</p>
 <div class="cell" data-tags="[]" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> surveys_df.columns:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> surveys_df.columns:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>record_id
 month
@@ -567,16 +588,25 @@ weight</code></pre>
 </div>
 <p>Let’s select the column <em>weight</em> in our DataFrame and let’s run some statistics on it</p>
 <div class="cell" data-tags="[]" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>weight <span class="op">=</span> surveys_df[<span class="st">'weight'</span>]</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(weight))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.series.Series'&gt;</code></pre>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>0         NaN
+1         NaN
+2         NaN
+3         NaN
+4         NaN
+         ... 
+35544     NaN
+35545     NaN
+35546    14.0
+35547    51.0
+35548     NaN
+Name: weight, Length: 35549, dtype: float64</code></pre>
 </div>
 </div>
-<p><em>weight</em> is another Pandas core object, a <strong>Series</strong>. You can think at a Series as a python list, or numpy array, with extra powers. One of these extra powers allows us to make a simple plot, just to have a first glance at the data. As this is the first plot of this session, we specify the command <code>%matplotlib inline</code>, in this way jupyter lab or notebook will print the plot in the current notebook instead of opening a new window.</p>
+<p>Now let’s plot the values in a histogram:</p>
 <div class="cell" data-tags="[]" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>weight.plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;AxesSubplot: ylabel='Frequency'&gt;</code></pre>
 </div>
@@ -586,7 +616,7 @@ weight</code></pre>
 </div>
 <p>Did you notice how easy it was to obtain a summary plot of a column of our DataFrame? We can repeat the same for every column with a single line of code.</p>
 <div class="cell" data-tags="[]" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'hindfoot_length'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'hindfoot_length'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;AxesSubplot: ylabel='Frequency'&gt;</code></pre>
 </div>
@@ -594,18 +624,21 @@ weight</code></pre>
 <p><img src="data-science-with-pandas-1_files/figure-html/cell-11-output-2.png" width="610" height="411"></p>
 </div>
 </div>
-<div class="alert alert-block alert-success">
-<p><b>TRY IT YOURSELF:</b> Perform some basic statistics on the weight column. Can you tell what each method listed below does? Look at our explorative plot, does the statistics make sense?</p>
+<p>We can also make quick scatterplots to explore the relation between two columns:</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline <span class="co"># what this does will be discussed in the last chapter about visualization</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> surveys_df.plot(x<span class="op">=</span><span class="st">'weight'</span>, y<span class="op">=</span><span class="st">'hindfoot_length'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>UsageError: unrecognized arguments: # what this does will be discussed in the last chapter about visualization</code></pre>
 </div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>weight.<span class="bu">min</span>()</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>weight.<span class="bu">max</span>()</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>weight.mean()</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>weight.std()</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>weight.counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For each Series we have, instead of running the methods above one by one, we can obtain a statistical summary using the method <code>.describe()</code>. Let’s get a statistical summary for the weight column.</p>
-<div class="cell" data-tags="[]" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>weight.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+</div>
+<div class="alert alert-block alert-success">
+<p><b>Exercise 2</b></p>
+<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 2.</p>
+<p>Instead of running the methods above one by one, we can obtain a statistical summary using the method <code>.describe()</code>. Let’s get a statistical summary for the weight column.</p>
+<div class="cell" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>count    32283.000000
 mean        42.672428
 std         36.631259
@@ -617,19 +650,28 @@ max        280.000000
 Name: weight, dtype: float64</code></pre>
 </div>
 </div>
-<p><code>.describe()</code> is just one of the many Series and DataFrame methods. There are methods to remove duplicates, to sort values in a particular order, to filter data according to custom criteria, etc (you can always check the Pandas documentation for more information). One of these methods, <code>.nunique()</code>, returns the number of unique elements in a Series. Comparing this number with the length of the Series allows us to check if all the values of a column are unique.</p>
-<div class="cell" data-tags="[]" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(surveys_df[<span class="st">'plot_id'</span>]))</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df[<span class="st">'plot_id'</span>].nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are many more methods that can be used. For a complete overview, check out the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html">documentation of Pandas</a>. Some useful ones are the <code>unique</code> method to display all unique values in a certain column:</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'species_id'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>array(['NL', 'DM', 'PF', 'PE', 'DS', 'PP', 'SH', 'OT', 'DO', 'OX', 'SS',
+       'OL', 'RM', nan, 'SA', 'PM', 'AH', 'DX', 'AB', 'CB', 'CM', 'CQ',
+       'RF', 'PC', 'PG', 'PH', 'PU', 'CV', 'UR', 'UP', 'ZL', 'UL', 'CS',
+       'SC', 'BA', 'SF', 'RO', 'AS', 'SO', 'PI', 'ST', 'CU', 'SU', 'RX',
+       'PB', 'PL', 'PX', 'CT', 'US'], dtype=object)</code></pre>
+</div>
+</div>
+<p>Or <code>.nunique()</code> to return the number of unique elements in a column.</p>
+<div class="cell" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df[<span class="st">'plot_id'</span>].nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>35549
-24</code></pre>
+<pre><code>24</code></pre>
 </div>
 </div>
-<p>In this case the column plot_id has only 24 unique elements, while the total number of elements (computed applying the function <code>len()</code>) is 35549. We definetively have repeated values in that column. Checking if there are repeating elements in a DataFrame column is one of the most important operation in data analysis and introduces the next topic of this session: grouping.</p>
+<p>Perhaps we want to get some insight into the values for certain species or plots, in the next chapter we will go into <a href="./data-science-with-pandas-2.html">making groups and selections</a>.</p>
 
 
-</section>
+</div></section>
 </section>
 
 </main> <!-- /main -->
@@ -874,7 +916,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data-science-with-pandas-2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 2: Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

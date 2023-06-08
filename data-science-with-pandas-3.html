@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Python &amp; Data - 8&nbsp; Data Science with Pandas (part 3: Combining DataFrames)</title>
+<title>Introduction to Python &amp; Data - 8&nbsp; Combining DataFrames</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working with data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-3.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 3: Combining DataFrames)</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working with data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-3.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Combining DataFrames</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -236,25 +236,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 1: Introduction and basic statistics)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and Exploring data)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 2: Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 3: Combining DataFrames)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Combining DataFrames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 4: Data Visualization)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
   </div>
 </li>
       </ul>
@@ -285,9 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#concatenating-dataframes" id="toc-concatenating-dataframes" class="nav-link" data-scroll-target="#concatenating-dataframes"><span class="header-section-number">8.2</span> Concatenating DataFrames</a>
   <ul class="collapse">
   <li><a href="#vertical-concatenation" id="toc-vertical-concatenation" class="nav-link" data-scroll-target="#vertical-concatenation"><span class="header-section-number">8.2.1</span> Vertical concatenation</a></li>
-  <li><a href="#exercise-11" id="toc-exercise-11" class="nav-link" data-scroll-target="#exercise-11"><span class="header-section-number">8.2.2</span> Exercise 11</a></li>
-  <li><a href="#horizontal-concatenation" id="toc-horizontal-concatenation" class="nav-link" data-scroll-target="#horizontal-concatenation"><span class="header-section-number">8.2.3</span> Horizontal concatenation</a></li>
-  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12"><span class="header-section-number">8.2.4</span> Exercise 12</a></li>
+  <li><a href="#horizontal-concatenation" id="toc-horizontal-concatenation" class="nav-link" data-scroll-target="#horizontal-concatenation"><span class="header-section-number">8.2.2</span> Horizontal concatenation</a></li>
   </ul></li>
   <li><a href="#joining-dataframes" id="toc-joining-dataframes" class="nav-link" data-scroll-target="#joining-dataframes"><span class="header-section-number">8.3</span> Joining DataFrames</a></li>
   </ul>
@@ -298,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 3: Combining DataFrames)</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Combining DataFrames</span></h1>
 </div>
 
 
@@ -1109,12 +1107,12 @@ None</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-11" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="exercise-11"><span class="header-section-number">8.2.2</span> Exercise 11</h3>
-</section>
-<section id="horizontal-concatenation" class="level3" data-number="8.2.3">
-<h3 data-number="8.2.3" class="anchored" data-anchor-id="horizontal-concatenation"><span class="header-section-number">8.2.3</span> Horizontal concatenation</h3>
+<div class="alert alert-block alert-success">
+<p><b>Exercise 11</b></p>
+<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 11.</p>
+</div></section>
+<section id="horizontal-concatenation" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="horizontal-concatenation"><span class="header-section-number">8.2.2</span> Horizontal concatenation</h3>
 It’s now time to try <strong>horizontal stacking</strong>. In this case the two DataFrames are simply put one after the other (remember to specify <code>axis=1</code>).
 <div>
 <p><img src="images/horizontal_stacking.jpeg" width="300"></p>
@@ -2045,10 +2043,10 @@ None</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-12" class="level3" data-number="8.2.4">
-<h3 data-number="8.2.4" class="anchored" data-anchor-id="exercise-12"><span class="header-section-number">8.2.4</span> Exercise 12</h3>
-</section>
+<div class="alert alert-block alert-success">
+<p><b>Exercise 12</b></p>
+<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 12.</p>
+</div></section>
 </section>
 <section id="joining-dataframes" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="joining-dataframes"><span class="header-section-number">8.3</span> Joining DataFrames</h2>
@@ -2971,12 +2969,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./data-science-with-pandas-2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 2: Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data-science-with-pandas-4.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 4: Data Visualization)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

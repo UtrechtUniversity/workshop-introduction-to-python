@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Python &amp; Data - 9&nbsp; Data Science with Pandas (part 4: Data Visualization)</title>
+<title>Introduction to Python &amp; Data - 9&nbsp; Data Visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working with data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-4.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 4: Data Visualization)</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working with data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-4.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -236,25 +236,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 1: Introduction and basic statistics)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and Exploring data)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 2: Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Grouping, Indexing, Slicing, and Subsetting DataFrames)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 3: Combining DataFrames)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Combining DataFrames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-science-with-pandas-4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 4: Data Visualization)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
   </div>
 </li>
       </ul>
@@ -300,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 4: Data Visualization)</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></h1>
 </div>
 
 
@@ -343,11 +343,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.hist(sample_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>(array([  35.,  193.,  821., 2034., 2831., 2491., 1145.,  369.,   70.,
-          11.]),
- array([-0.3460395 , -0.27204041, -0.19804132, -0.12404222, -0.05004313,
-         0.02395596,  0.09795505,  0.17195415,  0.24595324,  0.31995233,
-         0.39395142]),
+<pre><code>(array([  20.,  115.,  575., 1535., 2632., 2692., 1682.,  591.,  134.,
+          24.]),
+ array([-0.36697615, -0.29455242, -0.2221287 , -0.14970497, -0.07728125,
+        -0.00485753,  0.0675662 ,  0.13998992,  0.21241365,  0.28483737,
+         0.3572611 ]),
  &lt;BarContainer object of 10 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -358,16 +358,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.hist(sample_data, bins<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(array([  4.,   8.,  23.,  27.,  63., 103., 177., 262., 382., 553., 667.,
-        814., 908., 946., 977., 989., 783., 719., 525., 362., 258., 186.,
-        118.,  65.,  42.,  21.,   7.,   7.,   3.,   1.]),
- array([-0.3460395 , -0.32137314, -0.29670677, -0.27204041, -0.24737404,
-        -0.22270768, -0.19804132, -0.17337495, -0.14870859, -0.12404222,
-        -0.09937586, -0.0747095 , -0.05004313, -0.02537677, -0.0007104 ,
-         0.02395596,  0.04862232,  0.07328869,  0.09795505,  0.12262142,
-         0.14728778,  0.17195415,  0.19662051,  0.22128687,  0.24595324,
-         0.2706196 ,  0.29528597,  0.31995233,  0.34461869,  0.36928506,
-         0.39395142]),
+<pre><code>(array([   8.,    5.,    7.,   26.,   34.,   55.,  116.,  180.,  279.,
+         348.,  512.,  675.,  778.,  838., 1016.,  933.,  922.,  837.,
+         712.,  524.,  446.,  270.,  196.,  125.,   62.,   49.,   23.,
+          11.,    8.,    5.]),
+ array([-0.36697615, -0.34283491, -0.31869366, -0.29455242, -0.27041118,
+        -0.24626994, -0.2221287 , -0.19798746, -0.17384622, -0.14970497,
+        -0.12556373, -0.10142249, -0.07728125, -0.05314001, -0.02899877,
+        -0.00485753,  0.01928372,  0.04342496,  0.0675662 ,  0.09170744,
+         0.11584868,  0.13998992,  0.16413116,  0.18827241,  0.21241365,
+         0.23655489,  0.26069613,  0.28483737,  0.30897861,  0.33311985,
+         0.3572611 ]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -443,7 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Text(0.5, 0, 'value')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-4_files/figure-html/cell-8-output-2.png" width="973" height="503"></p>
+<p><img src="data-science-with-pandas-4_files/figure-html/cell-8-output-2.png" width="975" height="503"></p>
 </div>
 </div>
 <p>Instead of plotting side by side, it is also possible to add a plot inside (or actually overlaying another plot).</p>
@@ -452,16 +453,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()  <span class="co"># initiate an empty figure and axis matplotlib object</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ax.hist(sample_data, bins<span class="op">=</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>(array([  4.,   8.,  23.,  27.,  63., 103., 177., 262., 382., 553., 667.,
-        814., 908., 946., 977., 989., 783., 719., 525., 362., 258., 186.,
-        118.,  65.,  42.,  21.,   7.,   7.,   3.,   1.]),
- array([-0.3460395 , -0.32137314, -0.29670677, -0.27204041, -0.24737404,
-        -0.22270768, -0.19804132, -0.17337495, -0.14870859, -0.12404222,
-        -0.09937586, -0.0747095 , -0.05004313, -0.02537677, -0.0007104 ,
-         0.02395596,  0.04862232,  0.07328869,  0.09795505,  0.12262142,
-         0.14728778,  0.17195415,  0.19662051,  0.22128687,  0.24595324,
-         0.2706196 ,  0.29528597,  0.31995233,  0.34461869,  0.36928506,
-         0.39395142]),
+<pre><code>(array([   8.,    5.,    7.,   26.,   34.,   55.,  116.,  180.,  279.,
+         348.,  512.,  675.,  778.,  838., 1016.,  933.,  922.,  837.,
+         712.,  524.,  446.,  270.,  196.,  125.,   62.,   49.,   23.,
+          11.,    8.,    5.]),
+ array([-0.36697615, -0.34283491, -0.31869366, -0.29455242, -0.27041118,
+        -0.24626994, -0.2221287 , -0.19798746, -0.17384622, -0.14970497,
+        -0.12556373, -0.10142249, -0.07728125, -0.05314001, -0.02899877,
+        -0.00485753,  0.01928372,  0.04342496,  0.0675662 ,  0.09170744,
+         0.11584868,  0.13998992,  0.16413116,  0.18827241,  0.21241365,
+         0.23655489,  0.26069613,  0.28483737,  0.30897861,  0.33311985,
+         0.3572611 ]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -488,16 +490,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#ax2 = fig.add_axes([left, bottom, right, top])</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>ax2.hist(beta_draws, bins<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>(array([ 6., 15., 15., 17., 39., 40., 49., 62., 52., 71., 77., 64., 75.,
-        66., 59., 46., 43., 38., 40., 27., 35., 13., 17., 15.,  5.,  4.,
-         3.,  6.,  0.,  1.]),
- array([0.06462892, 0.08633097, 0.10803302, 0.12973507, 0.15143712,
-        0.17313917, 0.19484122, 0.21654327, 0.23824532, 0.25994737,
-        0.28164942, 0.30335147, 0.32505352, 0.34675557, 0.36845762,
-        0.39015967, 0.41186172, 0.43356377, 0.45526582, 0.47696787,
-        0.49866992, 0.52037197, 0.54207402, 0.56377607, 0.58547812,
-        0.60718017, 0.62888222, 0.65058427, 0.67228632, 0.69398837,
-        0.71569042]),
+<pre><code>(array([ 1.,  6.,  6., 11., 21., 18., 39., 43., 47., 57., 69., 61., 82.,
+        54., 68., 71., 63., 57., 41., 33., 29., 42., 22., 16., 17.,  8.,
+         5.,  7.,  2.,  4.]),
+ array([0.03790648, 0.05902466, 0.08014284, 0.10126102, 0.12237921,
+        0.14349739, 0.16461557, 0.18573375, 0.20685194, 0.22797012,
+        0.2490883 , 0.27020648, 0.29132467, 0.31244285, 0.33356103,
+        0.35467922, 0.3757974 , 0.39691558, 0.41803376, 0.43915195,
+        0.46027013, 0.48138831, 0.50250649, 0.52362468, 0.54474286,
+        0.56586104, 0.58697922, 0.60809741, 0.62921559, 0.65033377,
+        0.67145195]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -691,8 +693,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="alert alert-block alert-success">
-<p><b>TRY IT YOURSELF</b>: Time to play with plots! Look at the pandas.DataFrame.plot() documentation (<a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html">here</a>) and change your data visualization selecting different DataFrame columns, x and y axes, and kind of plot (try at least three different plots).</p>
-</div>
+<p><b>Exercise 13</b></p>
+<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 13.</p>
 <p>If we want to see if this distribution is different between males and females we can use a for loop and the groupby method to overlay two plots on top of each other in the same Axes object.</p>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
@@ -714,22 +716,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>By using <code>ax.scatter</code> 2 times inside the for loop, the two sets of points end up in the same <strong>Axes</strong>. Automatically the groups get different colors. With <code>alpha=0.5</code> we can make the dots semi transparent so we can see them a bit better (however due to the large number of dots many blue dots are probably still hidden). We need to add the legend afterwards (after the for loop), but we do need the provide the labels in a list. We generated the list of labels in the for loop to make sure we don’t mix them up by accident.</p>
 <p>Perhaps we get a better view if we plot them in separate subplots, which is the next exercise:</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div <span class="kw">class</span><span class="op">=</span><span class="st">"alert alert-block alert-success"</span><span class="op">&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>b<span class="op">&gt;</span>TRY IT YOURSELF<span class="op">&lt;/</span>b<span class="op">&gt;</span>: Plot DataFrame data <span class="kw">in</span> a single Figure:</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> Initialize a Figure <span class="cf">with</span> <span class="dv">2</span> Axes distributed <span class="kw">in</span> one rows <span class="kw">and</span> two columns<span class="op">;</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> In the first Axis plot the data <span class="cf">for</span> <span class="bu">all</span> Females, <span class="kw">and</span> <span class="kw">in</span> the second Axis, plot <span class="bu">all</span> Males.</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="op">-</span> Make your Axes (plots) <span class="st">"pretty"</span>: label <span class="bu">all</span> your axes, use clear character font, choose a nice title <span class="cf">for</span> your plot. You may want to consult the [`Axes.plot()` documentation](https:<span class="op">//</span>matplotlib.org<span class="op">/</span>stable<span class="op">/</span>api<span class="op">/</span>_as_gen<span class="op">/</span>matplotlib.axes.Axes.plot.html).</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>SyntaxError: invalid syntax (315948408.py, line 1)</code></pre>
-</div>
-</div>
+<div class="alert alert-block alert-success">
+<p><b>Exercise 14</b></p>
+<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 14.</p>
 <section id="saving-your-plot" class="level3" data-number="9.7.1">
 <h3 data-number="9.7.1" class="anchored" data-anchor-id="saving-your-plot"><span class="header-section-number">9.7.1</span> Saving your plot</h3>
 <p>Once you produced your plot you will probably need to share it in different media (website, papers, slide show, etc). To do that, we need to save our plot in a specific format. Once you have defined a Figure, you can do that with a single line of code:</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'MyFigure.png'</span>, dpi<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'MyFigure.png'</span>, dpi<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The Figure method <code>savefig()</code> will save your figure into a file. The first argument of the function is the name of the output file. Matplotlib will automatically recognize the format of the output file from its name. If you will specify only a name without extention, you can indicate the format explicitly with the parameter <em>format</em>. We also need to specify the dpi (dots per inch), i.e.&nbsp;the quality of the picture. The quality of the picture depends on the media we want to use. 200 dpi is good enough for visualization on a screen.</p>
 </section>
@@ -740,7 +734,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </section>
-</section>
+</div></div></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -979,7 +973,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./data-science-with-pandas-3.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Science with Pandas (part 3: Combining DataFrames)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Combining DataFrames</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
