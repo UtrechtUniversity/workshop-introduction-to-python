@@ -23,7 +23,7 @@ book:
         - Introduction_to_python_3.ipynb
         - Introduction_to_python_4.ipynb
     - part: "Working with data"
-      chapter:
+      chapters:
         - data-science-with-pandas-1.ipynb
         - data-science-with-pandas-2.ipynb
         - data-science-with-pandas-3.ipynb
