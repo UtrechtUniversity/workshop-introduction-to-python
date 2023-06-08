@@ -432,6 +432,20 @@ Four is not equal to 4:  False</code></pre>
 <pre><code>False</code></pre>
 </div>
 </div>
+<p>Logical operators bind variables with different strengths. The <code>and</code> is stronger than the <code>or</code> and gets evaluated first in a boolean expression. So <code>a or b and c</code> will be evaluated like <code>a or (b and c)</code>, while in <code>(a or b) and c</code> first the value of the <code>or</code> is evaluated and then combined with <code>and c</code>. This leads to a different result.</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This expression 'a or b and c' evalutes to "</span>, a <span class="kw">or</span> b <span class="kw">and</span> c)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"And this is the same as 'a or (b and c)')"</span>, a <span class="kw">or</span> (b <span class="kw">and</span> c))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"But this expression evaluates '(a or b) and c' first the 'or' and generates:"</span>, (a <span class="kw">or</span> b) <span class="kw">and</span> c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This expression 'a or b and c' evalutes to  True
+And this is the same as 'a or (b and c)') True
+But this expression evaluates '(a or b) and c' first the 'or' and generates: False</code></pre>
+</div>
+</div>
 </section>
 <section id="exercises" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.4</span> Exercises</h2>
