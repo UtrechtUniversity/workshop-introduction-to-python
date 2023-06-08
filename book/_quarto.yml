@@ -10,12 +10,12 @@ book:
   chapters:
     - index.qmd
     - acknowledgements.qmd
+    - schedule.qmd
     - part: "Preparation"
       chapters: 
-        - schedule.qmd
         - installation-and-setup.qmd
         - course-materials.qmd
-    - part: "Python fundamentals"
+    - part: "Python Fundamentals"
       chapters: 
         - introduction.qmd
         - Introduction_to_python_1.ipynb
