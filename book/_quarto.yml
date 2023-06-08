@@ -22,13 +22,18 @@ book:
         - Introduction_to_python_2.ipynb
         - Introduction_to_python_3.ipynb
         - Introduction_to_python_4.ipynb
-    - part: data-science-with-pandas.ipynb
+    - part: "Working with data"
+      chapters:
+        - data-science-with-pandas-1.ipynb
+        - data-science-with-pandas-2.ipynb
+        - data-science-with-pandas-3.ipynb
+        - data-science-with-pandas-4.ipynb
     - what-next.qmd
     - references.qmd
   repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python
   repo-actions: [edit]
   sidebar:
-    logo: python-logo.png
+    logo: images/python-logo.png
 
 bibliography: references.bib
 
