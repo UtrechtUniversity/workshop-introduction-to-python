@@ -1,6 +1,0 @@
-cd "C:\Users\3976866\Documents\ITS repositories\workshop-introduction-to-python"
-conda activate .\env
-
-
-
-jupyter nbconvert --to notebook --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --inplace ./data-science-with-pandas-3.ipynb
