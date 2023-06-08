@@ -14,7 +14,7 @@ Don't forget to extract the contents of the zipped file after downloading!
 
 We will be using the following Jupyter Notebooks to work on the exercises:
 
-- python-101-exercises.ipynb
+- morning_exercises.ipynb
 - data-science-with-pandas-exercises.ipynb
 
 ## Data
