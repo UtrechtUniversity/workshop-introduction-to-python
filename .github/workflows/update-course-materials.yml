@@ -1,0 +1,13 @@
+on:
+  push:
+    branches: main
+    paths:
+      - 'course-materials/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Zip Course materials
+      run: zip -r course-materials.zip course-materials
