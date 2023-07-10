@@ -6,7 +6,7 @@ You can download the workshop materials collectively in a zipped file or separat
 
 The following zipped file contains the notebooks and data required for the workshop. 
 
-- [course materials.zip](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/course_materials.zip)
+- [course materials.zip](https://github.com/UtrechtUniversity/workshop-introduction-to-python/raw/main/course_materials.zip)
 
 Don't forget to extract the contents of the zipped file after downloading!
 

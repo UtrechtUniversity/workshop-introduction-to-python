@@ -70,7 +70,7 @@ version 9 and below, are not).
 
 ## Obtain lesson materials
 
-1. Download the zip folder with all [course materials](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/course-materials.zip)
+1. Download the zip folder with all [course materials](https://github.com/UtrechtUniversity/workshop-introduction-to-python/raw/main/course_materials.zip)
  (see [Course Materials][course-materials]).
 2. Create a folder called `intro-python` on your Desktop.
 3. Move downloaded files to `intro-python`.
