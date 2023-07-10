@@ -6,7 +6,7 @@ You can download the workshop materials collectively in a zipped file or separat
 
 The following zipped file contains the notebooks and data required for the workshop. 
 
-- link to zipped file
+- [course materials.zip](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/course_materials.zip)
 
 Don't forget to extract the contents of the zipped file after downloading!
 
@@ -15,7 +15,7 @@ Don't forget to extract the contents of the zipped file after downloading!
 We will be using the following Jupyter Notebooks to work on the exercises:
 
 - morning_exercises.ipynb
-- data-science-with-pandas-exercises.ipynb
+- afternoon_exercises.ipynb
 
 ## Data
 
