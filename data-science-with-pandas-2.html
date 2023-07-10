@@ -383,7 +383,7 @@ Name: weight, dtype: float64</code></pre>
 </section>
 <section id="selecting-data-using-column-names" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="selecting-data-using-column-names"><span class="header-section-number">7.2</span> Selecting data using column names</h2>
-<p>In the <a href="introduction_to_python_3.ipynb">morning session</a> we saw how to get specific values from dictionaries using keys. We can do the same with DataFrames, in fact we have already accessed the values in a column by the column name. In this section we will discover how to select values, slices of data and subsets of a DataFrame. There are two ways of selecting columns, we have already used the first:</p>
+<p>In the <a href="./Introduction_to_python_3.html">morning session</a> we saw how to get specific values from dictionaries using keys. We can do the same with DataFrames, in fact we have already accessed the values in a column by the column name. In this section we will discover how to select values, slices of data and subsets of a DataFrame. There are two ways of selecting columns, we have already used the first:</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'species_id'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -1867,7 +1867,7 @@ Name: weight, dtype: float64</code></pre>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>grouped_data.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_2333/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<pre><code>/tmp/ipykernel_2424/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   grouped_data.mean()</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="30">
