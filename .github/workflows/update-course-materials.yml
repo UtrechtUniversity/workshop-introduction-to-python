@@ -2,7 +2,7 @@ on:
   push:
     branches: main
     paths:
-      - 'course-materials/**'
+      - 'course_materials/**'
 
 jobs:
   build:
@@ -10,4 +10,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Zip Course materials
-      run: zip -r course-materials.zip course-materials
+      run: zip -r course_materials.zip course_materials
