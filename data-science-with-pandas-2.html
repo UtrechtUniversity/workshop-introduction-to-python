@@ -1867,7 +1867,7 @@ Name: weight, dtype: float64</code></pre>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>grouped_data.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_2368/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<pre><code>/tmp/ipykernel_2336/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   grouped_data.mean()</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="30">
@@ -1952,7 +1952,16 @@ Plot ids:  dict_keys(['F', 'M'])</code></pre>
 <section id="grouping-by-multiple-columns" class="level2" data-number="7.7">
 <h2 data-number="7.7" class="anchored" data-anchor-id="grouping-by-multiple-columns"><span class="header-section-number">7.7</span> Grouping by multiple columns</h2>
 <p>Now let’s have a look at a more complex grouping example. We want an overview statistics of the weight of all females and males by plot id. So in fact we want to group by <em>sex</em> and by <em>plot_id</em> at the same time.</p>
-<p>This will give us exactly 48 groups for our survey data: * female, plot id = 1 * female, plot id = 2 * … * female, plot id = 24 * male, plot id = 1 * … * male, plot id = 24</p>
+<p>This will give us exactly 48 groups for our survey data:</p>
+<ul>
+<li>female, plot id = 1</li>
+<li>female, plot id = 2</li>
+<li>…</li>
+<li>female, plot id = 24</li>
+<li>male, plot id = 1</li>
+<li>…</li>
+<li>male, plot id = 24</li>
+</ul>
 <p>Why 48 groups? We have 24 unique values for <em>plot_id</em>. Per plot we have two groups of samples, female and male. Hence, the grouping returns 48 groups.</p>
 <div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby([<span class="st">'sex'</span>, <span class="st">'plot_id'</span>])</span>
