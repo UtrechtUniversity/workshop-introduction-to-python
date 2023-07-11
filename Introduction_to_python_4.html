@@ -318,11 +318,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Please refer to https://docs.python.org/3/library/functions.html for more built-in functions.</p>
 <section id="writing-own-functions" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="writing-own-functions"><span class="header-section-number">5.1.1</span> Writing own functions</h3>
-<p>We will now turn to writing own functions. When should you write your own function?<br>
-1. If the functionality is not covered by an out-of-the-box function like the built-in functions or another python package<br>
-2. When code is getting pretty long, you can split it up into logical and reusable units<br>
-3. When code is often reused, e.g.&nbsp;you are reading in tens of spreadsheets and you need to clean them all in the same way. Instead of typing the line of code over and over again, it is more elegant and looks cleaner to create a function.<br>
-4. When code may be reused outside your current project. Scripts and the functions in a script can be imported in other scripts to be able to reuse them.</p>
+<p>We will now turn to writing own functions. When should you write your own function?</p>
+<ol type="1">
+<li>If the functionality is not covered by an out-of-the-box function like the built-in functions or another python package<br>
+</li>
+<li>When code is getting pretty long, you can split it up into logical and reusable units<br>
+</li>
+<li>When code is often reused, e.g.&nbsp;you are reading in tens of spreadsheets and you need to clean them all in the same way. Instead of typing the line of code over and over again, it is more elegant and looks cleaner to create a function.<br>
+</li>
+<li>When code may be reused outside your current project. Scripts and the functions in a script can be imported in other scripts to be able to reuse them.</li>
+</ol>
 <p>A big advantage of not having duplicate code inside your script or in multiple scripts is that when you want to make a slight modification to a function, you only have to do this modification in one place, instead of multiple lines that are doing more or less similar things.</p>
 <p>Python provides for this by letting us define things called ‘functions’. Let’s start by defining a function fahr_to_celsius that converts temperatures from Fahrenheit to Celsius:</p>
 <div class="cell" data-execution_count="2">

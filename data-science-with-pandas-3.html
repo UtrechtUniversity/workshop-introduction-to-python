@@ -281,13 +281,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#combining-dataframes" id="toc-combining-dataframes" class="nav-link active" data-scroll-target="#combining-dataframes"><span class="header-section-number">8.1</span> Combining DataFrames</a></li>
-  <li><a href="#concatenating-dataframes" id="toc-concatenating-dataframes" class="nav-link" data-scroll-target="#concatenating-dataframes"><span class="header-section-number">8.2</span> Concatenating DataFrames</a>
+  <li><a href="#concatenating-dataframes" id="toc-concatenating-dataframes" class="nav-link active" data-scroll-target="#concatenating-dataframes"><span class="header-section-number">8.1</span> Concatenating DataFrames</a>
   <ul class="collapse">
-  <li><a href="#vertical-concatenation" id="toc-vertical-concatenation" class="nav-link" data-scroll-target="#vertical-concatenation"><span class="header-section-number">8.2.1</span> Vertical concatenation</a></li>
-  <li><a href="#horizontal-concatenation" id="toc-horizontal-concatenation" class="nav-link" data-scroll-target="#horizontal-concatenation"><span class="header-section-number">8.2.2</span> Horizontal concatenation</a></li>
+  <li><a href="#vertical-concatenation" id="toc-vertical-concatenation" class="nav-link" data-scroll-target="#vertical-concatenation"><span class="header-section-number">8.1.1</span> Vertical concatenation</a></li>
+  <li><a href="#horizontal-concatenation" id="toc-horizontal-concatenation" class="nav-link" data-scroll-target="#horizontal-concatenation"><span class="header-section-number">8.1.2</span> Horizontal concatenation</a></li>
   </ul></li>
-  <li><a href="#joining-dataframes" id="toc-joining-dataframes" class="nav-link" data-scroll-target="#joining-dataframes"><span class="header-section-number">8.3</span> Joining DataFrames</a></li>
+  <li><a href="#joining-dataframes" id="toc-joining-dataframes" class="nav-link" data-scroll-target="#joining-dataframes"><span class="header-section-number">8.2</span> Joining DataFrames</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/UtrechtUniversity/workshop-introduction-to-python/blob/main/data-science-with-pandas-3.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -311,8 +310,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="combining-dataframes" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="combining-dataframes"><span class="header-section-number">8.1</span> Combining DataFrames</h2>
 <p>Previously, we have seen how to analyze and manipulate data in a single DataFrame. However, you will often find data saved into different files and, therefore, you may need to deal with several different pandas DataFrames.<br> In this session we will explore different ways of combining DataFrames into a single DataFrame.</p>
 <p>Let’s start loading the <code>pandas</code> library, reading two data sets into DataFrames, and having a quick look at the tabular data: <code>surveys.csv</code> and <code>species.csv</code></p>
 <div class="cell" data-execution_count="1">
@@ -504,9 +501,8 @@ None</code></pre>
 </div>
 </div>
 <p>We now have two DataFrames. The first, <code>surveys_df</code>, contains information on individuals of a species recorded in a survey, while the second, <code>species_df</code>, contains more detailed information on each species.</p>
-</section>
-<section id="concatenating-dataframes" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="concatenating-dataframes"><span class="header-section-number">8.2</span> Concatenating DataFrames</h2>
+<section id="concatenating-dataframes" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="concatenating-dataframes"><span class="header-section-number">8.1</span> Concatenating DataFrames</h2>
 <p>The first way we will combine DataFrames is <strong>concatenation</strong>, i.e.&nbsp;simply putting DataFrames one after the other either <strong>verically</strong> or <strong>horizontally</strong>.</p>
 <p>Concatenation can be used if the DataFrames are similar, meaning that they either have the same rows or columns. We will see examples of this later.</p>
 <p>To concatenate two DataFrames you will use the function <code>pd.concat()</code>, specifying as arguments the DataFrames to concatenate and <code>axis=0</code> or <code>axis=1</code> for vertical or horizontal concatenation, respectively.</p>
@@ -517,8 +513,8 @@ None</code></pre>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>surveys_df_sub_last10  <span class="op">=</span> surveys_df.tail(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We now have two DataFrames, one with the first ten rows of the original dataset, and another with the last ten rows.</p>
-<section id="vertical-concatenation" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="vertical-concatenation"><span class="header-section-number">8.2.1</span> Vertical concatenation</h3>
+<section id="vertical-concatenation" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="vertical-concatenation"><span class="header-section-number">8.1.1</span> Vertical concatenation</h3>
 Let’s start with <strong>vertical stacking</strong>. In this case the two DataFrames are simply stacked ‘on top of’ eachother (remember to specify <code>axis=0</code>).
 <div>
 <p><img src="images/vertical_stacking.jpeg" width="300"></p>
@@ -1111,8 +1107,8 @@ None</code></pre>
 <p><b>Exercise 11</b></p>
 <p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 11.</p>
 </div></section>
-<section id="horizontal-concatenation" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="horizontal-concatenation"><span class="header-section-number">8.2.2</span> Horizontal concatenation</h3>
+<section id="horizontal-concatenation" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="horizontal-concatenation"><span class="header-section-number">8.1.2</span> Horizontal concatenation</h3>
 It’s now time to try <strong>horizontal stacking</strong>. In this case the two DataFrames are simply put one after the other (remember to specify <code>axis=1</code>).
 <div>
 <p><img src="images/horizontal_stacking.jpeg" width="300"></p>
@@ -2048,8 +2044,8 @@ None</code></pre>
 <p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 12.</p>
 </div></section>
 </section>
-<section id="joining-dataframes" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="joining-dataframes"><span class="header-section-number">8.3</span> Joining DataFrames</h2>
+<section id="joining-dataframes" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="joining-dataframes"><span class="header-section-number">8.2</span> Joining DataFrames</h2>
 <p>Concatenating DataFrames allows you to combine two entire DataFrames into a single one. In many cases, you want to combine only selected parts of two DataFrames.</p>
 <p>You might, for example, want to merge rows of two DataFrames that have matching values in specific columns. The pandas function <code>merge()</code> performs an operation that you may know as a <em>join</em> if you worked with databases before. The join operation joins the content of two DataFrames in a particular way. There are different types of joins, but the workflow to perform a join operation is always the same:</p>
 <ol type="1">

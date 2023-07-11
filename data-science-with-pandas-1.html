@@ -281,14 +281,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#reading-and-exploring-data" id="toc-reading-and-exploring-data" class="nav-link active" data-scroll-target="#reading-and-exploring-data"><span class="header-section-number">7</span> Reading and Exploring data</a>
-  <ul class="collapse">
-  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><span class="header-section-number">7.1</span> Libraries</a></li>
-  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas"><span class="header-section-number">7.2</span> Pandas</a></li>
-  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries"><span class="header-section-number">7.3</span> Preliminaries</a></li>
-  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data"><span class="header-section-number">7.4</span> Reading data</a></li>
-  <li><a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="header-section-number">7.5</span> Exploring data</a></li>
-  </ul></li>
+  <li><a href="#libraries" id="toc-libraries" class="nav-link active" data-scroll-target="#libraries"><span class="header-section-number">6.1</span> Libraries</a></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas"><span class="header-section-number">6.2</span> Pandas</a></li>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries"><span class="header-section-number">6.3</span> Preliminaries</a></li>
+  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data"><span class="header-section-number">6.4</span> Reading data</a></li>
+  <li><a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="header-section-number">6.5</span> Exploring data</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/UtrechtUniversity/workshop-introduction-to-python/blob/main/data-science-with-pandas-1.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -312,24 +309,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="reading-and-exploring-data" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Reading and Exploring data</h1>
 <p>In the previous chapters we started with the fundamentals of Python. Now we will continue with more practical examples of doing data analysis with Python using the Pandas library.</p>
-<section id="libraries" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="libraries"><span class="header-section-number">7.1</span> Libraries</h2>
+<section id="libraries" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="libraries"><span class="header-section-number">6.1</span> Libraries</h2>
 <p>The power of Python (and many programming languages) is in the libraries.</p>
 <p>A library (aka package) is a collection of files (aka python scripts) that contains <strong>functions</strong> that can be used to perform specific tasks. A library may also contain data. The functions in a library are typically related and used for a specific purpose, e.g.&nbsp;there are libraries for plotting, handling audio data and machine learning and many many more. Some libraries are built into python, but most packages need to be installed before you can use it.</p>
 <p>Important to add: libraries are developed and maintained by other Python users. A popular library like Pandas has a large user base and the maintainers are supported by several funders, which makes it a reliable library that is updated very frequently. But this is not always the case, on the other side of the spectrum, a library can also be published once and not maintained at all.</p>
 </section>
-<section id="pandas" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="pandas"><span class="header-section-number">7.2</span> Pandas</h2>
+<section id="pandas" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="pandas"><span class="header-section-number">6.2</span> Pandas</h2>
 <p>The python library <a href="https://pandas.pydata.org/about/"><strong>Pandas</strong></a> is a popular open-source data analysis and data manipulation library for Python which was developed in 2008. The library has some similarities with R, mainly related to the DataFrame data type that is used to handle table like datasets.</p>
 <p>Pandas is widely used in data analyses and machine learning, as it provides powerful tools for data handling and manipulation. Furthermore, it integrates well with other Python libraries for data analysis, machine learning, and statistical analysis, such as NumPy, Scikit-Learn, and StatsModels.</p>
 <p>In this first chapter we will explore the main features of Pandas related to reading and exploring a dataset. In the following chapters we will go into finding, selecting and grouping data, merging datasets and visualization.</p>
 <p>For this purpose, we will be using data from the <a url="https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459">Portal Project Teaching Database</a>: real world example of life-history, population, and ecological data and, occasionally, a small ad-hoc dataset to exaplain DataFrame operations.</p>
 </section>
-<section id="preliminaries" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">7.3</span> Preliminaries</h2>
+<section id="preliminaries" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">6.3</span> Preliminaries</h2>
 <p>Before we start our journey into Pandas functionalities, there are some preliminary operations to run.</p>
 <p>The Pandas library is not a built-in library of python, it needs to be installed and loaded. Installations instructions for Pandas are in the the <a href="./installation-and-setup.html">setup instructions</a> for this course. Assuming you already installed it, let’s start importing the Pandas library and checking our installed version.</p>
 <div class="cell" data-tags="[]" data-execution_count="1">
@@ -360,8 +355,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If the result is True, we are all set up to go!</p>
 </section>
-<section id="reading-data" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">7.4</span> Reading data</h2>
+<section id="reading-data" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">6.4</span> Reading data</h2>
 <p>The very first operation we will perform is loading our data into a Pandas <strong>DataFrame</strong> using <code>pd.read_csv()</code>.</p>
 <div class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>surveys_df <span class="op">=</span> pd.read_csv(data_file)</span>
@@ -543,6 +538,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="alert alert-block alert-success">
 <p><b>Exercise 1</b></p>
 <p>Now go to the Jupyter Dashboard in your internet browser and open the notebook <code>afternoon_exercises.ipynb</code> and do exercise 1.</p>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -558,9 +554,9 @@ Note
 with the DataFrame specific method <code>shape</code>: <code>surveys_df.shape</code></p>
 </div>
 </div>
-</div></section>
-<section id="exploring-data" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="exploring-data"><span class="header-section-number">7.5</span> Exploring data</h2>
+</section>
+<section id="exploring-data" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="exploring-data"><span class="header-section-number">6.5</span> Exploring data</h2>
 <p>Now we will take a closer look into the actual values in the DataFrame. In order to do this it is helpful to have the column names at hand (easy for copy-pasting):</p>
 <div class="cell" data-tags="[]" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -635,6 +631,7 @@ Name: weight, Length: 35549, dtype: float64</code></pre>
 <div class="alert alert-block alert-success">
 <p><b>Exercise 2</b></p>
 <p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 2.</p>
+</div>
 <p>Instead of running the methods above one by one, we can obtain a statistical summary using the method <code>.describe()</code>. Let’s get a statistical summary for the weight column.</p>
 <div class="cell" data-tags="[]" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -671,7 +668,6 @@ Name: weight, dtype: float64</code></pre>
 <p>Perhaps we want to get some insight into the values for certain species or plots, in the next chapter we will go into <a href="./data-science-with-pandas-2.html">making groups and selections</a>.</p>
 
 
-</div></section>
 </section>
 
 </main> <!-- /main -->
