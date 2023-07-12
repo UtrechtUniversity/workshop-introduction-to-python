@@ -323,40 +323,114 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>surveys_df <span class="op">=</span> pd.read_csv(<span class="st">'../course_materials/data/surveys.csv'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>surveys_df.describe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>surveys_df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>&lt;bound method NDFrame.describe of        record_id  month  day  year  plot_id species_id  sex  hindfoot_length  \
-0              1      7   16  1977        2         NL    M             32.0   
-1              2      7   16  1977        3         NL    M             33.0   
-2              3      7   16  1977        2         DM    F             37.0   
-3              4      7   16  1977        7         DM    M             36.0   
-4              5      7   16  1977        3         DM    M             35.0   
-...          ...    ...  ...   ...      ...        ...  ...              ...   
-35544      35545     12   31  2002       15         AH  NaN              NaN   
-35545      35546     12   31  2002       15         AH  NaN              NaN   
-35546      35547     12   31  2002       10         RM    F             15.0   
-35547      35548     12   31  2002        7         DO    M             36.0   
-35548      35549     12   31  2002        5        NaN  NaN              NaN   
+<div>
 
-       weight  
-0         NaN  
-1         NaN  
-2         NaN  
-3         NaN  
-4         NaN  
-...       ...  
-35544     NaN  
-35545     NaN  
-35546    14.0  
-35547    51.0  
-35548     NaN  
 
-[35549 rows x 9 columns]&gt;</code></pre>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>35549.000000</td>
+<td>35549.000000</td>
+<td>35549.000000</td>
+<td>35549.000000</td>
+<td>35549.000000</td>
+<td>31438.000000</td>
+<td>32283.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>17775.000000</td>
+<td>6.477847</td>
+<td>15.991195</td>
+<td>1990.475231</td>
+<td>11.397001</td>
+<td>29.287932</td>
+<td>42.672428</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>10262.256696</td>
+<td>3.396925</td>
+<td>8.257366</td>
+<td>7.493355</td>
+<td>6.799406</td>
+<td>9.564759</td>
+<td>36.631259</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>1977.000000</td>
+<td>1.000000</td>
+<td>2.000000</td>
+<td>4.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>8888.000000</td>
+<td>4.000000</td>
+<td>9.000000</td>
+<td>1984.000000</td>
+<td>5.000000</td>
+<td>21.000000</td>
+<td>20.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>17775.000000</td>
+<td>6.000000</td>
+<td>16.000000</td>
+<td>1990.000000</td>
+<td>11.000000</td>
+<td>32.000000</td>
+<td>37.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>26662.000000</td>
+<td>10.000000</td>
+<td>23.000000</td>
+<td>1997.000000</td>
+<td>17.000000</td>
+<td>36.000000</td>
+<td>48.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>35549.000000</td>
+<td>12.000000</td>
+<td>31.000000</td>
+<td>2002.000000</td>
+<td>24.000000</td>
+<td>70.000000</td>
+<td>280.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 <p>In addition to learning about characteristics of our dataset as a whole, we may be interested in analyzing parts (subsets) of our data. For exampe we want to know how heavy our samples are:</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>count    32283.000000
 mean        42.672428
@@ -371,11 +445,11 @@ Name: weight, dtype: float64</code></pre>
 </div>
 <p>We can also extract one specific metric if we wish:</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].<span class="bu">min</span>()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].<span class="bu">max</span>()</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].mean()</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].std()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].<span class="bu">min</span>()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].<span class="bu">max</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].mean()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].std()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>32283</code></pre>
 </div>
@@ -385,7 +459,7 @@ Name: weight, dtype: float64</code></pre>
 <h2 data-number="7.2" class="anchored" data-anchor-id="selecting-data-using-column-names"><span class="header-section-number">7.2</span> Selecting data using column names</h2>
 <p>In the <a href="./Introduction_to_python_3.html">morning session</a> we saw how to get specific values from dictionaries using keys. We can do the same with DataFrames, in fact we have already accessed the values in a column by the column name. In this section we will discover how to select values, slices of data and subsets of a DataFrame. There are two ways of selecting columns, we have already used the first:</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'species_id'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'species_id'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>0         NL
 1         NL
@@ -402,7 +476,7 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>surveys_df.species_id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>surveys_df.species_id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>0         NL
 1         NL
@@ -420,7 +494,7 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 <p>How can we now create a DataFrame that only consists of the two columns <em>plot_id</em> and <em>species_id</em>?</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'plot_id'</span>, <span class="st">'species_id'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'plot_id'</span>, <span class="st">'species_id'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -498,8 +572,8 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 <p>Why the double <em>[[..]]</em>? What is the difference between <code>surveys_df['plot_id']</code> and <code>surveys_df[['plot_id']]</code>? Let us have a closer look:</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(surveys_df[<span class="st">'plot_id'</span>]))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(surveys_df[[<span class="st">'plot_id'</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(surveys_df[<span class="st">'plot_id'</span>]))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(surveys_df[[<span class="st">'plot_id'</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.series.Series'&gt;
 &lt;class 'pandas.core.frame.DataFrame'&gt;</code></pre>
@@ -507,10 +581,10 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 <p>The DataFrame is organised as a dictionary with the column names as keys and row numbers as keys for the values stored in a row. <code>surveys_df['plot_id']</code> will give us the value behind the key <em>plot_id</em>, in our case the series of numbers. When we ask for the values behind <em>plot_id</em> <strong>and</strong> <em>species_id</em> we need to give the DataFrame a <em>list</em> of column names like we did with <code>surveys_df[['plot_id', 'species_id']]</code>. When we pass a list of column names to a DataFrame, Pandas will execute for us the following code so that we do not have to worry about that any longer:</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>col1 <span class="op">=</span> surveys_df[<span class="st">'plot_id'</span>]</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>col2 <span class="op">=</span> surveys_df[<span class="st">'species_id'</span>]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>aggregatedData <span class="op">=</span> pd.DataFrame(<span class="bu">dict</span>(col1 <span class="op">=</span> col1, col2 <span class="op">=</span> col2))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>aggregatedData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>col1 <span class="op">=</span> surveys_df[<span class="st">'plot_id'</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>col2 <span class="op">=</span> surveys_df[<span class="st">'species_id'</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>aggregatedData <span class="op">=</span> pd.DataFrame(<span class="bu">dict</span>(col1 <span class="op">=</span> col1, col2 <span class="op">=</span> col2))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>aggregatedData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
@@ -591,7 +665,7 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 <h2 data-number="7.3" class="anchored" data-anchor-id="slicing-subsets-of-rows"><span class="header-section-number">7.3</span> Slicing subsets of rows</h2>
 <p>Slicing using the <code>[]</code> operator selects a set of rows and/or columns from a DataFrame. To slice out a set of rows, you use the following syntax: <code>data[start:stop]</code>. When slicing in pandas the start bound is included in the output. The stop bound is not included. The slicing stops <em>before</em> the stop bound. So if you want to select rows 0, 1 and 2 your code would look like this:</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
@@ -657,8 +731,8 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 <p>We can select specific ranges of our data in both the row and column directions using either label or integer-based indexing. The respective functions for that are called <code>loc</code> (label-based indexing) and <code>iloc</code> (integer-based indexing).</p>
 <p>Let’s have a look at <code>iloc</code> first. where we use the index of a row and/or column to select it. In the example below we select the first three entries and the columns month, day and year (the second, third and fourth column, remember indexing starts at 0 on Python). The first range of numbers selects the rows, the second the columns:</p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iloc[row slicing, column slicing]</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>surveys_df.iloc[<span class="dv">0</span>:<span class="dv">3</span>, <span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iloc[row slicing, column slicing]</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>surveys_df.iloc[<span class="dv">0</span>:<span class="dv">3</span>, <span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
@@ -699,7 +773,7 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 <p>We can achieve the same with the function <code>loc</code>, only instead of column indices, we use the column labels this time. So, we need to know the names of the columns:</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[<span class="dv">0</span>:<span class="dv">3</span>, [<span class="st">'month'</span>, <span class="st">'day'</span>, <span class="st">'year'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[<span class="dv">0</span>:<span class="dv">3</span>, [<span class="st">'month'</span>, <span class="st">'day'</span>, <span class="st">'year'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
@@ -744,9 +818,9 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<p>And there is a third way: In a forst step we select the columns by their names <code>surveys_df[['month', 'day', 'year']]</code>. From the resulting DataFrame we then, in a second step, select the first three rows <code>[0:3]</code>. Putting the two steps together, the code looks like this:</p>
+<p>And there is a third way: In a first step we select the columns by their names <code>surveys_df[['month', 'day', 'year']]</code>. From the resulting DataFrame we then, in a second step, select the first three rows <code>[0:3]</code>. Putting the two steps together, the code looks like this:</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'month'</span>, <span class="st">'day'</span>, <span class="st">'year'</span>]][<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'month'</span>, <span class="st">'day'</span>, <span class="st">'year'</span>]][<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
@@ -789,23 +863,80 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="interactive-part"><span class="header-section-number">7.3.1</span> Interactive Part</h3>
 <p>Let us further explore the <code>loc</code> and <code>iloc</code> functions as they are more powerful. Have a look at the examples below and predict their outcome before hitting enter.</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select all columns for rows of index values 0 and 10</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[[<span class="dv">0</span>, <span class="dv">10</span>], :]</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># What does this do?</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[<span class="dv">0</span>, [<span class="st">'species_id'</span>, <span class="st">'plot_id'</span>, <span class="st">'weight'</span>]]</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># What happens when you type the code below?</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[[<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">35549</span>], :]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select all columns for rows of index values 0 and 10</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[[<span class="dv">0</span>, <span class="dv">10</span>], :]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">record_id</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">plot_id</th>
+<th data-quarto-table-cell-role="th">species_id</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">hindfoot_length</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>2</td>
+<td>NL</td>
+<td>M</td>
+<td>32.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11</td>
+<td>7</td>
+<td>16</td>
+<td>1977</td>
+<td>5</td>
+<td>DS</td>
+<td>F</td>
+<td>53.0</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What does this do?</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[<span class="dv">0</span>, [<span class="st">'species_id'</span>, <span class="st">'plot_id'</span>, <span class="st">'weight'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>species_id     NL
+plot_id         2
+weight        NaN
+Name: 0, dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What happens when you type the code below?</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>surveys_df.loc[[<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">35549</span>], :]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>KeyError: '[35549] not in index'</code></pre>
 </div>
 </div>
 <p>We can also extract single values from our DataFrame:</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data.iloc[row, column]</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>surveys_df.iloc[<span class="dv">2</span>, <span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data.iloc[row, column]</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>surveys_df.iloc[<span class="dv">2</span>, <span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>'F'</code></pre>
 </div>
 </div>
@@ -813,24 +944,24 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 <section id="summary-selecting-slices-rows-and-columns" class="level3" data-number="7.3.2">
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="summary-selecting-slices-rows-and-columns"><span class="header-section-number">7.3.2</span> Summary: Selecting slices, rows and columns</h3>
 <p>In the first two methods we extract the column specifying its name. The third method is essentially identical to the first one as the 6th (index 5) element of the Series <code>surveys_df.columns</code> is <em>species_id</em>. The fourth method uses the method <code>iloc</code> to select <em>all</em> the rows of the 6th column.</p>
-<div class="cell" data-tags="[]" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># By name</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Method1</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>plot_id_1 <span class="op">=</span> surveys_df[<span class="st">'species_id'</span>]</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Method2</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plot_id_2 <span class="op">=</span> surveys_df.species_id</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># By location</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Method3</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>plot_id_3 <span class="op">=</span> surveys_df[surveys_df.columns[<span class="dv">5</span>]]</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Method4</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>plot_id_4 <span class="op">=</span> surveys_df.iloc[:,<span class="dv">5</span>]</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># By name</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Method1</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>plot_id_1 <span class="op">=</span> surveys_df[<span class="st">'species_id'</span>]</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Method2</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>plot_id_2 <span class="op">=</span> surveys_df.species_id</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># By location</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Method3</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>plot_id_3 <span class="op">=</span> surveys_df[surveys_df.columns[<span class="dv">5</span>]]</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Method4</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>plot_id_4 <span class="op">=</span> surveys_df.iloc[:,<span class="dv">5</span>]</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="alert alert-block alert-success">
 <p><b>Exercise 3 to 5</b></p>
@@ -839,10 +970,10 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 <section id="subsetting-data-according-to-user-defined-criteria" class="level3" data-number="7.3.3">
 <h3 data-number="7.3.3" class="anchored" data-anchor-id="subsetting-data-according-to-user-defined-criteria"><span class="header-section-number">7.3.3</span> Subsetting Data according to user-defined criteria</h3>
 <p>We can extract subsets of our DataFrame following the general syntax <code>data_frame[&lt;condition_on_data&gt;]</code> <condition_on_data> is a conditional statement on the DataFrame content itself. You may think at the conditional statement as a question or query you ask to your DataFrame. Here there are some examples:</condition_on_data></p>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data collected in the year 2002?</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df.year <span class="op">==</span> <span class="dv">2002</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data collected in the year 2002?</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df.year <span class="op">==</span> <span class="dv">2002</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -1001,10 +1132,10 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data NOT collected in the year 2002?</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df.year <span class="op">!=</span> <span class="dv">2002</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell" data-tags="[]" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data NOT collected in the year 2002?</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df.year <span class="op">!=</span> <span class="dv">2002</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -1163,10 +1294,10 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data NOT collected in the year 2002? (different syntax)</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="op">~</span>(surveys_df.year <span class="op">==</span> <span class="dv">2002</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell" data-tags="[]" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data NOT collected in the year 2002? (different syntax)</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="op">~</span>(surveys_df.year <span class="op">==</span> <span class="dv">2002</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
 
@@ -1326,10 +1457,10 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 </div>
 <p>Our filtering conditions may be very specific, they can target different columns in the DataFrame, and they can be combined using the logical operator “&amp;” which means <strong>and</strong>:</p>
-<div class="cell" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data collected between 2000 and 2002 on female species?</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df.year <span class="op">&gt;=</span> <span class="dv">2000</span>) <span class="op">&amp;</span> (surveys_df.year <span class="op">&lt;=</span> <span class="dv">2002</span>) <span class="op">&amp;</span> (surveys_df.sex <span class="op">==</span> <span class="st">'F'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell" data-tags="[]" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data collected between 2000 and 2002 on female species?</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df.year <span class="op">&gt;=</span> <span class="dv">2000</span>) <span class="op">&amp;</span> (surveys_df.year <span class="op">&lt;=</span> <span class="dv">2002</span>) <span class="op">&amp;</span> (surveys_df.sex <span class="op">==</span> <span class="st">'F'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
 
@@ -1488,11 +1619,11 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<p>We have also an operator for <strong>or</strong>. Below we filter for rows with collected data on female species in the year 2000 or 2002. “Give me all data where sex is Female and data is collected in 2000 or 2002”.</p>
+<p>Below we filter for rows with collected data on female species in the year 2000 or 2002. “Give me all data where sex is Female and data is collected in 2000 or 2002”.</p>
 <p>The method <code>isin()</code> allows to specify a range of “permitted” values for a certain column. Here it follows another example:</p>
-<div class="cell" data-tags="[]" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df.year <span class="op">==</span> <span class="dv">2000</span>) <span class="op">&amp;</span> (surveys_df.sex <span class="op">==</span> <span class="st">'F'</span>) <span class="op">&amp;</span> (surveys_df.month.isin([<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>]))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df.year <span class="op">==</span> <span class="dv">2000</span>) <span class="op">&amp;</span> (surveys_df.sex <span class="op">==</span> <span class="st">'F'</span>) <span class="op">&amp;</span> (surveys_df.month.isin([<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>]))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
 
@@ -1651,68 +1782,114 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 </div>
 </div>
 </div>
+<p>We have also an operator for <strong>or</strong>. For the sake of showing the syntax, below we fetch all entries from the year 2000 or from the gender female:</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df[(surveys_df.year <span class="op">==</span> <span class="dv">2000</span>) <span class="op">|</span> (surveys_df.sex <span class="op">==</span> <span class="st">'F'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       record_id  month  day  year  plot_id species_id sex  hindfoot_length  \
+2              3      7   16  1977        2         DM   F             37.0   
+6              7      7   16  1977        2         PE   F              NaN   
+8              9      7   16  1977        1         DM   F             34.0   
+9             10      7   16  1977        6         PF   F             20.0   
+10            11      7   16  1977        5         DS   F             53.0   
+...          ...    ...  ...   ...      ...        ...  ..              ...   
+35539      35540     12   31  2002       15         PB   F             26.0   
+35540      35541     12   31  2002       15         PB   F             24.0   
+35541      35542     12   31  2002       15         PB   F             26.0   
+35542      35543     12   31  2002       15         PB   F             27.0   
+35546      35547     12   31  2002       10         RM   F             15.0   
+
+       weight  
+2         NaN  
+6         NaN  
+8         NaN  
+9         NaN  
+10        NaN  
+...       ...  
+35539    23.0  
+35540    31.0  
+35541    29.0  
+35542    34.0  
+35546    14.0  
+
+[16552 rows x 9 columns]</code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="dataframe-cleaning" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="dataframe-cleaning"><span class="header-section-number">7.4</span> DataFrame Cleaning</h2>
 <p>A simple exploration of our DataFrame showed us that there are columns full of invalid values (NaN). One of the most important preliminary operations of data analysis is cleaning your data set, i.e.&nbsp;“getting rid” of non-numerical or non-character values. we want to make sure that our data only contains meaningful values.</p>
 <p>Now that we mastered selecting, slicing, and subsetting, we can easily clean our DataFrame with few lines of code. Let us have a look at the function <em>isnull</em>. It is a Pandas function which we imported at the beginning with <code>import pandas as pd</code>. Now we can call the functin like this:</p>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pd.isnull(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>pd.isnull(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>pd.isnull([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">''</span>, <span class="bu">dict</span>(), <span class="va">None</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>pd.isnull([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">''</span>, <span class="bu">dict</span>(), <span class="va">None</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>array([False, False, False, False, False,  True])</code></pre>
 </div>
 </div>
 <p>We can pass single values or array-like values to the function. The function will then check for us whether each value is <code>NaN</code> (Not a Number) or <code>None</code> and return a boolean array. Note, that values like the empty string (a strin without any characters in it) or an empty dictionary etc will not count as <code>null</code> value, they do have a type, they only do not contain any values but they are something. <code>null</code> values in python are only <code>NaN</code> and <code>None</code>. When you read in tabular data into a DataFrame empty cells will be shown as <code>NaN</code>. <code>None</code> stands for the type <em>NoneType</em>, which we will not dive into further in this workshop.</p>
 <p>With all that kowledge we can now detect <code>null</code> values in the column <em>weight</em> and do something about it. Let us have a look how many <code>null</code> values we can find:</p>
-<div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Length of the full dataframe: "</span>, <span class="bu">len</span>(surveys_df))</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>pd.isnull(surveys_df.weight) <span class="co"># boolean array indicating where null values are found</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>surveys_df[pd.isnull(surveys_df.weight)] <span class="co"># all lines that have a null value in the column weight</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(surveys_df[pd.isnull(surveys_df.weight)]) <span class="co"># length</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Length of the full dataframe:  35549</code></pre>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>pd.isnull(surveys_df.weight) <span class="co"># boolean array indicating where null values are found</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>0         True
+1         True
+2         True
+3         True
+4         True
+         ...  
+35544     True
+35545     True
+35546    False
+35547    False
+35548     True
+Name: weight, Length: 35549, dtype: bool</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+</div>
+<p>We can use the Series with the boolean values as a mask on the DataFrame. Here we only extract the rows of <code>surveys_df</code> where the weight is not defined:</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>surveys_df[pd.isnull(surveys_df.weight)] <span class="co"># all lines that have a null value in the column weight</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(surveys_df[pd.isnull(surveys_df.weight)]) <span class="co"># length</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>3266</code></pre>
 </div>
 </div>
 <p>As you can see, in our whole dataset 3266 weight values are not usable. We need to do something with those values.</p>
 <p>Another thing that would not make sense are negative weights. Let’s check whether the remaining 32283 values in the <em>weight</em> column are positive:</p>
-<div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(surveys_df[surveys_df.weight <span class="op">&gt;</span> <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(surveys_df[surveys_df.weight <span class="op">&gt;</span> <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>32283</code></pre>
 </div>
 </div>
-<p>As we see, we have 32283 non-negative <em>weighht</em> values. The remaining 3266 values in the <em>weight</em> column are not set, so they are <code>null</code>. How can we impute the values? Let us have a look at the average weight:</p>
-<div class="cell" data-tags="[]" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>surveys_df.weight.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<p>As we see, we have 32283 non-negative <em>weight</em> values. The remaining 3266 values in the <em>weight</em> column are not set, so they are <code>null</code>. How can we impute the values? Let us have a look at the average weight:</p>
+<div class="cell" data-tags="[]" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>surveys_df.weight.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>42.672428212991356</code></pre>
 </div>
 </div>
 <p>A smooth run, without errors or warnings. As we said several times, Pandas is a library designed for data analysis and when performing data analysis it is very common to deal with not numeric values. In particular, the <code>.mean()</code> method has an argument called <em>skipna</em> that when set <code>True</code> (default value, so we do not need to specify it) excludes NaN values. This means that, in this case, Pandas simply ignores whatever it is not numeric and it performs computations only on numeric values.</p>
 <p>If we are not happy with Pandas default behaviour, we can manually decide which value to assign to cells that contain <code>null</code> values. One possible choice is setting them to zero. To do that, we just need to apply the method <code>.fillna(&lt;value&gt;)</code>, where <code>&lt;value&gt;</code> is the number we want to substitute to the <code>null</code> value with (in our case, 0).</p>
-<div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>cleaned_weight1 <span class="op">=</span> surveys_df.weight.fillna(<span class="dv">0</span>)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>cleaned_weight_ave1 <span class="op">=</span> cleaned_weight1.mean()</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleaned_weight_ave1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>cleaned_weight1 <span class="op">=</span> surveys_df.weight.fillna(<span class="dv">0</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>cleaned_weight_ave1 <span class="op">=</span> cleaned_weight1.mean()</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleaned_weight_ave1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>38.751976145601844</code></pre>
 </div>
 </div>
 <p>You see that when filling the <code>null</code> values with 0, the average weight decreases. This is because the mean is now computed on data with many more zeros compared to the previous one. Conscious of this problem, we may now choose a more appropriate value to “fill” our <code>null</code> values. How about we use the “clean” mean of our first computation?</p>
-<div class="cell" data-tags="[]" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>cleaned_weight2 <span class="op">=</span> surveys_df.weight.fillna(surveys_df.weight.mean())</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>cleaned_weight_ave2 <span class="op">=</span> cleaned_weight2.mean()</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleaned_weight_ave2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>cleaned_weight2 <span class="op">=</span> surveys_df.weight.fillna(surveys_df.weight.mean())</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>cleaned_weight_ave2 <span class="op">=</span> cleaned_weight2.mean()</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleaned_weight_ave2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>42.672428212991356</code></pre>
 </div>
@@ -1726,9 +1903,9 @@ Name: species_id, Length: 35549, dtype: object</code></pre>
 <h2 data-number="7.5" class="anchored" data-anchor-id="grouping"><span class="header-section-number">7.5</span> Grouping</h2>
 <p>We often want to calculate summary statistics grouped by subsets or attributes within fields of our data. For example, we might want to calculate the average weight of all individuals per site.</p>
 <p>As we have seen above we can calculate basic statistics for all records in a single column using the syntax below:</p>
-<div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>count    32283.000000
 mean        42.672428
 std         36.631259
@@ -1741,10 +1918,10 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 <p>If we want to summarize by one or more variables, for example sex, we can use Pandas’ <code>.groupby()</code> method. Once we’ve created a groupby DataFrame, we can quickly calculate summary statistics by a group of our choice.</p>
-<div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby(<span class="st">'sex'</span>)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>grouped_data.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby(<span class="st">'sex'</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>grouped_data.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
 <div>
 
 
@@ -1864,13 +2041,13 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 <p>The output is a bit overwhelming. Let’s just have a look at one statistical value, the mean, to understand what is happening here:</p>
-<div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>grouped_data.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>grouped_data.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_2336/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<pre><code>/tmp/ipykernel_2301/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   grouped_data.mean()</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <div>
 
 
@@ -1925,27 +2102,23 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 <p>We see that the data is divided into two groups, one group where the value in the column <em>sex</em> equals “F” and another group where the value in the column <em>sex</em> equals “M”. The statistics is then calculated for all samples in that specific group for each of the columns in the dataframe. Note that samples annotated with sex equals NaN and column values with NaN are left out.</p>
-<div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby(...)</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>grouped_data[...].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>TypeError: 'ellipsis' object is not callable</code></pre>
-</div>
-</div>
 </section>
 <section id="structure-of-a-groupby-object" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="structure-of-a-groupby-object"><span class="header-section-number">7.6</span> Structure of a groupby object</h2>
 <p>We can investigate which rows are assigned to which group as follows:</p>
-<div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(grouped_data.groups)) <span class="co"># dictionary</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Plot ids: "</span>, grouped_data.groups.keys()) <span class="co"># keys are the unique values of the column we grouped by</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Rows belonging to plot id "</span>, <span class="dv">1</span>, <span class="st">": "</span>, grouped_data.groups[<span class="dv">1</span>]) <span class="co"># values are row indexes </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(grouped_data.groups)) <span class="co"># dictionary</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Plot ids: "</span>, grouped_data.groups.keys()) <span class="co"># keys are the unique values of the column we grouped by</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Rows belonging to sex 'F': "</span>, grouped_data.groups[<span class="st">'F'</span>]) <span class="co"># values are row indexes </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.io.formats.printing.PrettyDict'&gt;
-Plot ids:  dict_keys(['F', 'M'])</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>KeyError: 1</code></pre>
+Plot ids:  dict_keys(['F', 'M'])
+Rows belonging to sex 'F':  Int64Index([    2,     6,     8,     9,    10,    14,    15,    16,    19,
+               20,
+            ...
+            35531, 35532, 35535, 35536, 35537, 35539, 35540, 35541, 35542,
+            35546],
+           dtype='int64', length=15690)</code></pre>
 </div>
 </div>
 </section>
@@ -1963,10 +2136,10 @@ Plot ids:  dict_keys(['F', 'M'])</code></pre>
 <li>male, plot id = 24</li>
 </ul>
 <p>Why 48 groups? We have 24 unique values for <em>plot_id</em>. Per plot we have two groups of samples, female and male. Hence, the grouping returns 48 groups.</p>
-<div class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby([<span class="st">'sex'</span>, <span class="st">'plot_id'</span>])</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>grouped_data[<span class="st">"weight"</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby([<span class="st">'sex'</span>, <span class="st">'plot_id'</span>])</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>grouped_data[<span class="st">"weight"</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
 <div>
 
 
@@ -2538,22 +2711,70 @@ Plot ids:  dict_keys(['F', 'M'])</code></pre>
 <section id="counting-and-plotting" class="level2" data-number="7.8">
 <h2 data-number="7.8" class="anchored" data-anchor-id="counting-and-plotting"><span class="header-section-number">7.8</span> Counting and plotting</h2>
 <p>Another very useful outcome of grouping is the possibility of performing selective counting. For example, let’s see how to count the number of records per species. We just need to remember that each species has a unique ID and that records are identified by another ID stored in the column record ID. We will first group our data according to the species ID and then, for each group, we will count the number of records. Several consecutive operations that, once again, Pandas allows us to execute in a single line.</p>
-<div class="cell" data-tags="[]" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>species_counts <span class="op">=</span> surveys_df.groupby(<span class="st">'species_id'</span>)[<span class="st">'record_id'</span>].count()</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(grouped_species_counts))</span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>species_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'grouped_species_counts' is not defined</code></pre>
+<div class="cell" data-tags="[]" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>species_counts <span class="op">=</span> surveys_df.groupby(<span class="st">'species_id'</span>)[<span class="st">'record_id'</span>].count()</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>species_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>species_id
+AB      303
+AH      437
+AS        2
+BA       46
+CB       50
+CM       13
+CQ       16
+CS        1
+CT        1
+CU        1
+CV        1
+DM    10596
+DO     3027
+DS     2504
+DX       40
+NL     1252
+OL     1006
+OT     2249
+OX       12
+PB     2891
+PC       39
+PE     1299
+PF     1597
+PG        8
+PH       32
+PI        9
+PL       36
+PM      899
+PP     3123
+PU        5
+PX        6
+RF       75
+RM     2609
+RO        8
+RX        2
+SA       75
+SC        1
+SF       43
+SH      147
+SO       43
+SS      248
+ST        1
+SU        5
+UL        4
+UP        8
+UR       10
+US        4
+ZL        2
+Name: record_id, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can also plot the information for better overview. We will learn more about plotting after the next chapter.</p>
-<div class="cell" data-tags="[]" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>species_counts.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell" data-tags="[]" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>species_counts.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>&lt;AxesSubplot: xlabel='species_id'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-2_files/figure-html/cell-36-output-2.png" width="593" height="438"></p>
+<p><img src="data-science-with-pandas-2_files/figure-html/cell-39-output-2.png" width="593" height="438"></p>
 </div>
 </div>
 </section>
