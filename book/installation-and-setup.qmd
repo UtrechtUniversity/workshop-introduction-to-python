@@ -192,4 +192,4 @@ The instructions on this page were adapted from the [setup instructions of the S
 [python]: https://python.org
 [swcarpentry-python]: https://swcarpentry.github.io/python-novice-inflammation/setup.html
 [walk-in-hours]: https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software
-[zipfile-course-materials](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/introduction.python.zip)
+[zipfile-course-materials](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/course_materials.zip)
