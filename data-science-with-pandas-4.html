@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working with data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-4.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-science-with-pandas-1.html">Working With Data</a></li><li class="breadcrumb-item"><a href="./data-science-with-pandas-4.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Visualization</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -126,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/python-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/python-hex-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Python &amp; Data</a> 
@@ -154,6 +154,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Acknowledgements</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -165,14 +171,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./schedule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./installation-and-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation &amp; Setup</span></span></a>
+ <span class="menu-text">Installation &amp; Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Python fundamentals</span></a>
+ <span class="menu-text">Python Fundamentals</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Working with data</span></a>
+ <span class="menu-text">Working With Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -343,37 +343,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.hist(sample_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>(array([2.100e+01, 1.590e+02, 7.940e+02, 2.227e+03, 3.179e+03, 2.395e+03,
-        9.890e+02, 2.100e+02, 2.400e+01, 2.000e+00]),
- array([-0.37183756, -0.29046858, -0.2090996 , -0.12773062, -0.04636164,
-         0.03500733,  0.11637631,  0.19774529,  0.27911427,  0.36048325,
-         0.44185223]),
+<pre><code>(array([   5.,   67.,  346., 1321., 2640., 2989., 1806.,  666.,  143.,
+          17.]),
+ array([-0.40882622, -0.33052034, -0.25221447, -0.1739086 , -0.09560273,
+        -0.01729686,  0.06100902,  0.13931489,  0.21762076,  0.29592663,
+         0.3742325 ]),
  &lt;BarContainer object of 10 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-4_files/figure-html/cell-5-output-2.png" width="583" height="411"></p>
+<p><img src="data-science-with-pandas-4_files/figure-html/cell-5-output-2.png" width="586" height="411"></p>
 </div>
 </div>
 <p>As we expected, the histogram is centered around 0 and we can already see the bell shape arising among the blocks. The default values of histogram bins (blocks) is 10, so in our case 10000 points are subdivided into 10 bins, but we can change that by specifying the parameter <code>bins</code>:</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.hist(sample_data, bins<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(array([4.000e+00, 3.000e+00, 1.400e+01, 2.600e+01, 4.600e+01, 8.700e+01,
-        1.550e+02, 2.270e+02, 4.120e+02, 5.550e+02, 7.580e+02, 9.140e+02,
-        1.041e+03, 1.083e+03, 1.055e+03, 9.330e+02, 8.300e+02, 6.320e+02,
-        4.900e+02, 2.960e+02, 2.030e+02, 1.190e+02, 6.100e+01, 3.000e+01,
-        1.400e+01, 7.000e+00, 3.000e+00, 1.000e+00, 0.000e+00, 1.000e+00]),
- array([-0.37183756, -0.34471456, -0.31759157, -0.29046858, -0.26334559,
-        -0.23622259, -0.2090996 , -0.18197661, -0.15485361, -0.12773062,
-        -0.10060763, -0.07348464, -0.04636164, -0.01923865,  0.00788434,
-         0.03500733,  0.06213033,  0.08925332,  0.11637631,  0.14349931,
-         0.1706223 ,  0.19774529,  0.22486828,  0.25199128,  0.27911427,
-         0.30623726,  0.33336026,  0.36048325,  0.38760624,  0.41472923,
-         0.44185223]),
+<pre><code>(array([1.000e+00, 0.000e+00, 4.000e+00, 1.100e+01, 1.700e+01, 3.900e+01,
+        6.400e+01, 1.130e+02, 1.690e+02, 2.800e+02, 4.330e+02, 6.080e+02,
+        7.480e+02, 8.830e+02, 1.009e+03, 1.040e+03, 1.038e+03, 9.110e+02,
+        7.610e+02, 6.170e+02, 4.280e+02, 3.180e+02, 2.040e+02, 1.440e+02,
+        7.700e+01, 4.600e+01, 2.000e+01, 1.000e+01, 3.000e+00, 4.000e+00]),
+ array([-0.40882622, -0.38272426, -0.3566223 , -0.33052034, -0.30441839,
+        -0.27831643, -0.25221447, -0.22611252, -0.20001056, -0.1739086 ,
+        -0.14780664, -0.12170469, -0.09560273, -0.06950077, -0.04339881,
+        -0.01729686,  0.0088051 ,  0.03490706,  0.06100902,  0.08711097,
+         0.11321293,  0.13931489,  0.16541684,  0.1915188 ,  0.21762076,
+         0.24372272,  0.26982467,  0.29592663,  0.32202859,  0.34813055,
+         0.3742325 ]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-4_files/figure-html/cell-6-output-2.png" width="583" height="411"></p>
+<p><img src="data-science-with-pandas-4_files/figure-html/cell-6-output-2.png" width="586" height="411"></p>
 </div>
 </div>
 <p>You may have noticed that increasing the number of bins, the bell shape of the histogram is even more evident.</p>
@@ -415,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Text(0.5, 0.98, 'Histogram')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-4_files/figure-html/cell-7-output-2.png" width="601" height="477"></p>
+<p><img src="data-science-with-pandas-4_files/figure-html/cell-7-output-2.png" width="604" height="477"></p>
 </div>
 </div>
 <p>Note: To plot data on our Axes we used the same plotting methods used in the previous examples. We used <code>hist()</code> sampling the data in 30 bins, but this time we had to call the function from the Axes object, so <code>ax.hist()</code>.</p>
@@ -445,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Text(0.5, 0, 'value')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-4_files/figure-html/cell-8-output-2.png" width="973" height="504"></p>
+<p><img src="data-science-with-pandas-4_files/figure-html/cell-8-output-2.png" width="973" height="503"></p>
 </div>
 </div>
 <p>Instead of plotting side by side, it is also possible to add a plot inside (or actually overlaying another plot).</p>
@@ -454,22 +454,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()  <span class="co"># initiate an empty figure and axis matplotlib object</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ax.hist(sample_data, bins<span class="op">=</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>(array([4.000e+00, 3.000e+00, 1.400e+01, 2.600e+01, 4.600e+01, 8.700e+01,
-        1.550e+02, 2.270e+02, 4.120e+02, 5.550e+02, 7.580e+02, 9.140e+02,
-        1.041e+03, 1.083e+03, 1.055e+03, 9.330e+02, 8.300e+02, 6.320e+02,
-        4.900e+02, 2.960e+02, 2.030e+02, 1.190e+02, 6.100e+01, 3.000e+01,
-        1.400e+01, 7.000e+00, 3.000e+00, 1.000e+00, 0.000e+00, 1.000e+00]),
- array([-0.37183756, -0.34471456, -0.31759157, -0.29046858, -0.26334559,
-        -0.23622259, -0.2090996 , -0.18197661, -0.15485361, -0.12773062,
-        -0.10060763, -0.07348464, -0.04636164, -0.01923865,  0.00788434,
-         0.03500733,  0.06213033,  0.08925332,  0.11637631,  0.14349931,
-         0.1706223 ,  0.19774529,  0.22486828,  0.25199128,  0.27911427,
-         0.30623726,  0.33336026,  0.36048325,  0.38760624,  0.41472923,
-         0.44185223]),
+<pre><code>(array([1.000e+00, 0.000e+00, 4.000e+00, 1.100e+01, 1.700e+01, 3.900e+01,
+        6.400e+01, 1.130e+02, 1.690e+02, 2.800e+02, 4.330e+02, 6.080e+02,
+        7.480e+02, 8.830e+02, 1.009e+03, 1.040e+03, 1.038e+03, 9.110e+02,
+        7.610e+02, 6.170e+02, 4.280e+02, 3.180e+02, 2.040e+02, 1.440e+02,
+        7.700e+01, 4.600e+01, 2.000e+01, 1.000e+01, 3.000e+00, 4.000e+00]),
+ array([-0.40882622, -0.38272426, -0.3566223 , -0.33052034, -0.30441839,
+        -0.27831643, -0.25221447, -0.22611252, -0.20001056, -0.1739086 ,
+        -0.14780664, -0.12170469, -0.09560273, -0.06950077, -0.04339881,
+        -0.01729686,  0.0088051 ,  0.03490706,  0.06100902,  0.08711097,
+         0.11321293,  0.13931489,  0.16541684,  0.1915188 ,  0.21762076,
+         0.24372272,  0.26982467,  0.29592663,  0.32202859,  0.34813055,
+         0.3742325 ]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-4_files/figure-html/cell-9-output-2.png" width="583" height="411"></p>
+<p><img src="data-science-with-pandas-4_files/figure-html/cell-9-output-2.png" width="586" height="411"></p>
 </div>
 </div>
 <p>Once we defined a Figure and an Axes, we can add other Axes to our Figure using <code>fig.add_axes([left,bottom,length,height])</code> where the argument is a list containing the coordinates of our new Axes in the following format: [left edge, bottom edge, length, and height]. The left edge and bottom edgeare scaled from 0 to 1, so that 0.5 corresponds to the center of the Figure. For example, the list of coordinates [0.5,0.5,0.33,0.33] will locate the bottom-left corner of our additional Axis at the very center of the Figure. The new plot will be as wide as ~1/3 of the length of the Figure and as high as ~1/3 of the height of the Figure.</p>
@@ -492,20 +492,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#ax2 = fig.add_axes([left, bottom, right, top])</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>ax2.hist(beta_draws, bins<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>(array([ 2.,  6.,  4., 13., 34., 55., 59., 65., 73., 72., 94., 89., 66.,
-        66., 58., 56., 42., 41., 28., 32., 10., 12., 13.,  6.,  3.,  0.,
-         0.,  0.,  0.,  1.]),
- array([0.04573612, 0.07037459, 0.09501306, 0.11965153, 0.14429   ,
-        0.16892847, 0.19356694, 0.21820541, 0.24284388, 0.26748235,
-        0.29212082, 0.31675929, 0.34139776, 0.36603623, 0.3906747 ,
-        0.41531317, 0.43995164, 0.46459011, 0.48922858, 0.51386704,
-        0.53850551, 0.56314398, 0.58778245, 0.61242092, 0.63705939,
-        0.66169786, 0.68633633, 0.7109748 , 0.73561327, 0.76025174,
-        0.78489021]),
+<pre><code>(array([ 1.,  2.,  9., 18., 17., 39., 52., 45., 63., 56., 71., 83., 75.,
+        65., 67., 69., 52., 49., 37., 31., 29., 15., 22., 17.,  4.,  4.,
+         3.,  3.,  0.,  2.]),
+ array([0.03753625, 0.0603259 , 0.08311556, 0.10590522, 0.12869488,
+        0.15148454, 0.1742742 , 0.19706385, 0.21985351, 0.24264317,
+        0.26543283, 0.28822249, 0.31101215, 0.3338018 , 0.35659146,
+        0.37938112, 0.40217078, 0.42496044, 0.4477501 , 0.47053975,
+        0.49332941, 0.51611907, 0.53890873, 0.56169839, 0.58448805,
+        0.60727771, 0.63006736, 0.65285702, 0.67564668, 0.69843634,
+        0.721226  ]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-4_files/figure-html/cell-10-output-2.png" width="601" height="429"></p>
+<p><img src="data-science-with-pandas-4_files/figure-html/cell-10-output-2.png" width="604" height="429"></p>
 </div>
 </div>
 <p><code>plt.subplots()</code> parameters allow you to specify all sort of plot features: the size of the Figure in inches or cm, the number of plots to display in the Figure arranged in rows and columns, whether the subplots need to share the same axis, etc. The <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html">Matplotlib documentation</a> provides all the information and examples.</p>
