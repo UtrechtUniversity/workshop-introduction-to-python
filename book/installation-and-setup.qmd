@@ -171,6 +171,7 @@ winpty python
 ## Python packages
 
 This workshop will make use of the following Python packages:
+
 - `pandas`
 - `matplotlib`
 
