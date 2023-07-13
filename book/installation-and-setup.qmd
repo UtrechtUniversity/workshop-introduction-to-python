@@ -69,7 +69,7 @@ version 9 and below, are not).
 1. Download the zip folder with all [course materials](https://github.com/UtrechtUniversity/workshop-introduction-to-python/raw/main/course_materials.zip)
  (see [Course Materials][course-materials]).
 2. Create a folder called `python-workshop` on your Desktop (or any other place where you want to store the materials).
-2. Move the downloaded zip to the folder where you want to store these course materials.
+3. Move the downloaded zip to the folder where you want to store these course materials.
 4. Unzip the zip file.
 
 In your `python-workshop` you will see two folders called `data` and `solutions` and the following files:
