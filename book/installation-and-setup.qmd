@@ -68,12 +68,26 @@ version 9 and below, are not).
 
 1. Download the zip folder with all [course materials](https://github.com/UtrechtUniversity/workshop-introduction-to-python/raw/main/course_materials.zip)
  (see [Course Materials][course-materials]).
-2. Create a folder called `intro-python` on your Desktop.
-3. Move downloaded files to `intro-python`.
-4. Unzip the files.
+2. Create a folder called `python-workshop` on your Desktop (or any other place where you want to store the materials).
+2. Move the downloaded zip to the folder where you want to store these course materials.
+4. Unzip the zip file.
 
-You should see two folders called `data` and `code` in the `intro-python` directory on your
-Desktop.
+In your `python-workshop` you will see two folders called `data` and `solutions` and the following files:
+
+```
+introduction-python
+├── data
+│   ├── EU_capitals_tiny.csv
+│   ├── Netherlands_town_weather_tiny.csv
+│   ├── species.csv
+│   ├── surveys.csv
+│   └── plots.csv
+├── solutions
+│   ├── morning_exercises_solutions.ipynb 
+│   └── afternoon_exercises_solutions.ipynb
+├── morning_exercises.ipynb 
+└── afternoon_exercises.ipynb            
+```
 
 ## Launch Python interface
 
@@ -177,4 +191,4 @@ The instructions on this page were adapted from the [setup instructions of the S
 [python]: https://python.org
 [swcarpentry-python]: https://swcarpentry.github.io/python-novice-inflammation/setup.html
 [walk-in-hours]: https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software
-[zipfile-course-materials](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/course-materials.zip)
+[zipfile-course-materials](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/introduction.python.zip)

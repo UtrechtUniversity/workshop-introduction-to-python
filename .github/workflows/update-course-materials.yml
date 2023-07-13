@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Zip Course materials 
-      run: zip -r course_materials.zip course_materials
+      run: cd course_materials; zip -r ../course_materials.zip *
     - uses: actions/upload-artifact@v3
       with:
         name: course_materials
