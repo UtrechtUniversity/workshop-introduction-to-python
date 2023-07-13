@@ -1,8 +1,4 @@
----
-number-depth: 2
----
-
-# Installation & Setup
+# Installation & Setup {.unnumbered}
 
 ## Overview
 
