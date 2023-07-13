@@ -2,5 +2,5 @@
 
 What is Python? Why do we like it so much more than R? Let's get going!
 
-Introduce Pythno as a programming language.
+Introduce Python as a programming language.
 Introduction Jupyter, perhaps a tour of the Jupyter environment.
