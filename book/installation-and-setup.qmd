@@ -75,7 +75,7 @@ version 9 and below, are not).
 In your `python-workshop` you will see two folders called `data` and `solutions` and the following files:
 
 ```
-introduction-python
+python-workshop
 ├── data
 │   ├── EU_capitals_tiny.csv
 │   ├── Netherlands_town_weather_tiny.csv
