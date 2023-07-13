@@ -1,6 +1,11 @@
 # Introduction 
 
-What is Python? Why do we like it so much more than R? Let's get going!
-
+What is Python? 
 Introduce Python as a programming language.
+
+Why do we like it so much?
+Most popular programming language for open source research projects @ UU (see [SWORDS-UU](https://github.com/UtrechtUniversity/SWORDS-UU/blob/main/collect_variables/analyze_metrics.ipynb)).
+
+![Programming languages by user](images/programming_languages.png)
+
 Introduction Jupyter, perhaps a tour of the Jupyter environment.
