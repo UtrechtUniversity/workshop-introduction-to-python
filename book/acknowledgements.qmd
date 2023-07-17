@@ -12,8 +12,8 @@ The aforementioned source materials are reused under a [CC-BY 4.0](https://creat
 
 The following indivduals have contributed to the development of this workshop:
 
-- Jelle Treep
+- [Jelle Treep](https://orcid.org/0000-0003-3196-7954)
 - Christine Staiger
-- Roel Brouwer
+- [Roel Brouwer](https://orcid.org/0000-0001-8300-4290)
 - [Neha Moopen](https://orcid.org/0000-0003-1412-4402)
 - Stefano Rapisarda
