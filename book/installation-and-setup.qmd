@@ -72,7 +72,7 @@ version 9 and below, are not).
 3. Move the downloaded zip to the folder where you want to store these course materials.
 4. Unzip the zip file.
 
-In your `python-workshop` you will see two folders called `data` and `solutions` and the following files:
+In your `python-workshop` you will see a folders called `data` and the following files:
 
 ```
 python-workshop
@@ -82,11 +82,9 @@ python-workshop
 │   ├── species.csv
 │   ├── surveys.csv
 │   └── plots.csv
-├── solutions
-│   ├── morning_exercises_solutions.ipynb 
-│   └── afternoon_exercises_solutions.ipynb
 ├── morning_exercises.ipynb 
-└── afternoon_exercises.ipynb            
+├── afternoon_exercises.ipynb 
+└── empty_notebook_for_code_along.ipynb
 ```
 
 ## Launch Python interface
@@ -141,7 +139,9 @@ Anaconda will open a new browser window or tab with a Notebook Dashboard showing
 contents of your Home (or User) folder.
 3. Navigate to the `data` directory by clicking on the directory names leading to it.
 `Desktop`, `python-workshop`, then `data`:
-4. Launch the notebook by clicking on the "New" button and then selecting "Python 3".
+4. Launch the notebook called `empty_notebook_for_code_along.ipynb` by clicking on it. 
+5. Run the first code cell just below "Test installation" by clicking on it and then click on the 'play button'.
+If the output of the cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
 :::
 
 ### Option B: IPython interpreter
@@ -176,7 +176,7 @@ This workshop will make use of the following Python packages:
 - `matplotlib`
 - `numpy`
 
-Anaconda Navigator comes with these packages, so you are ready to go. If you are using another option to work with Python, you need to install these packages. If you need help with this, please ask the internet, your colleagues or us (see welcome email).
+Anaconda Navigator comes with these packages, so you are ready to go. If you are using another option to work with Python, you need to install these packages. We then assume that you know how to install packages, otherwise we recommend using Anaconda instead. If for some reason you cannot work with Anaconda and you need help with installing packages, we are happy to help during the [RDM walk in hours](https://www.uu.nl/en/research/research-data-management/workshops/walk-in-hours-research-data-and-software), or email us by replying to the welcome email.
 
 ## References {.unnumbered}
 
