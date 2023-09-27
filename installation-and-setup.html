@@ -222,6 +222,29 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Exercises solutions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions/morning_exercises_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Morning Exercises: Python fundamentals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions/afternoon_exercises_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Afternoon Exercises: Working with data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./what-next.html" class="sidebar-item-text sidebar-link">
@@ -328,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Move the downloaded zip to the folder where you want to store these course materials.</li>
 <li>Unzip the zip file.</li>
 </ol>
-<p>In your <code>python-workshop</code> you will see two folders called <code>data</code> and <code>solutions</code> and the following files:</p>
+<p>In your <code>python-workshop</code> you will see a folders called <code>data</code> and the following files:</p>
 <pre><code>python-workshop
 ├── data
 │   ├── EU_capitals_tiny.csv
@@ -336,11 +359,9 @@ ul.task-list li input[type="checkbox"] {
 │   ├── species.csv
 │   ├── surveys.csv
 │   └── plots.csv
-├── solutions
-│   ├── morning_exercises_solutions.ipynb 
-│   └── afternoon_exercises_solutions.ipynb
 ├── morning_exercises.ipynb 
-└── afternoon_exercises.ipynb            </code></pre>
+├── afternoon_exercises.ipynb 
+└── empty_notebook_for_code_along.ipynb</code></pre>
 </section>
 <section id="launch-python-interface" class="level2">
 <h2 class="anchored" data-anchor-id="launch-python-interface">Launch Python interface</h2>
@@ -368,8 +389,9 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Launch Anaconda Navigator. It might ask you if you’d like to send anonymized usage information to Anaconda developers. Make your choice and click “Ok, and don’t show again” button.</li>
 <li>Find the “Notebook” tab and click on the “Launch” button. Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the contents of your Home (or User) folder.</li>
-<li>Navigate to the <code>python-workshop</code> directory by clicking on the directory names leading to it. <code>Desktop</code> and then <code>python-workshop</code>:</li>
-<li>Launch the notebook by clicking on the “New” button and then selecting “Python 3”.</li>
+<li>Navigate to the <code>data</code> directory by clicking on the directory names leading to it. <code>Desktop</code>, <code>python-workshop</code>, then <code>data</code>:</li>
+<li>Launch the notebook called <code>empty_notebook_for_code_along.ipynb</code> by clicking on it.</li>
+<li>Run the first code cell just below “Test installation” by clicking on it and then click on the ‘play button’. If the output of the cell displays 4 version numbers and the words “No errors! Ready to code!” instead of an error message, your installation is successful. If not, contact us at <a href="https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software">RDM walk in hours</a> or reply to the welcome email.</li>
 </ol>
 </div>
 </div>
@@ -397,7 +419,7 @@ ul.task-list li input[type="checkbox"] {
 <li><code>matplotlib</code></li>
 <li><code>numpy</code></li>
 </ul>
-<p>Anaconda Navigator comes with these packages, so you are ready to go. If you are using another option to work with Python, you need to install these packages. If you need help with this, please ask the internet, your colleagues or us (see welcome email).</p>
+<p>Anaconda Navigator comes with these packages, so you are ready to go. If you are using another option to work with Python, you need to install these packages. We then assume that you know how to install packages, otherwise we recommend using Anaconda instead. If for some reason you cannot work with Anaconda and you need help with installing packages, we are happy to help during the <a href="https://www.uu.nl/en/research/research-data-management/workshops/walk-in-hours-research-data-and-software">RDM walk in hours</a>, or email us by replying to the welcome email.</p>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>

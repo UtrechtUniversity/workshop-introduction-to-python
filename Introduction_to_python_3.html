@@ -256,6 +256,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Exercises solutions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions/morning_exercises_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Morning Exercises: Python fundamentals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions/afternoon_exercises_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Afternoon Exercises: Working with data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./what-next.html" class="sidebar-item-text sidebar-link">
@@ -551,35 +574,35 @@ cat</code></pre>
 </section>
 <section id="dictionaries" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">4.4</span> Dictionaries</h2>
-<p>A dictionary is another way to store multiple items into one object. In dictionaries, however, this is done with keys and values. This can be useful for several reasons, one example is to store model settings, parameters or variable values for multiple scenarios.</p>
+<p>A dictionary is another way to store multiple items into one object. In dictionaries, however, this is done with keys and values. In dictionaries, keys are typically use to look up values. A good analogy may be the contact list in your phone where you use a name (key) to lookup a phone number (value). This can be useful for several reasons, one example is to store model settings, parameters or variable values for multiple scenarios.</p>
 <div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'one'</span>: <span class="st">'first'</span>, <span class="st">'two'</span>: <span class="st">'second'</span>}</span>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'one'</span>: <span class="dv">1</span>, <span class="st">'two'</span>: <span class="dv">2</span>}</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>my_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
-<pre><code>{'one': 'first', 'two': 'second'}</code></pre>
+<pre><code>{'one': 1, 'two': 2}</code></pre>
 </div>
 </div>
 <p>We can access dictionary items by their key:</p>
 <div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>my_dict[<span class="st">'one'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
-<pre><code>'first'</code></pre>
+<pre><code>1</code></pre>
 </div>
 </div>
 <p>And we can add new key-value pairs like that:</p>
 <div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>my_dict[<span class="st">'third'</span>] <span class="op">=</span> <span class="st">'three'</span></span>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>my_dict[<span class="st">'three'</span>] <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>my_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
-<pre><code>{'one': 'first', 'two': 'second', 'third': 'three'}</code></pre>
+<pre><code>{'one': 1, 'two': 2, 'three': 3}</code></pre>
 </div>
 </div>
-<p>Dictionary items are key-value pairs. The keys are changeable and unique. The values are changable, but not necessarily unique.</p>
+<p>Dictionary items are key-value pairs. The keys are changeable and always have to be unique (within a dictionary object). The values within a dictionary are changable, and don’t have to be unique.</p>
 <div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>my_dict[<span class="st">'two'</span>] <span class="op">=</span> <span class="st">'three'</span></span>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>my_dict[<span class="st">'two'</span>] <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>my_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
-<pre><code>{'one': 'first', 'two': 'three', 'third': 'three'}</code></pre>
+<pre><code>{'one': 1, 'two': 5, 'three': 3}</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
@@ -587,9 +610,9 @@ cat</code></pre>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dictionary values: "</span>, my_dict.values())</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dictionary items (key, value): "</span>, my_dict.items())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dictionary keys:  dict_keys(['one', 'two', 'third'])
-Dictionary values:  dict_values(['first', 'three', 'three'])
-Dictionary items (key, value):  dict_items([('one', 'first'), ('two', 'three'), ('third', 'three')])</code></pre>
+<pre><code>Dictionary keys:  dict_keys(['one', 'two', 'three'])
+Dictionary values:  dict_values([1, 5, 3])
+Dictionary items (key, value):  dict_items([('one', 1), ('two', 5), ('three', 3)])</code></pre>
 </div>
 </div>
 </section>
@@ -639,9 +662,9 @@ horse</code></pre>
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> my_dict.items():</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item, <span class="st">"is of type"</span>, <span class="bu">type</span>(item))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>('one', 'first') is of type &lt;class 'tuple'&gt;
-('two', 'three') is of type &lt;class 'tuple'&gt;
-('third', 'three') is of type &lt;class 'tuple'&gt;</code></pre>
+<pre><code>('one', 1) is of type &lt;class 'tuple'&gt;
+('two', 5) is of type &lt;class 'tuple'&gt;
+('three', 3) is of type &lt;class 'tuple'&gt;</code></pre>
 </div>
 </div>
 <p>We can extract the keys and values from the items directly in the <code>for</code> statement:</p>
@@ -649,9 +672,9 @@ horse</code></pre>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> my_dict.items():</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="st">"-&gt;"</span>, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>one -&gt; first
-two -&gt; three
-third -&gt; three</code></pre>
+<pre><code>one -&gt; 1
+two -&gt; 5
+three -&gt; 3</code></pre>
 </div>
 </div>
 <div class="alert alert-block alert-success">

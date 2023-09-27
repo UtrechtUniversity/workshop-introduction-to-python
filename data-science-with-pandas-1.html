@@ -259,6 +259,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Exercises solutions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions/morning_exercises_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Morning Exercises: Python fundamentals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions/afternoon_exercises_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Afternoon Exercises: Working with data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./what-next.html" class="sidebar-item-text sidebar-link">
@@ -314,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="6.1" class="anchored" data-anchor-id="libraries"><span class="header-section-number">6.1</span> Libraries</h2>
 <p>The power of Python (and many programming languages) is in the libraries.</p>
 <p>A library (aka package) is a collection of files (aka python scripts) that contains <strong>functions</strong> that can be used to perform specific tasks. A library may also contain data. The functions in a library are typically related and used for a specific purpose, e.g.&nbsp;there are libraries for plotting, handling audio data and machine learning and many many more. Some libraries are built into python, but most packages need to be installed before you can use it.</p>
-<p>Important to add: libraries are developed and maintained by other Python users. A popular library like Pandas has a large user base and the maintainers are supported by several funders, which makes it a reliable library that is updated very frequently. But this is not always the case, on the other side of the spectrum, a library can also be published once and not maintained at all.</p>
+<p>Libraries are developed and maintained by other Python users. That is why there are so many packages and this is great: there is a huge variety of functions available that you can use instead of programming them yourself. But it is important to be aware that the quality can differ. A popular library like Pandas has a large user base and the maintainers are supported by several funders, which makes it a reliable library that is updated very frequently. But this is not always the case, on the other side of the spectrum, a library can also be published once, badly designed/documented and/or not maintained at all. To check the quality of a library, you can check e.g.&nbsp;the number of downloads, the number of contributors, the number of open issues, the date of the last update and the number of stars on GitHub.</p>
 </section>
 <section id="pandas" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="pandas"><span class="header-section-number">6.2</span> Pandas</h2>
@@ -535,25 +558,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>By looking at the DataFrame we can finally understand what a DataFrame actually is: a 2-dimensional data structure storing different types of variables in columns. All rows in the DataFrame have a row index (starting from 0). The columns have names. The row indices and column names can be used to do operations on values in the column (we will go into this later).</p>
 <p>As you can see Jupyter only prints the first and last 5 rows separated by <code>...</code> . In this way the notebook remains clear and tidy (printing the whole DataFrame may result in a large table and a lot of scrolling to get to the next code cell).</p>
 <p>It is, however, enough for a quick exploration of how the dataset looks like in terms of columns names, values, and potential reading errors.</p>
-<div class="alert alert-block alert-success">
-<p><b>Exercise 1</b></p>
-<p>Now go to the Jupyter Dashboard in your internet browser and open the notebook <code>afternoon_exercises.ipynb</code> and do exercise 1.</p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As you can see in this exercise a DataFrame object comes with several methods that can be applied to the DataFrame. A method is similar to a function, but it can only be applied to the object it belongs to and has a different notation than a function.</p>
-<p>Compare the notation of the function <code>len</code>: <code>len(surveys_df)</code><br>
-with the DataFrame specific method <code>shape</code>: <code>surveys_df.shape</code></p>
-</div>
-</div>
 </section>
 <section id="exploring-data" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="exploring-data"><span class="header-section-number">6.5</span> Exploring data</h2>
@@ -629,8 +633,23 @@ Name: weight, Length: 35549, dtype: float64</code></pre>
 </div>
 </div>
 <div class="alert alert-block alert-success">
-<p><b>Exercise 2</b></p>
-<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercise 2.</p>
+<p><b>Exercises 0 and 1</b></p>
+<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercises 0 and 1.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you can see in this exercise a DataFrame object comes with several methods that can be applied to the DataFrame. A method is similar to a function, but it can only be applied to the object it belongs to and has a different notation than a function.</p>
+<p>Compare the notation of the function <code>len</code>: <code>len(surveys_df)</code><br>
+with the DataFrame specific method <code>shape</code>: <code>surveys_df.shape</code></p>
+</div>
 </div>
 <p>Instead of running the methods above one by one, we can obtain a statistical summary using the method <code>.describe()</code>. Let’s get a statistical summary for the weight column.</p>
 <div class="cell" data-tags="[]" data-execution_count="12">
