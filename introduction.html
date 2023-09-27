@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -240,7 +240,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-python" id="toc-what-is-python" class="nav-link active" data-scroll-target="#what-is-python"><span class="header-section-number">1.1</span> What is Python?</a></li>
+  <li><a href="#scope-of-this-course" id="toc-scope-of-this-course" class="nav-link" data-scroll-target="#scope-of-this-course"><span class="header-section-number">1.2</span> Scope of this course</a></li>
+  <li><a href="#jupyter-notebooks" id="toc-jupyter-notebooks" class="nav-link" data-scroll-target="#jupyter-notebooks"><span class="header-section-number">1.3</span> Jupyter Notebooks</a></li>
+  <li><a href="#course-setup" id="toc-course-setup" class="nav-link" data-scroll-target="#course-setup"><span class="header-section-number">1.4</span> Course setup</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/UtrechtUniversity/workshop-introduction-to-python/edit/main/introduction.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -262,17 +271,34 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>What is Python? Introduce Python as a programming language.</p>
-<p>Why do we like it so much? Most popular programming language for open source research projects @ UU (see <a href="https://github.com/UtrechtUniversity/SWORDS-UU/blob/main/collect_variables/analyze_metrics.ipynb">SWORDS-UU</a>).</p>
+<section id="what-is-python" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-python"><span class="header-section-number">1.1</span> What is Python?</h2>
+<p>Python is a general-purpose programming language that is very popular in the scientific community. At Utrecht University it is the most popular programming language for open source research projects @ UU (see <a href="https://github.com/UtrechtUniversity/SWORDS-UU/blob/main/collect_variables/analyze_metrics.ipynb">SWORDS-UU</a>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/programming_languages.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Programming languages by user</figcaption>
 </figure>
 </div>
-<p>Introduction Jupyter, perhaps a tour of the Jupyter environment.</p>
+<p>Python is popular due to its readability, ease of use, its large community, and its large ecosystem of packages that can be used for a large variety of tasks, ranging from data analysis, modelling, simulation, machine learning to web development.</p>
+<p>Python is open source, which means that it is free to use and that the source code is available for anyone to inspect and modify. This makes it easy to install Python on any computer, and e.g.&nbsp;share code with others or scale up your computations to a high performance computing system.</p>
+</section>
+<section id="scope-of-this-course" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="scope-of-this-course"><span class="header-section-number">1.2</span> Scope of this course</h2>
+<p>Learning to program is a skill that takes time and practice. This course will not make you an expert programmer, but it will give you a small foundation to build on. The course will focus on the basics of the Python language, and simple data handling and visualization with the Pandas Python library. This will be enough to demonstrate the power of Python and hopefully inspire you to learn more. After the course you will have some basic knowledge to get started and we will be available during the <a href="https://www.uu.nl/en/research/research-data-management/workshops/walk-in-hours-research-data-and-software">RDM walk in hours</a> and the <a href="https://www.uu.nl/en/research/research-data-management/workshops/programming-cafe">Programming cafe</a> to help you continue your learning journey and start using Python in your own research.</p>
+</section>
+<section id="jupyter-notebooks" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="jupyter-notebooks"><span class="header-section-number">1.3</span> Jupyter Notebooks</h2>
+<p>There are many programs that can be used to edit and run Python code. This course will use Jupyter Notebooks. Jupyter Notebooks are a way to combine text, code, and output in a single document. Jupyter Notebooks are a great way to learn Python, as you can run code in small chunks and immediately see the results. But this doesn’t mean Jupyter Notebooks are only for beginners. Jupyter Notebooks are used by many professional programmers and scientists to share their work and even do computationally expensive analyses.</p>
+<p>See below how a Jupyter Notebook looks like. The notebook is divided in text cells and code cells. The code cell contains Python code, which can be executed by pressing the ‘play’ button in the toolbar or by pressing <code>Shift + Enter</code>. The output of the code is shown below the code cell. The text cells contain text written in Markdown, which is a simple way to format text. You can edit the text by double clicking on the text cell. To render the text again, press <code>Shift + Enter</code>.</p>
+<p><a href="https://jupyter.org/"><img src="images/jupyter_example.png" class="img-fluid" alt="Jupyter Notebook"></a> <em>Example of a Jupyter Notebook</em></p>
+</section>
+<section id="course-setup" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="course-setup"><span class="header-section-number">1.4</span> Course setup</h2>
+<p>During the course we will be introducing concepts in short lectures where we will demonstrate by means of ‘live coding’. This means that we will be writing code in a Jupyter Notebook and explain what we are doing. You can follow along by opening an empty notebook, typing along and running the code yourself. In between the lectures we will provide you with exercises to practice what you have learned.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -524,4 +550,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/UtrechtUniversity/workshop-introduction-to-python/edit/main/introduction.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
+</body></html>

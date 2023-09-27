@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -1791,10 +1791,8 @@ Data columns (total 18 columns):
  16  hindfoot_length  6 non-null      float64
  17  weight           6 non-null      float64
 dtypes: float64(4), int64(10), object(4)
-memory usage: 1.5+ KB</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>None</code></pre>
+memory usage: 1.5+ KB
+None</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -2059,11 +2057,11 @@ memory usage: 1.5+ KB</code></pre>
 <p>What it means for a DataFrame to be ‘left’ or ‘right’ depends on the type of join, and will become clear in the examples below. For now, just remember that it matters which DataFrame you mention first when performing a join.</p>
 <p>Let’s see some join example considering two tiny (few rows) DataFrames. Our left DataFrame contains general data of European capitals, and our right DataFrame contains weather measurements for some Dutch towns. We first need to import these datasets:</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>left_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/EU_capitals_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>right_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/Netherlands_town_weather_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>left_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/EU_capitals_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>right_df <span class="op">=</span> pd.read_csv(<span class="st">"../course_materials/data/Netherlands_town_weather_tiny.csv"</span>, sep<span class="op">=</span><span class="st">","</span>, header<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>left_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>left_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
@@ -2135,7 +2133,7 @@ memory usage: 1.5+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>right_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>right_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
@@ -2224,8 +2222,8 @@ memory usage: 1.5+ KB</code></pre>
 </div>
 <p>The column we want to perform the join on is the one containing information about the town. In the left DataFrame this has name <em>Capital</em> while in the right one <em>Town</em>.</p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>inner_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>inner_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>inner_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>inner_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
@@ -2272,8 +2270,8 @@ memory usage: 1.5+ KB</code></pre>
 <p>The columns of the two DataFrames are all preserved, even if they have the same name. In our case, both left and right DataFrames have a column with the same name (<em>Elevation</em>). After merging, the two columns are preserved, but with a suffix to distinguish them. If you are not happy with the default suffix, you may specify yours in the list of arguments of the <code>pd.merge</code> functions.</p>
 <p>Let’s now look at the other joins:</p>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>left_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>left_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>left_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>left_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
@@ -2387,8 +2385,8 @@ memory usage: 1.5+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>right_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'right'</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>right_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>right_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>right_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
@@ -2516,8 +2514,8 @@ memory usage: 1.5+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>outer_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'outer'</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>outer_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>outer_join <span class="op">=</span> pd.merge(left_df,right_df,left_on<span class="op">=</span><span class="st">'Capital'</span>,right_on<span class="op">=</span><span class="st">'Town'</span>,how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>outer_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
