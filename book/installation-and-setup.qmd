@@ -103,12 +103,12 @@ If you installed Anaconda, you can launch a notebook in two ways:
 
 ::: {.panel-tabset}
 ## Command line (Terminal)
-1. Navigate to the `data` directory:<br>
+1. Navigate to the `python-workshop` directory:<br>
 	**Unix shell**<br>
 	If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
 	in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
 	```{bash}
-	cd ~/Desktop/python-workshop/data
+	cd ~/Desktop/python-workshop
 	```
 
 	**Command Prompt (Windows)**<br>
@@ -117,7 +117,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 	<kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
 	the `data` folder:
 	```{sh}
-	cd /D %userprofile%\Desktop\python-workshop\data
+	cd /D %userprofile%\Desktop\python-workshop
 	```
 2. Start Jupyter server:<br>
 	**Unix shell**
@@ -139,8 +139,8 @@ Make your choice and click "Ok, and don't show again" button.
 2. Find the "Notebook" tab and click on the "Launch" button.
 Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 contents of your Home (or User) folder.
-3. Navigate to the `data` directory by clicking on the directory names leading to it.
-`Desktop`, `python-workshop`, then `data`:
+3. Navigate to the `python-workshop` directory by clicking on the directory names leading to it.
+`Desktop` and then `python-workshop`:
 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3".
 :::
 
