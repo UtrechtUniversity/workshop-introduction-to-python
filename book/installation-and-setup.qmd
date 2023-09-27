@@ -101,12 +101,12 @@ If you installed Anaconda, you can launch a notebook in two ways:
 
 ::: {.panel-tabset}
 ## Command line (Terminal)
-1. Navigate to the `data` directory:<br>
+1. Navigate to the `python-workshop` directory:<br>
 	**Unix shell**<br>
 	If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
 	in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
 	```{bash}
-	cd ~/Desktop/python-workshop/data
+	cd ~/Desktop/python-workshop
 	```
 
 	**Command Prompt (Windows)**<br>
@@ -115,7 +115,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 	<kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
 	the `data` folder:
 	```{sh}
-	cd /D %userprofile%\Desktop\python-workshop\data
+	cd /D %userprofile%\Desktop\python-workshop
 	```
 2. Start Jupyter server:<br>
 	**Unix shell**
@@ -142,6 +142,7 @@ contents of your Home (or User) folder.
 4. Launch the notebook called `empty_notebook_for_code_along.ipynb` by clicking on it. 
 5. Run the first code cell just below "Test installation" by clicking on it and then click on the 'play button'.
 If the output of the cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
+
 :::
 
 ### Option B: IPython interpreter
