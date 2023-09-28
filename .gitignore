@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 /docs/
 /.quarto/
+
+/book/_freeze
+/book/MyFigure.png
