@@ -366,11 +366,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.hist(sample_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>(array([  16.,  134.,  727., 2037., 3139., 2511., 1133.,  267.,   32.,
-           4.]),
- array([-0.37860703, -0.29742092, -0.21623482, -0.13504872, -0.05386262,
-         0.02732348,  0.10850958,  0.18969568,  0.27088179,  0.35206789,
-         0.43325399]),
+<pre><code>(array([  16.,  123.,  590., 1688., 2834., 2697., 1487.,  446.,  109.,
+          10.]),
+ array([-0.37774022, -0.30084311, -0.223946  , -0.14704889, -0.07015178,
+         0.00674533,  0.08364244,  0.16053955,  0.23743666,  0.31433377,
+         0.39123088]),
  &lt;BarContainer object of 10 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -381,19 +381,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.hist(sample_data, bins<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(array([4.000e+00, 5.000e+00, 7.000e+00, 2.300e+01, 4.700e+01, 6.400e+01,
-        1.330e+02, 2.250e+02, 3.690e+02, 5.080e+02, 6.620e+02, 8.670e+02,
-        9.960e+02, 1.081e+03, 1.062e+03, 9.460e+02, 8.590e+02, 7.060e+02,
-        5.020e+02, 3.870e+02, 2.440e+02, 1.460e+02, 7.400e+01, 4.700e+01,
-        1.500e+01, 1.200e+01, 5.000e+00, 1.000e+00, 2.000e+00, 1.000e+00]),
- array([-3.78607026e-01, -3.51544993e-01, -3.24482959e-01, -2.97420925e-01,
-        -2.70358891e-01, -2.43296857e-01, -2.16234823e-01, -1.89172790e-01,
-        -1.62110756e-01, -1.35048722e-01, -1.07986688e-01, -8.09246542e-02,
-        -5.38626204e-02, -2.68005866e-02,  2.61447278e-04,  2.73234811e-02,
-         5.43855150e-02,  8.14475488e-02,  1.08509583e-01,  1.35571616e-01,
-         1.62633650e-01,  1.89695684e-01,  2.16757718e-01,  2.43819752e-01,
-         2.70881786e-01,  2.97943820e-01,  3.25005853e-01,  3.52067887e-01,
-         3.79129921e-01,  4.06191955e-01,  4.33253989e-01]),
+<pre><code>(array([3.000e+00, 4.000e+00, 9.000e+00, 1.900e+01, 3.600e+01, 6.800e+01,
+        1.180e+02, 1.830e+02, 2.890e+02, 3.680e+02, 5.580e+02, 7.620e+02,
+        8.690e+02, 1.003e+03, 9.620e+02, 1.014e+03, 9.110e+02, 7.720e+02,
+        6.340e+02, 4.910e+02, 3.620e+02, 2.270e+02, 1.360e+02, 8.300e+01,
+        5.700e+01, 3.200e+01, 2.000e+01, 6.000e+00, 3.000e+00, 1.000e+00]),
+ array([-0.37774022, -0.35210785, -0.32647548, -0.30084311, -0.27521074,
+        -0.24957837, -0.223946  , -0.19831363, -0.17268126, -0.14704889,
+        -0.12141652, -0.09578415, -0.07015178, -0.04451941, -0.01888704,
+         0.00674533,  0.0323777 ,  0.05801007,  0.08364244,  0.10927481,
+         0.13490718,  0.16053955,  0.18617192,  0.21180429,  0.23743666,
+         0.26306903,  0.2887014 ,  0.31433377,  0.33996614,  0.36559851,
+         0.39123088]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -478,19 +477,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()  <span class="co"># initiate an empty figure and axis matplotlib object</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ax.hist(sample_data, bins<span class="op">=</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>(array([4.000e+00, 5.000e+00, 7.000e+00, 2.300e+01, 4.700e+01, 6.400e+01,
-        1.330e+02, 2.250e+02, 3.690e+02, 5.080e+02, 6.620e+02, 8.670e+02,
-        9.960e+02, 1.081e+03, 1.062e+03, 9.460e+02, 8.590e+02, 7.060e+02,
-        5.020e+02, 3.870e+02, 2.440e+02, 1.460e+02, 7.400e+01, 4.700e+01,
-        1.500e+01, 1.200e+01, 5.000e+00, 1.000e+00, 2.000e+00, 1.000e+00]),
- array([-3.78607026e-01, -3.51544993e-01, -3.24482959e-01, -2.97420925e-01,
-        -2.70358891e-01, -2.43296857e-01, -2.16234823e-01, -1.89172790e-01,
-        -1.62110756e-01, -1.35048722e-01, -1.07986688e-01, -8.09246542e-02,
-        -5.38626204e-02, -2.68005866e-02,  2.61447278e-04,  2.73234811e-02,
-         5.43855150e-02,  8.14475488e-02,  1.08509583e-01,  1.35571616e-01,
-         1.62633650e-01,  1.89695684e-01,  2.16757718e-01,  2.43819752e-01,
-         2.70881786e-01,  2.97943820e-01,  3.25005853e-01,  3.52067887e-01,
-         3.79129921e-01,  4.06191955e-01,  4.33253989e-01]),
+<pre><code>(array([3.000e+00, 4.000e+00, 9.000e+00, 1.900e+01, 3.600e+01, 6.800e+01,
+        1.180e+02, 1.830e+02, 2.890e+02, 3.680e+02, 5.580e+02, 7.620e+02,
+        8.690e+02, 1.003e+03, 9.620e+02, 1.014e+03, 9.110e+02, 7.720e+02,
+        6.340e+02, 4.910e+02, 3.620e+02, 2.270e+02, 1.360e+02, 8.300e+01,
+        5.700e+01, 3.200e+01, 2.000e+01, 6.000e+00, 3.000e+00, 1.000e+00]),
+ array([-0.37774022, -0.35210785, -0.32647548, -0.30084311, -0.27521074,
+        -0.24957837, -0.223946  , -0.19831363, -0.17268126, -0.14704889,
+        -0.12141652, -0.09578415, -0.07015178, -0.04451941, -0.01888704,
+         0.00674533,  0.0323777 ,  0.05801007,  0.08364244,  0.10927481,
+         0.13490718,  0.16053955,  0.18617192,  0.21180429,  0.23743666,
+         0.26306903,  0.2887014 ,  0.31433377,  0.33996614,  0.36559851,
+         0.39123088]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -517,16 +515,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#ax2 = fig.add_axes([left, bottom, right, top])</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>ax2.hist(beta_draws, bins<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>(array([ 1.,  6., 19., 18., 37., 59., 48., 75., 73., 78., 71., 70., 64.,
-        57., 63., 54., 45., 35., 34., 28., 16., 16., 13.,  3.,  6.,  3.,
-         5.,  0.,  0.,  3.]),
- array([0.05635038, 0.07953697, 0.10272356, 0.12591015, 0.14909674,
-        0.17228333, 0.19546992, 0.21865651, 0.2418431 , 0.26502969,
-        0.28821628, 0.31140287, 0.33458946, 0.35777605, 0.38096264,
-        0.40414923, 0.42733582, 0.45052241, 0.473709  , 0.49689559,
-        0.52008218, 0.54326877, 0.56645536, 0.58964195, 0.61282854,
-        0.63601513, 0.65920172, 0.68238831, 0.7055749 , 0.72876149,
-        0.75194808]),
+<pre><code>(array([ 2.,  1.,  4., 12., 13., 31., 54., 57., 60., 68., 64., 79., 79.,
+        79., 79., 40., 59., 44., 34., 39., 32., 19., 14., 11., 10.,  6.,
+         4.,  3.,  2.,  1.]),
+ array([0.03314355, 0.0558779 , 0.07861226, 0.10134661, 0.12408096,
+        0.14681531, 0.16954966, 0.19228402, 0.21501837, 0.23775272,
+        0.26048707, 0.28322143, 0.30595578, 0.32869013, 0.35142448,
+        0.37415883, 0.39689319, 0.41962754, 0.44236189, 0.46509624,
+        0.4878306 , 0.51056495, 0.5332993 , 0.55603365, 0.578768  ,
+        0.60150236, 0.62423671, 0.64697106, 0.66970541, 0.69243977,
+        0.71517412]),
  &lt;BarContainer object of 30 artists&gt;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
