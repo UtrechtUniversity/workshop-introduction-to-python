@@ -3,14 +3,14 @@
 ## What is Python? 
 Python is a general-purpose programming language that is very popular in the scientific community. At Utrecht University it is the most popular programming language for open source research projects @ UU (see [SWORDS-UU](https://github.com/UtrechtUniversity/SWORDS-UU/blob/main/collect_variables/analyze_metrics.ipynb)).
 
-![Programming languages by user](images/programming_languages.png)
+![Programming languages by user](images/programming_languages.png){width=400}
 
 Python is popular due to its readability, ease of use, its large community, and its large ecosystem of packages that can be used for a large variety of tasks, ranging from data analysis, modelling, simulation, machine learning to web development.
 
 Python is open source, which means that it is free to use and that the source code is available for anyone to inspect and modify. This makes it easy to install Python on any computer, and e.g. share code with others or scale up your computations to a high performance computing system.
 
 ## Scope of this course
-Learning to program is a skill that takes time and practice. This course will not make you an expert programmer, but it will give you a small foundation to build on. The course will focus on the basics of the Python language, and simple data handling and visualization with the Pandas Python library. This will be enough to demonstrate the power of Python and hopefully inspire you to learn more. After the course you will have some basic knowledge to get started and we will be available during the [RDM walk in hours](https://www.uu.nl/en/research/research-data-management/workshops/walk-in-hours-research-data-and-software) and the [Programming cafe](https://www.uu.nl/en/research/research-data-management/workshops/programming-cafe) to help you continue your learning journey and start using Python in your own research.
+Programming is a skill that takes time and practice to learn. This course will not make you an expert programmer, but it will give you a small foundation to build on. The course will focus on the basics of the Python language, and simple data handling and visualization with the Pandas Python library. This will be enough to demonstrate the power of Python and hopefully inspire you to learn more. After the course you will have some basic knowledge to get started and we will be available during the [RDM walk in hours](https://www.uu.nl/en/research/research-data-management/workshops/walk-in-hours-research-data-and-software) and the [Programming cafe](https://www.uu.nl/en/research/research-data-management/workshops/programming-cafe) to help you continue your learning journey and start using Python in your own research.
 
 ## Jupyter Notebooks
 There are many programs that can be used to edit and run Python code. This course will use Jupyter Notebooks. Jupyter Notebooks are a way to combine text, code, and output in a single document. Jupyter Notebooks are a great way to learn Python, as you can run code in small chunks and immediately see the results. But this doesn't mean Jupyter Notebooks are only for beginners. Jupyter Notebooks are used by many professional programmers and scientists to share their work and even do computationally expensive analyses.

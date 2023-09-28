@@ -77,8 +77,6 @@ In your `python-workshop` you will see a folders called `data` and the following
 ```
 python-workshop
 ├── data
-│   ├── EU_capitals_tiny.csv
-│   ├── Netherlands_town_weather_tiny.csv
 │   ├── species.csv
 │   ├── surveys.csv
 │   └── plots.csv
