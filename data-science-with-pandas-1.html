@@ -95,9 +95,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -349,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="preliminaries" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">6.3</span> Preliminaries</h2>
 <p>Before we start our journey into Pandas functionalities, there are some preliminary operations to run.</p>
-<p>The Pandas library is not a built-in library of python, it needs to be installed and loaded. Installations instructions for Pandas are in the the <a href="./installation-and-setup.html">setup instructions</a> for this course. Assuming you already installed it, let’s start importing the Pandas library and checking our installed version.</p>
+<p>The Pandas library is not a built-in library of python, it needs to be installed and loaded. If you are using Anaconda Navigator and/or followed the <a href="./installation-and-setup.html">setup instructions</a> for this course, Pandas is already installed on your system. Assuming you already installed it, let’s start importing the Pandas library and checking our installed version.</p>
 <div class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -367,13 +364,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>/home/runner/work/workshop-introduction-to-python/workshop-introduction-to-python/book</code></pre>
 </div>
 </div>
-<p>If the current working directory ends with <code>&lt;...&gt;/workshop-introduction-to-python</code>, where <code>&lt;...&gt;</code> is whatever directory you chose to download and unzip the course material, you are in the right place. If not, use <code>os.chdir(&lt;...&gt;)</code> to change the working directory, where <code>&lt;...&gt;</code> is the full path of the <code>workshop-introductions-to-python</code> directory.</p>
+<p>If the current working directory ends with <code>&lt;...&gt;/python-workshop</code>(or any other name that you used to create a folder for storing the course materials during <a href="./installation-and-setup.html">installation and setup</a>), where <code>&lt;...&gt;</code> is whatever directory you chose to download and unzip the course material, you are in the right place. If not, use <code>os.chdir(&lt;...&gt;)</code> to change the working directory, where <code>&lt;...&gt;</code> is the full path of the <code>python-workshop</code> directory.</p>
 <p>Let’s store the relative path of our data into a variable and let’s check if the data file actually exists using the function <code>os.path.exists()</code></p>
 <div class="cell" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_file <span class="op">=</span> <span class="st">'../course_materials/data/surveys.csv'</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_file <span class="op">=</span> <span class="st">'./data/surveys.csv'</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(os.path.exists(data_file))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>True</code></pre>
+<pre><code>False</code></pre>
 </div>
 </div>
 <p>If the result is True, we are all set up to go!</p>
@@ -386,9 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(data_file))</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(surveys_df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'str'&gt;
-&lt;class 'pandas.core.frame.DataFrame'&gt;</code></pre>
+<div class="cell-output cell-output-error">
+<pre><code>FileNotFoundError: [Errno 2] No such file or directory: './data/surveys.csv'</code></pre>
 </div>
 </div>
 <p>Pandas can read quite a large variety of formats like the <em>comma-separated values</em> (CSV) and Excel file formats.</p>
@@ -396,163 +392,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In Jupyter Notebook or Jupyter Lab you can visualise the DataFrame simply by writing its name in a code cell and running the cell (in the same way you would display the value of any variable). Let’s have a look at our just created DataFrame:</p>
 <div class="cell" data-tags="[]" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>surveys_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">record_id</th>
-<th data-quarto-table-cell-role="th">month</th>
-<th data-quarto-table-cell-role="th">day</th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">plot_id</th>
-<th data-quarto-table-cell-role="th">species_id</th>
-<th data-quarto-table-cell-role="th">sex</th>
-<th data-quarto-table-cell-role="th">hindfoot_length</th>
-<th data-quarto-table-cell-role="th">weight</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>7</td>
-<td>16</td>
-<td>1977</td>
-<td>2</td>
-<td>NL</td>
-<td>M</td>
-<td>32.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>7</td>
-<td>16</td>
-<td>1977</td>
-<td>3</td>
-<td>NL</td>
-<td>M</td>
-<td>33.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>7</td>
-<td>16</td>
-<td>1977</td>
-<td>2</td>
-<td>DM</td>
-<td>F</td>
-<td>37.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4</td>
-<td>7</td>
-<td>16</td>
-<td>1977</td>
-<td>7</td>
-<td>DM</td>
-<td>M</td>
-<td>36.0</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>7</td>
-<td>16</td>
-<td>1977</td>
-<td>3</td>
-<td>DM</td>
-<td>M</td>
-<td>35.0</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">35544</td>
-<td>35545</td>
-<td>12</td>
-<td>31</td>
-<td>2002</td>
-<td>15</td>
-<td>AH</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">35545</td>
-<td>35546</td>
-<td>12</td>
-<td>31</td>
-<td>2002</td>
-<td>15</td>
-<td>AH</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">35546</td>
-<td>35547</td>
-<td>12</td>
-<td>31</td>
-<td>2002</td>
-<td>10</td>
-<td>RM</td>
-<td>F</td>
-<td>15.0</td>
-<td>14.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">35547</td>
-<td>35548</td>
-<td>12</td>
-<td>31</td>
-<td>2002</td>
-<td>7</td>
-<td>DO</td>
-<td>M</td>
-<td>36.0</td>
-<td>51.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">35548</td>
-<td>35549</td>
-<td>12</td>
-<td>31</td>
-<td>2002</td>
-<td>5</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-<p>35549 rows × 9 columns</p>
-</div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>By looking at the DataFrame we can finally understand what a DataFrame actually is: a 2-dimensional data structure storing different types of variables in columns. All rows in the DataFrame have a row index (starting from 0). The columns have names. The row indices and column names can be used to do operations on values in the column (we will go into this later).</p>
@@ -563,78 +404,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="6.5" class="anchored" data-anchor-id="exploring-data"><span class="header-section-number">6.5</span> Exploring data</h2>
 <p>Now we will take a closer look into the actual values in the DataFrame. In order to do this it is helpful to have the column names at hand (easy for copy-pasting):</p>
 <div class="cell" data-tags="[]" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Index(['record_id', 'month', 'day', 'year', 'plot_id', 'species_id', 'sex',
-       'hindfoot_length', 'weight'],
-      dtype='object')</code></pre>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>As you can see this gives you more information than just the column names. It is also possible to just print the column names using a for loop (see <a href="./Introduction_to_python_4.html">chapter 4</a>):</p>
 <div class="cell" data-tags="[]" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> surveys_df.columns:</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>record_id
-month
-day
-year
-plot_id
-species_id
-sex
-hindfoot_length
-weight</code></pre>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> surveys_df.columns:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>Let’s select the column <em>weight</em> in our DataFrame and let’s run some statistics on it</p>
 <div class="cell" data-tags="[]" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>0         NaN
-1         NaN
-2         NaN
-3         NaN
-4         NaN
-         ... 
-35544     NaN
-35545     NaN
-35546    14.0
-35547    51.0
-35548     NaN
-Name: weight, Length: 35549, dtype: float64</code></pre>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>Now let’s plot the values in a histogram:</p>
 <div class="cell" data-tags="[]" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>&lt;AxesSubplot: ylabel='Frequency'&gt;</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-1_files/figure-html/cell-10-output-2.png" width="610" height="411"></p>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>Did you notice how easy it was to obtain a summary plot of a column of our DataFrame? We can repeat the same for every column with a single line of code.</p>
 <div class="cell" data-tags="[]" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'hindfoot_length'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>&lt;AxesSubplot: ylabel='Frequency'&gt;</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="data-science-with-pandas-1_files/figure-html/cell-11-output-2.png" width="610" height="411"></p>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'hindfoot_length'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>We can also make quick scatterplots to explore the relation between two columns:</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline <span class="co"># what this does will be discussed in the last chapter about visualization</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> surveys_df.plot(x<span class="op">=</span><span class="st">'weight'</span>, y<span class="op">=</span><span class="st">'hindfoot_length'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>UsageError: unrecognized arguments: # what this does will be discussed in the last chapter about visualization</code></pre>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># what %matplotlib inline does will be discussed in the last chapter about visualization</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> surveys_df.plot(x<span class="op">=</span><span class="st">'weight'</span>, y<span class="op">=</span><span class="st">'hindfoot_length'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <div class="alert alert-block alert-success">
 <p><b>Exercises 0 and 1</b></p>
-<p>Now go to the Jupyter Dashboard in your internet browser and continue with exercises 0 and 1.</p>
+<p>Now go to the Jupyter Dashboard in your internet browser, open the notebook <code>afternoon_exercises.ipynb</code> and continue with exercises 0 and 1.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -653,35 +468,23 @@ with the DataFrame specific method <code>shape</code>: <code>surveys_df.shape</c
 </div>
 <p>Instead of running the methods above one by one, we can obtain a statistical summary using the method <code>.describe()</code>. Let’s get a statistical summary for the weight column.</p>
 <div class="cell" data-tags="[]" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>count    32283.000000
-mean        42.672428
-std         36.631259
-min          4.000000
-25%         20.000000
-50%         37.000000
-75%         48.000000
-max        280.000000
-Name: weight, dtype: float64</code></pre>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>There are many more methods that can be used. For a complete overview, check out the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html">documentation of Pandas</a>. Some useful ones are the <code>unique</code> method to display all unique values in a certain column:</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'species_id'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>array(['NL', 'DM', 'PF', 'PE', 'DS', 'PP', 'SH', 'OT', 'DO', 'OX', 'SS',
-       'OL', 'RM', nan, 'SA', 'PM', 'AH', 'DX', 'AB', 'CB', 'CM', 'CQ',
-       'RF', 'PC', 'PG', 'PH', 'PU', 'CV', 'UR', 'UP', 'ZL', 'UL', 'CS',
-       'SC', 'BA', 'SF', 'RO', 'AS', 'SO', 'PI', 'ST', 'CU', 'SU', 'RX',
-       'PB', 'PL', 'PX', 'CT', 'US'], dtype=object)</code></pre>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'species_id'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>Or <code>.nunique()</code> to return the number of unique elements in a column.</p>
 <div class="cell" data-tags="[]" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df[<span class="st">'plot_id'</span>].nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>24</code></pre>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(surveys_df[<span class="st">'plot_id'</span>].nunique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'surveys_df' is not defined</code></pre>
 </div>
 </div>
 <p>Perhaps we want to get some insight into the values for certain species or plots, in the next chapter we will go into <a href="./data-science-with-pandas-2.html">making groups and selections</a>.</p>
