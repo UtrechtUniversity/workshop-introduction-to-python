@@ -2286,41 +2286,50 @@ Name: weight, dtype: float64</code></pre>
 </section>
 <section id="exercise-12" class="level3" data-number="11.0.13">
 <h3 data-number="11.0.13" class="anchored" data-anchor-id="exercise-12"><span class="header-section-number">11.0.13</span> Exercise 12</h3>
-<p>Time to play with plots! Look at the pandas.DataFrame.plot() documentation <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html">here</a> and change your data visualization swapping the DataFrame columns, and changing the axes labels.</p>
+<p>Time to play with plots! Create a multiplot following these instructions: - Using the matplotlib.pyplot function <code>subplots()</code>, create a single figure (10x10 inches) with four subplots organized in two rows and two columns; - In the top row plot hindfoot_length VS weight for female and male in two different plots with two different colors; - In the bottom row, plot the same data of the top row, but using data collected before (left plot) and after (right plot) 1990; - Give to each plot an appropriate descriptive title and customize the plot labels. <br></p>
+<p>Feel free to use the DataFrame <code>plot</code> method or <code>plt.scatter</code> function to plot data points, but be awave that, in any case, the first thing to do is creating <em>Figure</em> and <em>Axes</em>.<br> EXTRA: The four plots have same x and y axes spanning the same range. Can you remove the space between the four plots? Try it!</p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>fig, ax1 <span class="op">=</span> plt.subplots() <span class="co"># prepare a matplotlib figure</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>)) <span class="co"># prepare a matplotlib figure</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>surveys_df.plot(<span class="st">"hindfoot_length"</span>, <span class="st">"weight"</span>, kind<span class="op">=</span><span class="st">"scatter"</span>, ax<span class="op">=</span>ax1)</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide further adaptations with matplotlib:</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">"Hindfoot length"</span>)</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>ax1.tick_params(labelsize<span class="op">=</span><span class="dv">16</span>, pad<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Scatter plot of weight versus hindfoot length'</span>, fontsize<span class="op">=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Top left plot, male data</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df[<span class="st">'sex'</span>]<span class="op">==</span><span class="st">'M'</span>].plot(<span class="st">"hindfoot_length"</span>, <span class="st">"weight"</span>, kind<span class="op">=</span><span class="st">"scatter"</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>][<span class="dv">0</span>], color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>][<span class="dv">0</span>].set_title(<span class="st">'Male data'</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>][<span class="dv">0</span>].grid()</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Top right plot, female data</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df[<span class="st">'sex'</span>]<span class="op">==</span><span class="st">'F'</span>].plot(<span class="st">"hindfoot_length"</span>, <span class="st">"weight"</span>, kind<span class="op">=</span><span class="st">"scatter"</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>][<span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>][<span class="dv">1</span>].set_title(<span class="st">'Female data'</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>][<span class="dv">1</span>].grid()</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Bottom left plot, male data</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df[<span class="st">'sex'</span>]<span class="op">==</span><span class="st">'M'</span>) <span class="op">&amp;</span> (surveys_df[<span class="st">'year'</span>] <span class="op">&lt;</span> year)].plot(<span class="st">"hindfoot_length"</span>, <span class="st">"weight"</span>, kind<span class="op">=</span><span class="st">"scatter"</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>][<span class="dv">0</span>], color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>][<span class="dv">0</span>].set_title(<span class="ss">f'Male data (&lt; </span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">)'</span>)</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>][<span class="dv">0</span>].grid()</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Bottom right plot, male data</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df[<span class="st">'sex'</span>]<span class="op">==</span><span class="st">'F'</span>) <span class="op">&amp;</span> (surveys_df[<span class="st">'year'</span>] <span class="op">&gt;=</span> year)].plot(<span class="st">"hindfoot_length"</span>, <span class="st">"weight"</span>, kind<span class="op">=</span><span class="st">"scatter"</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>][<span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>][<span class="dv">1</span>].set_title(<span class="ss">f'Female data (&gt;= </span><span class="sc">{</span>year<span class="sc">}</span><span class="ss">)'</span>)</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>][<span class="dv">1</span>].grid()</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing individual plot labels</span></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>        axes[i][j].set_xlabel(<span class="st">''</span>)</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>        axes[i][j].set_ylabel(<span class="st">''</span>)</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing figure labels</span></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>fig.supxlabel(<span class="st">"Hindfoot Length [cm]"</span>,fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>fig.supylabel(<span class="st">"Weight [Kg]"</span>,fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Scatter plot of weight versus hindfoot length'</span>, fontsize<span class="op">=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>Text(0.5, 0.98, 'Scatter plot of weight versus hindfoot length')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="afternoon_exercises_solutions_files/figure-html/cell-19-output-2.png" width="614" height="491"></p>
-</div>
-</div>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>fig, ax1 <span class="op">=</span> plt.subplots() <span class="co"># prepare a matplotlib figure</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>surveys_df.plot(<span class="st">"weight"</span>,<span class="st">"hindfoot_length"</span>, kind<span class="op">=</span><span class="st">"scatter"</span>, ax<span class="op">=</span>ax1)</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide further adaptations with matplotlib:</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">"weight"</span>)</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>ax1.tick_params(labelsize<span class="op">=</span><span class="dv">16</span>, pad<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Scatter plot of hindfood length versus weight'</span>, fontsize<span class="op">=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>Text(0.5, 0.98, 'Scatter plot of hindfood length versus weight')</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="afternoon_exercises_solutions_files/figure-html/cell-20-output-2.png" width="601" height="491"></p>
+<p><img src="afternoon_exercises_solutions_files/figure-html/cell-19-output-2.png" width="864" height="950"></p>
 </div>
 </div>
 
