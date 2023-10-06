@@ -34,7 +34,7 @@ book:
         - solutions/afternoon_exercises_solutions.ipynb
     - what-next.qmd
     - references.qmd
-  repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python
+  repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python/book
   repo-actions: [edit]
   sidebar:
     logo: images/python-hex-logo.png
