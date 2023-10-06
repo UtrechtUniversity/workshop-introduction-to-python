@@ -12,8 +12,6 @@ join the [RDM walk-in hours][walk-in-hours] to ask for help.
 ## Install Python
 
 In this course, we will be using Python 3 with some of its most popular scientific libraries.
-[Python][python] is a popular language for research computing, and great for general-purpose
-programming as well.
 Although one can install a plain-vanilla Python and all required libraries by hand,
 we recommend installing [Anaconda][anaconda-website],
 a Python distribution that comes with everything we need for the lesson. 
@@ -200,4 +198,3 @@ The instructions on this page were adapted from the [setup instructions of the S
 [python]: https://python.org
 [swcarpentry-python]: https://swcarpentry.github.io/python-novice-inflammation/setup.html
 [walk-in-hours]: https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software
-[zipfile-course-materials](https://raw.githubusercontent.com/UtrechtUniversity/workshop-introduction-to-python/main/course_materials.zip)
