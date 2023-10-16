@@ -104,6 +104,19 @@ A Jupyter Notebook provides a browser-based interface for working with Python.
 If you installed Anaconda, you can launch a notebook in two ways:
 
 ::: {.panel-tabset}
+## Anaconda Navigator
+1. Launch Anaconda Navigator.
+It might ask you if you'd like to send anonymized usage information to Anaconda developers.
+Make your choice and click "Ok, and don't show again" button.
+2. Find the "Notebook" tab and click on the "Launch" button.
+Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
+contents of your Home (or User) folder.
+3. Navigate to the `data` directory by clicking on the directory names leading to it.
+`Desktop`, `python-workshop`, then `data`:
+4. Launch the notebook called `empty_notebook_for_code_along.ipynb` by clicking on it. 
+5. Run the first code cell just below "Test installation" by clicking on it and then click on the 'play button'.
+If the output of the cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
+
 ## Command line (Terminal)
 1. Navigate to the `python-workshop` directory:<br>
 	**Unix shell**<br>
@@ -133,20 +146,6 @@ If you installed Anaconda, you can launch a notebook in two ways:
 	```
 3. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
 	from the drop-down menu.
-
-## Anaconda Navigator
-1. Launch Anaconda Navigator.
-It might ask you if you'd like to send anonymized usage information to Anaconda developers.
-Make your choice and click "Ok, and don't show again" button.
-2. Find the "Notebook" tab and click on the "Launch" button.
-Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
-contents of your Home (or User) folder.
-3. Navigate to the `data` directory by clicking on the directory names leading to it.
-`Desktop`, `python-workshop`, then `data`:
-4. Launch the notebook called `empty_notebook_for_code_along.ipynb` by clicking on it. 
-5. Run the first code cell just below "Test installation" by clicking on it and then click on the 'play button'.
-If the output of the cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
-
 :::
 
 ### Option B: IPython interpreter
