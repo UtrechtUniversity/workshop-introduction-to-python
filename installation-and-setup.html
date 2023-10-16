@@ -378,9 +378,18 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="option-a-jupyter-notebook">Option A: Jupyter Notebook</h3>
 <p>A Jupyter Notebook provides a browser-based interface for working with Python. If you installed Anaconda, you can launch a notebook in two ways:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Command line (Terminal)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Anaconda Navigator</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Anaconda Navigator</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Command line (Terminal)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ol type="1">
+<li>Launch Anaconda Navigator. It might ask you if you’d like to send anonymized usage information to Anaconda developers. Make your choice and click “Ok, and don’t show again” button.</li>
+<li>Find the “Notebook” tab and click on the “Launch” button. Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the contents of your Home (or User) folder.</li>
+<li>Navigate to the <code>data</code> directory by clicking on the directory names leading to it. <code>Desktop</code>, <code>python-workshop</code>, then <code>data</code>:</li>
+<li>Launch the notebook called <code>empty_notebook_for_code_along.ipynb</code> by clicking on it.</li>
+<li>Run the first code cell just below “Test installation” by clicking on it and then click on the ‘play button’. If the output of the cell displays 4 version numbers and the words “No errors! Ready to code!” instead of an error message, your installation is successful. If not, contact us at <a href="https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software">RDM walk in hours</a> or reply to the welcome email.</li>
+</ol>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ol type="1">
 <li><p>Navigate to the <code>python-workshop</code> directory:<br> <strong>Unix shell</strong><br> If you’re using a Unix shell application, such as Terminal app in macOS, Console or Terminal in Linux, or <a href="https://gitforwindows.org">Git Bash</a> on Windows, execute the following command:</p>
 <pre class="{bash}"><code>cd ~/Desktop/python-workshop</code></pre>
@@ -391,15 +400,6 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Command Prompt (Windows)</strong></p>
 <pre class="{sh}"><code>python -m notebook</code></pre></li>
 <li><p>Launch the notebook by clicking on the “New” button on the right and selecting “Python 3” from the drop-down menu.</p></li>
-</ol>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<ol type="1">
-<li>Launch Anaconda Navigator. It might ask you if you’d like to send anonymized usage information to Anaconda developers. Make your choice and click “Ok, and don’t show again” button.</li>
-<li>Find the “Notebook” tab and click on the “Launch” button. Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the contents of your Home (or User) folder.</li>
-<li>Navigate to the <code>data</code> directory by clicking on the directory names leading to it. <code>Desktop</code>, <code>python-workshop</code>, then <code>data</code>:</li>
-<li>Launch the notebook called <code>empty_notebook_for_code_along.ipynb</code> by clicking on it.</li>
-<li>Run the first code cell just below “Test installation” by clicking on it and then click on the ‘play button’. If the output of the cell displays 4 version numbers and the words “No errors! Ready to code!” instead of an error message, your installation is successful. If not, contact us at <a href="https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software">RDM walk in hours</a> or reply to the welcome email.</li>
 </ol>
 </div>
 </div>
