@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: Workshop Introduction to Python
+message: 'If you reuse our materials, please cite us!'
+type: software
+authors:
+  - given-names: Research Data Management Support
+    affiliation: Utrecht University
+    email: info.rdm@uu.nl
+identifiers:
+  - type: url
+    value: >-
+      https://utrechtuniversity.github.io/workshop-introduction-to-python
+    description: URL to the course materials.
+repository-code: >-
+  https://github.com/UtrechtUniversity/workshop-introduction-to-python/
+url: 'https://uu.nl/rdm'
+abstract: >
+  This repository contains the materials for the one-day
+  workshop 'Introduction to Python', organized by Research
+  Data Management Support at Utrecht University, the
+  Netherlands.
+keywords:
+  - python
+  - jupyter
+  - programming
+  - notebook
+  - workshop
+license: CC-BY-4.0
+version: 2023.07.21
+date-released: '2023-07-21'
