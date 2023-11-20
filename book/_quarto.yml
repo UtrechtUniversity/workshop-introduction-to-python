@@ -1,6 +1,7 @@
 project:
   type: book
-  output-dir: ../docs
+
+  output-dir: ./docs
 
 book:
   title: "Introduction to Python & Data"
@@ -35,7 +36,9 @@ book:
     - what-next.qmd
     - references.qmd
   repo-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python
-  repo-actions: [edit]
+  repo-subdir: book
+  issue-url: https://github.com/UtrechtUniversity/workshop-introduction-to-python/issues/new
+  repo-actions: [edit, issue, source]
   sidebar:
     logo: images/python-hex-logo.png
 
