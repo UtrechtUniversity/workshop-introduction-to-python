@@ -5,9 +5,9 @@
 | 9:00 | Walk-in, tech support |
 | 9:30 | Introductions |
 | 10:00 | Python Fundamentals Chapters 1-3: _Exercises 0-3_ |
-| 11:25 | Recap & Questions |
-| **11:30** | **Coffee break** |
-| 11:45 | Python Fundamentals Chapters 4-5: _Exercises 4-9_ |
+| 10:55 | Recap & Questions |
+| **11:00** | **Coffee break** |
+| 11:15 | Python Fundamentals Chapters 4-5: _Exercises 4-9_ |
 | 12:40 | Recap & Questions |
 | **12:45** | **Lunch break** |
 | 13:30 | Data Science with Pandas Chapters 6-7: _Exercises 0-4_ |
