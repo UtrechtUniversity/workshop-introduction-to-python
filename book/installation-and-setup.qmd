@@ -88,7 +88,7 @@ python-workshop
 │   └── plots.csv
 ├── morning_exercises.ipynb 
 ├── afternoon_exercises.ipynb 
-└── empty_notebook_for_code_along.ipynb
+└── preparation.ipynb
 ```
 
 ## Launch Python interface
@@ -113,9 +113,8 @@ Anaconda will open a new browser window or tab with a Notebook Dashboard showing
 contents of your Home (or User) folder.
 3. Navigate to the `data` directory by clicking on the directory names leading to it.
 `Desktop`, `python-workshop`, then `data`:
-4. Launch the notebook called `empty_notebook_for_code_along.ipynb` by clicking on it. 
-5. Run the first code cell just below "Test installation" by clicking on it and then click on the 'play button'.
-If the output of the cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
+4. Launch the notebook called `preparation.ipynb` by clicking on it. 
+5. Follow the instructions in the notebook to finalize your preparation for the workshop. If the output of the last cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
 
 ## Command line (Terminal)
 1. Navigate to the `python-workshop` directory:<br>

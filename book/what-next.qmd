@@ -1,13 +1,38 @@
 # What Next? {.unnumbered}
 
-See this website as reference: https://datacarpentry.org/python-ecology-lesson/00-before-we-start/index.html
+The aim of this workshop is to demonstrate the power of Python and to provide you with a small foundation to be able to start using Python in your own project. We hopefully inspire you to learn more. Starting to use Python in your own project will not be easy, and you will need to invest more time to be able to use it effectively. The best way to learn is to start using it in your own project and explore the Python libraries that are relevant. You probably will get stuck, but we are always happy to help you to get back on track during our weekly walk-in hours. We are also happy to think along and suggest additional (online) courses to improve programming skills that are relevant for your project.
 
-You can continue on your programming journey using:
+## Libraries:
 
-- help function
-- documentation
-- StackOverflow
-- ChatGPT haha
-- Walk-In Hours
-- Programming Cafe
+This is a short list of popular Python libraries that might be useful for your next steps:
+
+- [`numpy`](https://numpy.org/doc/stable/user/index.html) for numerical computing
+- [`pandas`](https://pandas.pydata.org/docs/user_guide/index.html) for data analysis
+- [`scipy`](https://docs.scipy.org/doc/scipy/tutorial/index.html) and [`statsmodels`](https://www.statsmodels.org/stable/user-guide.html) for statistics
+- [`scikit-learn`](https://scikit-learn.org/stable/index.html) for machine learning
+- [`geopandas`](https://geopandas.org/en/stable/docs/user_guide.html) and [`rasterio`](https://rasterio.readthedocs.io/en/latest/quickstart.html) for geospatial data
+- [`matplotlib`](https://matplotlib.org/stable/users/index) and [`seaborn`](https://seaborn.pydata.org/tutorial.html) for plotting
+
+The documentation sites of these libraries often contain many examples and tutorials to get you started.
+
+Many more libraries for working with various data types (text, images, audio, video, etc.) and a wide variety of other tasks/applications (web scraping, parallel computing, large language models, image classification, speech recognition, etc.) are available.
+
+## Courses:
+
+1. [Best practices for writing reproducible code by UU RDM support](https://www.uu.nl/en/research/research-data-management/training-workshops/best-practices-for-writing-reproducible-code)
+2. [Various intermediate and advanced programming courses by the eScience Center](https://www.esciencecenter.nl/events/?f=workshops)
+3. [Software Carpentries](https://carpentries.org/community-lessons/)
+4. [Python for Data Science and Data Wrangling (online book)](https://wesmckinney.com/book/)
+5. [Python Data Science Handbook (online book)](https://jakevdp.github.io/PythonDataScienceHandbook/)
+
+## Find us:
+
+We are happy to help you in your journey to master Python and use it in your own projects. You can find us at the following places:
+
+- [Walk-In Hours](https://www.uu.nl/en/research/research-data-management/workshops/walk-in-hours-research-data-and-software), come with your questions!
+- [Programming Cafe](https://www.uu.nl/en/research/research-data-management/workshops/programming-cafe), informal meetup about programming. Bring your laptop, work on your project and get help when you need it!
+- [UU Research Engineers](https://www.uu.nl/en/research/research-data-management/support/research-engineers)
+- [UU RDM consultants](https://www.uu.nl/en/research/research-data-management/support/data-managers-and-consultants)
+
+
 
