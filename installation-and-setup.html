@@ -268,9 +268,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#install-python" id="toc-install-python" class="nav-link" data-scroll-target="#install-python">Install Python</a></li>
-  <li><a href="#obtain-lesson-materials" id="toc-obtain-lesson-materials" class="nav-link" data-scroll-target="#obtain-lesson-materials">Obtain lesson materials</a></li>
-  <li><a href="#launch-python-interface" id="toc-launch-python-interface" class="nav-link" data-scroll-target="#launch-python-interface">Launch Python interface</a>
+  <li><a href="#step-1-install-python" id="toc-step-1-install-python" class="nav-link" data-scroll-target="#step-1-install-python">Step 1: Install Python</a></li>
+  <li><a href="#step-2-obtain-lesson-materials" id="toc-step-2-obtain-lesson-materials" class="nav-link" data-scroll-target="#step-2-obtain-lesson-materials">Step 2: Obtain lesson materials</a></li>
+  <li><a href="#step-3-start-jupyter-interface-and-complete-preparation.ipynb" id="toc-step-3-start-jupyter-interface-and-complete-preparation.ipynb" class="nav-link" data-scroll-target="#step-3-start-jupyter-interface-and-complete-preparation.ipynb">Step 3: Start Jupyter interface and complete <code>preparation.ipynb</code></a>
   <ul class="collapse">
   <li><a href="#option-a-jupyter-notebook" id="toc-option-a-jupyter-notebook" class="nav-link" data-scroll-target="#option-a-jupyter-notebook">Option A: Jupyter Notebook</a></li>
   <li><a href="#option-b-ipython-interpreter" id="toc-option-b-ipython-interpreter" class="nav-link" data-scroll-target="#option-b-ipython-interpreter">Option B: IPython interpreter</a></li>
@@ -306,8 +306,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The course materials are designed to be run on a personal computer. All of the software and data used are freely available online, and instructions on how to obtain them are provided below.</p>
 <p>If you have any questions, or are not comfortable with doing the installation yourself join the <a href="https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software">RDM walk-in hours</a> to ask for help.</p>
 </section>
-<section id="install-python" class="level2">
-<h2 class="anchored" data-anchor-id="install-python">Install Python</h2>
+<section id="step-1-install-python" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-install-python">Step 1: Install Python</h2>
 <p>In this course, we will be using Python 3 with some of its most popular scientific libraries. Although one can install a plain-vanilla Python and all required libraries by hand, we recommend installing <a href="https://www.anaconda.com/">Anaconda</a>, a Python distribution that comes with everything we need for the lesson. Detailed installation instructions can be found in the <a href="https://docs.anaconda.com/anaconda/install">Anaconda documentation</a>, or by following the instructions below.</p>
 <p>Regardless of how you choose to install it, <strong>please make sure you install Python version 3.x</strong> (e.g., 3.9 is fine).</p>
 <p>We will teach Python using the <a href="https://jupyter.org/">Jupyter Notebook</a>, a programming environment that runs in a web browser (Jupyter Notebook will be installed by Anaconda). For this to work you will need a reasonably up-to-date browser. The current versions of the Chrome, Safari and Firefox browsers are all <a href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility">supported</a> (some older browsers, including Internet Explorer version 9 and below, are not).</p>
@@ -353,8 +353,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="obtain-lesson-materials" class="level2">
-<h2 class="anchored" data-anchor-id="obtain-lesson-materials">Obtain lesson materials</h2>
+<section id="step-2-obtain-lesson-materials" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-obtain-lesson-materials">Step 2: Obtain lesson materials</h2>
 <ol type="1">
 <li>Download the zip folder with all <a href="https://github.com/UtrechtUniversity/workshop-introduction-to-python/raw/main/course_materials.zip">course materials</a> (see <a href="./course-materials.html">Course Materials</a>).</li>
 <li>Create a folder called <code>python-workshop</code> on your Desktop (or any other place where you want to store the materials).</li>
@@ -371,8 +371,8 @@ ul.task-list li input[type="checkbox"] {
 ├── afternoon_exercises.ipynb 
 └── preparation.ipynb</code></pre>
 </section>
-<section id="launch-python-interface" class="level2">
-<h2 class="anchored" data-anchor-id="launch-python-interface">Launch Python interface</h2>
+<section id="step-3-start-jupyter-interface-and-complete-preparation.ipynb" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-start-jupyter-interface-and-complete-preparation.ipynb">Step 3: Start Jupyter interface and complete <code>preparation.ipynb</code></h2>
 <p>To start working with Python, we need to launch a program that will interpret and execute our Python commands. Below we list several options. If you don’t have a preference, proceed with the top option in the list that is available on your machine. Otherwise, you may use any interface you like.</p>
 <section id="option-a-jupyter-notebook" class="level3">
 <h3 class="anchored" data-anchor-id="option-a-jupyter-notebook">Option A: Jupyter Notebook</h3>
@@ -399,7 +399,8 @@ ul.task-list li input[type="checkbox"] {
 <pre class="{bash}"><code>jupyter notebook</code></pre>
 <p><strong>Command Prompt (Windows)</strong></p>
 <pre class="{sh}"><code>python -m notebook</code></pre></li>
-<li><p>Launch the notebook by clicking on the “New” button on the right and selecting “Python 3” from the drop-down menu.</p></li>
+<li><p>Launch the notebook called <code>preparation.ipynb</code> via the ‘File’ menu.</p></li>
+<li><p>Follow the instructions in the notebook to finalize your preparation for the workshop. If the output of the last cell displays 4 version numbers and the words “No errors! Ready to code!” instead of an error message, your installation is successful. If not, contact us at <a href="https://www.uu.nl/en/research/research-data-management/walk-in-hours-workshops/walk-in-hours-research-data-software">RDM walk in hours</a> or reply to the welcome email.</p></li>
 </ol>
 </div>
 </div>
