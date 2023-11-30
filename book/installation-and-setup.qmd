@@ -9,7 +9,7 @@ and instructions on how to obtain them are provided below.
 If you have any questions, or are not comfortable with doing the installation yourself
 join the [RDM walk-in hours][walk-in-hours] to ask for help.
 
-## Install Python
+## Step 1: Install Python
 
 In this course, we will be using Python 3 with some of its most popular scientific libraries.
 Although one can install a plain-vanilla Python and all required libraries by hand,
@@ -70,7 +70,7 @@ version 9 and below, are not).
 6. Close the terminal window.
 :::
 
-## Obtain lesson materials
+## Step 2: Obtain lesson materials
 
 1. Download the zip folder with all [course materials](https://github.com/UtrechtUniversity/workshop-introduction-to-python/raw/main/course_materials.zip)
  (see [Course Materials][course-materials]).
@@ -91,7 +91,7 @@ python-workshop
 └── preparation.ipynb
 ```
 
-## Launch Python interface
+## Step 3: Start Jupyter interface and complete `preparation.ipynb`
 
 To start working with Python, we need to launch a program that will interpret and execute our
 Python commands. Below we list several options. If you don't have a preference, proceed with the
@@ -143,8 +143,8 @@ contents of your Home (or User) folder.
 	```{sh}
 	python -m notebook
 	```
-3. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
-	from the drop-down menu.
+3. Launch the notebook called `preparation.ipynb` via the 'File' menu. 
+4. Follow the instructions in the notebook to finalize your preparation for the workshop. If the output of the last cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
 :::
 
 ### Option B: IPython interpreter
