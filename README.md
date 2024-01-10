@@ -1,6 +1,6 @@
 # Workshop: Introduction to Python
 
-[![DOI](https://zenodo.org/badge/578551995.svg)](https://zenodo.org/doi/10.5281/zenodo.10227861)
+[![DOI](https://zenodo.org/badge/578551995.svg)](https://zenodo.org/doi/10.5281/zenodo.10227861) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 This repository contains the workshop materials for the single day workshop ['Introduction to Python'](https://www.uu.nl/en/research/research-data-management/workshops/introduction-to-python) at Utrecht University. The workshop is organised by [Research Data Management Support](https://www.uu.nl/en/research/research-data-management).
 
