@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Python &amp; Data - 3&nbsp; Operators and built-in functions</title>
+<title>Introduction to Python &amp; Data - 3&nbsp; Operators, built-in functions, if-statements</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Python Fundamentals</a></li><li class="breadcrumb-item"><a href="./Introduction_to_python_2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators and built-in functions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Python Fundamentals</a></li><li class="breadcrumb-item"><a href="./Introduction_to_python_2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators, built-in functions, if-statements</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -211,13 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Introduction_to_python_2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators and built-in functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators, built-in functions, if-statements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Introduction_to_python_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, if-statements and for-loops</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, lists and for-loops</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -310,16 +310,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#mathematical-operations" id="toc-mathematical-operations" class="nav-link active" data-scroll-target="#mathematical-operations"><span class="header-section-number">3.1</span> Mathematical operations</a></li>
   <li><a href="#built-in-python-functions" id="toc-built-in-python-functions" class="nav-link" data-scroll-target="#built-in-python-functions"><span class="header-section-number">3.2</span> Built-in Python functions</a></li>
-  <li><a href="#boolean-values-logical-expressions-and-operators" id="toc-boolean-values-logical-expressions-and-operators" class="nav-link" data-scroll-target="#boolean-values-logical-expressions-and-operators"><span class="header-section-number">3.3</span> Boolean values, Logical expressions and operators</a></li>
+  <li><a href="#if-statements-and-comparisons" id="toc-if-statements-and-comparisons" class="nav-link" data-scroll-target="#if-statements-and-comparisons"><span class="header-section-number">3.3</span> If-statements and comparisons</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/UtrechtUniversity/workshop-introduction-to-python/blob/main/book/Introduction_to_python_2.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/workshop-introduction-to-python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/UtrechtUniversity/workshop-introduction-to-python/blob/main/book/Introduction_to_python_2.ipynb" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Python Fundamentals</a></li><li class="breadcrumb-item"><a href="./Introduction_to_python_2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators and built-in functions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Python Fundamentals</a></li><li class="breadcrumb-item"><a href="./Introduction_to_python_2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators, built-in functions, if-statements</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators and built-in functions</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators, built-in functions, if-statements</span></h1>
 </div>
 
 
@@ -387,106 +387,138 @@ Modulo:  3</code></pre>
 </div>
 </div>
 </section>
-<section id="boolean-values-logical-expressions-and-operators" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="boolean-values-logical-expressions-and-operators"><span class="header-section-number">3.3</span> Boolean values, Logical expressions and operators</h2>
-<p>In programming you often need to know if something is <code>True</code> or <code>False</code>. <code>True</code> and <code>False</code> are called Boolean values and have their own data type (<code>bool</code> so they are not of type <code>str</code>!!). <code>True</code> and <code>False</code> are the only two Boolean values.</p>
-<div id="878b1de4" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>True</code></pre>
+<section id="if-statements-and-comparisons" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="if-statements-and-comparisons"><span class="header-section-number">3.3</span> If-statements and comparisons</h2>
+<p>In programming it is possible to perform certain tasks only when a certain condition is met: Assume we have a table where each row is a person and the table contains a column <code>age</code>. We want to create a new variable <code>age_group</code> which can have the values <code>child</code> and <code>adult</code> based on the value in the column age. We can use an <code>if</code>-statement to decide whether a person is younger than 18 and asign the right value to <code>age_group</code>.</p>
+<div id="8bfd4af2" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">17</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'this person is a child'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>this person is a child</code></pre>
 </div>
 </div>
-<div id="d6143053" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>False</code></pre>
+<p>As you can see, the line <code>print(...)</code> starts with 4 spaces indentation. In Python indentation is very important. Python uses indentation to determine which lines of code belong together. Lines with the same identation are called a code block. We use code blocks to define what should be done in an if-statement, for-loop or in a functions. E.g. after the if condition, all lines with indentation are only performed when the if-condition is met.</p>
+<div id="ea2cb2ed" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> num <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'This line is only executed when num &gt; 100'</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'This line is only executed when num &gt; 100'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'This line is only executed when num &gt; 100'</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This line is always executed'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This line is always executed</code></pre>
 </div>
 </div>
-<div id="18d579dc-1275-4b9f-8579-459aa9c194c4" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>bool</code></pre>
+<p>It is also possible to specify a task that is performed when the condition is not met using <code>else</code> (note the use of indentation):</p>
+<div id="fe4cf9a4" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">17</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'this person is a child'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'this person is an adult'</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'done'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>this person is a child
+done</code></pre>
 </div>
 </div>
-<p>Comparison operators (e.g.&nbsp;<code>&gt;</code>, <code>&lt;</code>, <code>==</code>) are used in an expression to compare two values. The result of this expression is either <code>True</code> or <code>False</code>. Why this is useful we will show later (see if-statements).</p>
-<div id="57accc50-7e82-4541-ae47-02a198fa0606" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>False</code></pre>
+<p>With an <code>if .. else</code> statement we can define one condition. If we need to check more conditions the <code>if ... else</code> statement can be extended with (one or more) <code>elif</code> to specify more tasks that need to be performed on other conditions. These extended <code>if ... else</code> statements always start with <code>if</code> followed by (one or more) <code>elif</code>. When an <code>else</code> statement is included it is always the last statement, it is the default which will be eceuted when all previous comparisons failed.</p>
+<p><strong>Order matters</strong>: The statements (or conditions) are checked in order from top to bottom and only the task belonging to the first condition that is met is being performed.</p>
+<div id="29c03372" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> num <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">'is positive'</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> num <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">'is zero'</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">'is negative'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-3 is negative</code></pre>
 </div>
 </div>
-<p><code>3 &gt; 4</code> is an example of a ‘logical expression’ (also known as condition), where <code>&gt;</code> is the comparison operator.</p>
-<div id="9ee5e542-0b9f-489f-b542-9edc3cdf289e" class="cell" data-execution_count="9">
+<p>If statements often use comparisons to check if a certain condition is met. Comparisons are done with comparison operators such as <code>&gt;</code>, <code>==</code>.</p>
+<p>Along with the <code>&gt;</code> and <code>==</code> comparison operators that we have already used for comparing values above, there are a few more options to know about:</p>
+<ul>
+<li>&gt;: greater than</li>
+<li>&lt;: less than</li>
+<li>==: equal to</li>
+<li>!=: does not equal</li>
+<li>&gt;=: greater than or equal to</li>
+<li>&lt;=: less than or equal to</li>
+</ul>
+<p>Let’s now play around with comparisons to see how they work in more detail.</p>
+<div id="57accc50-7e82-4541-ae47-02a198fa0606" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>True</code></pre>
 </div>
 </div>
-<p><code>==</code> is another comparison operator to check if two values or variables are the same. If this is the case it will return <code>True</code></p>
-<div id="2f36bacd-a602-49d6-9546-5b06d4b5629d" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>four <span class="op">=</span> <span class="dv">4</span>          <span class="co"># first we assign the integer 4 to a variable</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>four <span class="op">==</span> <span class="dv">4</span>         <span class="co"># then we check if it is equal to 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9a2bd3af" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">&lt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>True</code></pre>
-</div>
-</div>
-<p><code>!=</code> is used to check if two values or variable are <strong>not</strong> the same. If this is the case it will return <code>True</code></p>
-<div id="84f8e1a5-f96d-450d-84e7-63aedf217400" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Four is not equal to 5: "</span>, four <span class="op">!=</span> <span class="dv">5</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Four is not equal to 4: "</span>, four <span class="op">!=</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Four is not equal to 5:  True
-Four is not equal to 4:  False</code></pre>
-</div>
-</div>
-<p><code>and</code>, <code>or</code> and <code>not</code> are ‘logical operators’, and are used to join two logical expressions (or revert a logical expression in the case of <code>not</code>) to create more complex conditions.</p>
-<p><code>and</code> will return <code>True</code> if both expression on either side are <code>True</code>.</p>
-<div id="fc3bdb67-1b1c-43de-9939-faaa507c82c5" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>a <span class="kw">and</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="de1eb6b7-1cc7-45a4-8d54-db521c56d281" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>a <span class="kw">and</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="a1adbdd1-faf3-4387-98a0-c23f00e9885f" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">3</span> <span class="kw">and</span> <span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div id="1f8f7d8d" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">3</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>bool</code></pre>
+</div>
+</div>
+<p>As you can see, comparisons return <code>True</code> or <code>False</code>. The data type of these values are <code>bool</code> which is short for boolean values.</p>
+<p>If-statements work with boolean values. If the value is <code>True</code>, the task is performed, if the value is <code>False</code>, the task is not performed.</p>
+<p>Boolean values can also be assigned to variables:</p>
+<div id="96d2c495" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>bool</code></pre>
+</div>
+</div>
+<p><code>and</code>, <code>or</code> and <code>not</code> are ‘logical operators’, and are used to join two comparisons (or revert a logical expression in the case of <code>not</code>) to create more complex conditions.</p>
+<p><code>and</code> will return <code>True</code> if both expression on either side are <code>True</code>.</p>
+<div id="fc3bdb67-1b1c-43de-9939-faaa507c82c5" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="kw">and</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>True</code></pre>
 </div>
 </div>
-<p><code>or</code> is used to check if at least one of two logical expressions are <code>True</code>. If this is the case it will return <code>True</code>.</p>
-<div id="c610a59a-4d65-4583-ab3b-5e9804a3bd53" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">or</span> <span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="de1eb6b7-1cc7-45a4-8d54-db521c56d281" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>a <span class="kw">and</span> c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="a1adbdd1-faf3-4387-98a0-c23f00e9885f" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">3</span> <span class="kw">and</span> <span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="2e90ec2f-5a62-4651-bab0-d2968d9402b5" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">3</span> <span class="kw">or</span> <span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>or</code> is used to check if at least one of two logical expressions are <code>True</code>. If this is the case it will return <code>True</code>.</p>
+<div id="c610a59a-4d65-4583-ab3b-5e9804a3bd53" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">or</span> <span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>True</code></pre>
 </div>
 </div>
-<p>In the last three examples you can see that multiple expressions can be combined in a single line of Python code. Python evaluates the expressions one by one. <code>4 &gt; 3</code> would return <code>True</code>, <code>9 &gt; 3</code> would return <code>True</code>, so <code>4 &gt; 3 or 9 &gt; 3</code> would translate to <code>True or True</code>.</p>
-<p>It is also possible to assign the output of an expression to a variable:</p>
-<div id="71f75fc1" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>greater <span class="op">=</span> <span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">4</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"3 &gt; 4 : "</span>, greater)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 &gt; 4 :  False</code></pre>
+<div id="2e90ec2f-5a62-4651-bab0-d2968d9402b5" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">3</span> <span class="kw">or</span> <span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>True</code></pre>
 </div>
 </div>
+<p>In the last three examples you can see that multiple expressions can be combined in a single line of Python code. Python evaluates the expressions one by one. <code>4 &gt; 3</code> would return <code>True</code>, <code>9 &gt; 3</code> would return <code>True</code>, so <code>4 &gt; 3 or 9 &gt; 3</code> would translate to <code>True or True</code>. Because at least one of the expressions on either side of the <code>or</code> operator is <code>True</code>, the whole expression results to <code>True</code>.</p>
 <p>The <code>not</code> operator can be used to reverse the Boolean value. If you apply <code>not</code> to an expression that evaluates to <code>True</code>, then you get <code>False</code> as a result. If you apply <code>not</code> to an expression that evaluates to <code>False</code>, then you get <code>True</code> as a result:</p>
 <div id="de38bb19-b631-49ba-919b-2c2a5a0b26fa" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">not</span> <span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -506,6 +538,24 @@ Four is not equal to 4:  False</code></pre>
 <pre><code>This expression 'a or b and c' evalutes to  True
 And this is the same as 'a or (b and c)') True
 But this expression evaluates '(a or b) and c' first the 'or' and generates: False</code></pre>
+</div>
+</div>
+<p>Now we know how to use comparisons and logical operators to create complex conditions. These complex conditions can be used in if-statements to perform tasks based on these conditions.</p>
+<div id="ddd44a2d" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">or</span> (<span class="dv">1</span> <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'at least one the above logical statements is true'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>at least one the above logical statements is true</code></pre>
+</div>
+</div>
+<p>While <code>and</code> is only true if both parts are true</p>
+<div id="45666f42" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="dv">1</span> <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">and</span> (<span class="dv">1</span> <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'both tests are true'</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'at least one of the tests is not true'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>at least one of the tests is not true</code></pre>
 </div>
 </div>
 <div class="alert alert-block alert-success">
@@ -907,13 +957,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Introduction_to_python_1.html" class="pagination-link  aria-label=" &lt;span="" and="" printing="" output&lt;="" span&gt;"="">
+      <a href="./Introduction_to_python_1.html" class="pagination-link" aria-label="Variables and printing output">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Variables and printing output</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Introduction_to_python_3.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Data types, if-statements and for-loops</span>">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, if-statements and for-loops</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Introduction_to_python_3.html" class="pagination-link" aria-label="Data types, lists and for-loops">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, lists and for-loops</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -214,13 +214,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Introduction_to_python_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators and built-in functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators, built-in functions, if-statements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Introduction_to_python_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, if-statements and for-loops</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, lists and for-loops</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,6 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>surveys_df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -458,6 +459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 <p>In addition to learning about characteristics of our dataset as a whole, we may be interested in analyzing parts (subsets) of our data. For exampe we want to know how heavy our samples are:</p>
 <div id="e8e3f384" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -491,6 +493,7 @@ Name: weight, dtype: float64</code></pre>
 <div id="f8f57013" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'species_id'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
+<div>
 <div>
 
 
@@ -553,10 +556,12 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p>In contrast to the examples we saw in the previous Section we are using double brackets <code>[[...]]</code> instead of single brackets. The single brackets retrieve a Pandas series of values and can only be applied to one column. The double brackets <code>[[...]]</code> tell Pandas to format the values of several columns as a Pandas DataFrame. With this syntax we can create a DataFrame that consists of the two columns <em>plot_id</em> and <em>species_id</em>!</p>
 <div id="7c9b2a3e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'plot_id'</span>, <span class="st">'species_id'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
+<div>
 <div>
 
 
@@ -631,6 +636,7 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="slicing-subsets-of-rows" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="slicing-subsets-of-rows"><span class="header-section-number">7.3</span> Slicing subsets of rows</h2>
@@ -638,6 +644,7 @@ Name: weight, dtype: float64</code></pre>
 <div id="bc4725da" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
+<div>
 <div>
 
 
@@ -699,12 +706,14 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p>We can select specific ranges of our data in both the row and column directions using the row and column labels or using the row and column indices.</p>
 <p>Let’s have a look at <code>iloc</code> first. where we use the index of a row and/or column to select it. In the example below we select the first three entries and the columns month, day and year (the second, third and fourth column, remember indexing starts at 0 on Python). The first range of numbers selects the rows, the second the columns:</p>
 <div id="709a25e9" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iloc[row slicing, column slicing]</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>surveys_df.iloc[<span class="dv">0</span>:<span class="dv">3</span>, <span class="dv">1</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
+<div>
 <div>
 
 
@@ -739,6 +748,7 @@ Name: weight, dtype: float64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -748,6 +758,7 @@ Name: weight, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'month'</span>, <span class="st">'day'</span>, <span class="st">'year'</span>]][<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -781,6 +792,7 @@ Name: weight, dtype: float64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -821,6 +833,7 @@ Name: weight, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data collected in the year 2002?</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2002</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
+<div>
 <div>
 
 
@@ -979,10 +992,12 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div id="1b21c366" class="cell" data-tags="[]" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the data NOT collected in the year 2002?</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>surveys_df[surveys_df[<span class="st">'year'</span>] <span class="op">!=</span> <span class="dv">2002</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
+<div>
 <div>
 
 
@@ -1138,6 +1153,7 @@ Name: weight, dtype: float64</code></pre>
 </table>
 
 <p>33320 rows × 9 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -1146,6 +1162,7 @@ Name: weight, dtype: float64</code></pre>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="op">~</span>(surveys_df[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2002</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1300,6 +1317,7 @@ Name: weight, dtype: float64</code></pre>
 </table>
 
 <p>33320 rows × 9 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -1309,6 +1327,7 @@ Name: weight, dtype: float64</code></pre>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df[<span class="st">'year'</span>] <span class="op">&gt;=</span> <span class="dv">2000</span>) <span class="op">&amp;</span> (surveys_df[<span class="st">'year'</span>] <span class="op">&lt;=</span> <span class="dv">2002</span>) <span class="op">&amp;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>           (surveys_df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="st">'F'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
+<div>
 <div>
 
 
@@ -1467,6 +1486,7 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p><strong>Spotlight on Syntax</strong>: We can introduce linebreaks in commands.</p>
 <p>Below we filter for rows with collected data on female species in the year 2000 or 2002. “Give me all data where sex is Female and data is collected in 2000 or 2002”.</p>
 <p>The method <code>isin()</code> allows to specify a range of “permitted” values for a certain column. Here it follows another example:</p>
@@ -1474,6 +1494,7 @@ Name: weight, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>surveys_df[(surveys_df[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2000</span>) <span class="op">&amp;</span> (surveys_df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="st">'F'</span>) <span class="op">&amp;</span> </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>           (surveys_df[<span class="st">'month'</span>].isin([<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>]))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
+<div>
 <div>
 
 
@@ -1629,6 +1650,7 @@ Name: weight, dtype: float64</code></pre>
 </table>
 
 <p>156 rows × 9 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -1803,6 +1825,7 @@ Name: weight, dtype: float64</code></pre>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>grouped_data.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1920,14 +1943,16 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p>The output is a bit overwhelming. Let’s just have a look at one statistical value, the mean, to understand what is happening here:</p>
 <div id="b2f88c4f" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>grouped_data.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_2405/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<pre><code>/tmp/ipykernel_2415/1133710423.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   grouped_data.mean()</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="27">
+<div>
 <div>
 
 
@@ -1981,6 +2006,7 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p>We see that the data is divided into two groups, one group where the value in the column <em>sex</em> equals “F” and another group where the value in the column <em>sex</em> equals “M”. The statistics is then calculated for all samples in that specific group for each of the columns in the dataframe. Note that samples annotated with sex equals NaN and column values with NaN are left out.</p>
 </section>
 <section id="optional-structure-of-a-groupby-object" class="level2" data-number="7.6">
@@ -2020,6 +2046,7 @@ Rows belonging to sex 'F':  Int64Index([    2,     6,     8,     9,    10,    14
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby([<span class="st">'plot_id'</span>, <span class="st">'sex'</span>])</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>grouped_data[<span class="st">'weight'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
+<div>
 <div>
 
 
@@ -2609,6 +2636,7 @@ Rows belonging to sex 'F':  Int64Index([    2,     6,     8,     9,    10,    14
 </div>
 </div>
 </div>
+</div>
 <p>With the same grouped data we can compare the average weight between the males and females per plot and visualise that as stacked bar plot:</p>
 <div id="9fb6cde6" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> surveys_df.groupby([<span class="st">'plot_id'</span>, <span class="st">'sex'</span>])</span>
@@ -3040,12 +3068,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data-science-with-pandas-1.html" class="pagination-link  aria-label=" &lt;span="" and="" exploring="" data&lt;="" span&gt;"="">
+      <a href="./data-science-with-pandas-1.html" class="pagination-link" aria-label="Reading and Exploring data">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and Exploring data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data-science-with-pandas-3.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Combining DataFrames</span>">
+      <a href="./data-science-with-pandas-3.html" class="pagination-link" aria-label="Combining DataFrames">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Combining DataFrames</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

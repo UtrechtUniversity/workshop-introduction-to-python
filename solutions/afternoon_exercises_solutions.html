@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -214,13 +214,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Introduction_to_python_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators and built-in functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operators, built-in functions, if-statements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Introduction_to_python_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, if-statements and for-loops</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data types, lists and for-loops</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -416,6 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>surveys_df[[<span class="st">'plot_id'</span>, <span class="st">'plot_id'</span>, <span class="st">'species_id'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -501,6 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 <div id="bb68a995" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>surveys_df[<span class="st">'plot_id'</span>, <span class="st">'species_id'</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -527,6 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>surveys_df[:<span class="dv">4</span>] </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>surveys_df[:<span class="op">-</span><span class="dv">1</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
+<div>
 <div>
 
 
@@ -682,6 +685,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 
 <p>35548 rows × 9 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -870,6 +874,7 @@ Name: weight, dtype: float64</code></pre>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>vert_concat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
+<div>
 <div>
 
 
@@ -1198,6 +1203,7 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <p>We get a total of 20 rows and 12 columns. The original dataframes together had a total of 13 columns. As they both have a column <code>species_id</code>, this one is collapsed. All other columns are padded with <code>NaN</code> values. We expect 20 rows, as we are putting two DataFrames of 10 rows one after the other. The padding of the columns happens because these two DataFrames do not have the same column names. To keep all the information that was in the original DataFrames, the padding of columns that occur in only one of the two is necessary.</p>
 </section>
 <section id="exercise-10" class="level3" data-number="11.0.11">
@@ -1221,6 +1227,7 @@ Name: weight, dtype: float64</code></pre>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>                      how<span class="op">=</span><span class="st">'outer'</span>)</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>outer_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
+<div>
 <div>
 
 
@@ -1669,6 +1676,7 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <ol start="3" type="1">
 <li>Ten rows. The resulting DataFrame closely resembles the original left DataFrame, but with information from the right DataFrame added to it, where applicable.</li>
 </ol>
@@ -1678,6 +1686,7 @@ Name: weight, dtype: float64</code></pre>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>                     how<span class="op">=</span><span class="st">'left'</span>)</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>left_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
+<div>
 <div>
 
 
@@ -1856,6 +1865,7 @@ Name: weight, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <ol start="4" type="1">
 <li>25 rows. The resulting DataFrame closely resembles the original right DataFrame, but with information from the left DataFrame added to it, where applicable. Note that rows from the right DataFrame that have multiple matching rows in the left DataFrame are duplicated.</li>
 </ol>
@@ -1865,6 +1875,7 @@ Name: weight, dtype: float64</code></pre>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                      how<span class="op">=</span><span class="st">'right'</span>)</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>right_join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
+<div>
 <div>
 
 
@@ -2265,6 +2276,7 @@ Name: weight, dtype: float64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -2715,7 +2727,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../solutions/morning_exercises_solutions.html" class="pagination-link  aria-label=" &lt;span="" exercises:="" python="" fundamentals&lt;="" span&gt;"="">
+      <a href="../solutions/morning_exercises_solutions.html" class="pagination-link" aria-label="Morning Exercises: Python fundamentals">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Morning Exercises: Python fundamentals</span></span>
       </a>          
   </div>
