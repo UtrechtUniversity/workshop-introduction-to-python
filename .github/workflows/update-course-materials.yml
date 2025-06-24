@@ -19,7 +19,7 @@ jobs:
         rm course_materials.zip
         cd course_materials
         zip -r ../course_materials.zip .
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: course_materials
         path: course_materials.zip
