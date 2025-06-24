@@ -19,7 +19,8 @@ on:
       - 'book/**'
 
 jobs:
-  build-deploy:
+  # Build job
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -41,13 +42,25 @@ jobs:
         uses: actions/configure-pages@v1
 
       - name: Render Website
+        id: build
         run: quarto render book/
 
       - name: Upload artifact
+        id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'book/_site'
-          
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@main
+        uses: actions/deploy-pages@v4
+          
+
