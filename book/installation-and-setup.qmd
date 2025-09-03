@@ -15,8 +15,7 @@ In this course, we will be using Python 3 with some of its most popular scientif
 Although one can install a plain-vanilla Python and all required libraries by hand,
 we recommend installing [Anaconda][anaconda-website],
 a Python distribution that comes with everything we need for the lesson. 
-Detailed installation instructions can be found in the [Anaconda documentation][anaconda-install],
-or by following the instructions below.
+Detailed installation instructions can be found in the [Anaconda documentation][anaconda-install], or by following the instructions below.
 
 Regardless of how you choose to install it, **please make sure you install Python version 3.x**
 (e.g., 3.9 is fine).
@@ -26,6 +25,8 @@ in a web browser (Jupyter Notebook will be installed by Anaconda). For this to w
 a reasonably up-to-date browser. The current versions of the Chrome, Safari and Firefox browsers
 are all [supported][jupyter-compatibility] (some older browsers, including Internet Explorer
 version 9 and below, are not).
+
+To download the software from the webpage please click on "skip Registration" and then choose one of the Distribution installers.
 
 ::: {.panel-tabset}
 ## Windows
