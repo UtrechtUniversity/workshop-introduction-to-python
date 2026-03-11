@@ -122,7 +122,8 @@ contents of your Home (or User) folder.
 	**Unix shell**<br>
 	If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
 	in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
-	```{bash}
+	
+	```
 	cd ~/Desktop/python-workshop
 	```
 
@@ -131,19 +132,24 @@ contents of your Home (or User) folder.
 	pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting
 	<kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
 	the `data` folder:
-	```{sh}
+	
+	```
 	cd /D %userprofile%\Desktop\python-workshop
 	```
+
 2. Start Jupyter server:<br>
 	**Unix shell**
-	```{bash}
+
+	```
 	jupyter notebook
 	```
 
 	**Command Prompt (Windows)**
-	```{sh}
+	
+	```
 	python -m notebook
 	```
+
 3. Launch the notebook called `preparation.ipynb` via the 'File' menu. 
 4. Follow the instructions in the notebook to finalize your preparation for the workshop. If the output of the last cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
 :::
