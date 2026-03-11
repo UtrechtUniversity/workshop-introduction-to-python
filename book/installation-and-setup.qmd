@@ -112,8 +112,7 @@ Make your choice and click "Ok, and don't show again" button.
 2. Find the "Notebook" tab and click on the "Launch" button.
 Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 contents of your Home (or User) folder.
-3. Navigate to the `python-workshop` directory by clicking on the directory names leading to it.
-`Desktop`, `python-workshop`:
+3. Navigate to the `python-workshop` directory by clicking on the directory names leading to it, e.g. `Desktop`, then `python-workshop`.
 4. Launch the notebook called `preparation.ipynb` by clicking on it. 
 5. Follow the instructions in the notebook to finalize your preparation for the workshop. If the output of the last cell displays 4 version numbers and the words "No errors! Ready to code!" instead of an error message, your installation is successful. If not, contact us at [RDM walk in hours][walk-in-hours] or reply to the welcome email.
 
